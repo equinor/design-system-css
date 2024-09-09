@@ -1,0 +1,34 @@
+{
+  "git.autofetch": true,
+  "git.rebaseWhenSync": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "errorLens.gutterIconsEnabled": true,
+  "emmet.variables": {
+    "lang": "no"
+  },
+  "emmet.extensionsPath": ["./.emmet"],
+  "explorer.sortOrder": "type",
+  "workbench.colorCustomizations": {
+    "htmlEndTagLabels.labelColor": "#cdcdcd"
+  },
+  "htmlEndTagLabels.labelPrefix": "//",
+  "editor.wordWrap": "on",
+  "rewrap.autoWrap.enabled": true,
+  "json.schemas": [
+    {
+      "fileMatch": [".prettier.yaml"],
+      "url": "http://json.schemastore.org/prettierrc"
+    },
+    {
+      "fileMatch": [".eslintrc.yaml"],
+      "url": "http://json.schemastore.org/eslintrc"
+    }
+  ],
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
+  "editor.tabSize": 2,
+  "editor.linkedEditing": true,
+  "css.lint.unknownAtRules": "ignore"
+}

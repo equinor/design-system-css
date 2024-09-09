@@ -1,0 +1,25 @@
+{
+  "html": {
+    "snippets": {
+      "c:example": "<!--\n\tDette er en HTML kommentar.\n\tKommentarer er ikke synlig i nettleseren. Vi kan ha kommentarer i Javascript og CSS-filer også, men de ser litt annerledes ut.\n-->",
+      "c:head": "<!--\n\tDette er head-seksjonen – den inneholder informasjon til nettleseren, som f.eks. tittelen som vises i en fane eller et bokmerke, men som ikke vises direkte på siden.\n\tHusk å endre tittelen så det ikke står «Document» når du er ferdig.\n-->",
+      "c:css": "<!--\n\tDette er stilarket til websiden, det er der vi bestemmer hvordan designet skal se ut.\n-->",
+      "c:js": "<!--\n\tDette er Javascriptet til websiden.\n-->",
+      "c:body": "<!--\n\tBody-seksjonen inneholder alt det du kan se i nettleser-vinduet.\n\tHvert element er definert ved bruk av tagger, som f.eks. <div></div>.\n\tAttributter som f.eks. class=\"button-primary\" gjør at vi kan bestemme hvordan et element skal se ut med CSS.\n-->",
+      "head": "c:example+head>meta[charset=${charset}]+meta:vp+c:head+title{${1:Document}}+c:css+link[rel=\"stylesheet\"][href=\"style.css\"]",
+      "doc": "html[lang=${lang}]>head+body>c:body+{${0:Slett denne teksten og skriv tenk:page og så tabulator.}}+c:js+script[src=\"script.js\"]",
+      "!|html:5": "!!!+doc",
+      "tenk:preview": "div.preview>div.preview-component>{${0:Her skriver vi koden til komponenten vi skal lage.}}^div.preview-code>pre>code>",
+      "tenk:component": "p.description+h2.heading-large>{${0:Navnet på komponenten her}}^tenk:preview",
+      "tenk:topbar": "div.top-bar>a[href=\"./\"].button-primary>{◀︎ Tilbake}^svg.top-bar-logo>use[href=\"assets/tenk-logo.svg#logo\"]^p.top-bar-text>{Tech Camp 2023}",
+      "tenk:page": "div.page>tenk:topbar+main.main>div.content>h1.heading-xl>{${0:Hovedoverskriften på siden}}^{${1:Hvis du skal lage en komponent-visning, kan du slette denne teksten og skrive «tenk:component» og så tabulator}}"
+    }
+  },
+  "css": {
+    "snippets": {
+      "cb": "color: black",
+      "bsd": "border: 1px solid ${1:red}",
+      "ls": "list-style: ${1}"
+    }
+  }
+}
