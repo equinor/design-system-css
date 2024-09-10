@@ -1,0 +1,16 @@
+@layer eds-input {
+  .eds-input {
+    border: 2px solid black;
+    &.error {
+      border-color: red;
+    }
+    &.warning {
+      border-color: orange;
+    }
+    &.success {
+      border-color: green;
+    }
+  }
+
+}
+

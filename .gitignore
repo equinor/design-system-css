@@ -3,3 +3,4 @@ build
 !*/tokens/build
 .env*
 .DS_Store
+*storybook.log
