@@ -1,0 +1,6 @@
+.eds-autocomplete__options {
+  inset: auto;
+  position-anchor: --input;
+  top: anchor(bottom);
+  left: anchor(left);
+}
