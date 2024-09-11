@@ -19,11 +19,11 @@ export const Autocomplete = () => {
   {/* @ts-ignore */}
   <div ref={options} className="eds-autocomplete__options" popover="manual" onClick={closePopover}>
     <ul>
-      <li>item</li>
-      <li>item</li>
-      <li>item</li>
-      <li>item</li>
-      <li>item</li>
+      <li><button>item</button></li>
+      <li><button>item</button></li>
+      <li><button>item</button></li>
+      <li><button>item</button></li>
+      <li><button>item</button></li>
     </ul>
   </div>
   </>
