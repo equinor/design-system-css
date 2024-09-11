@@ -1,0 +1,31 @@
+.eds-accordion {
+  border: 1px solid black;
+  summary {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    background-color: white;
+    user-select: none;
+    cursor: pointer;
+    &::before {
+      content: '>';
+      flex-basis: 32px;
+      transform-origin: left center;
+    }
+
+  }
+  &[open] summary {
+    border-bottom: 1px solid black;
+    &::before {
+      rotate: 90deg;
+    }
+  }
+}
+.eds-accordion__actions {
+  display: flex;
+  gap: 8px;
+}
+.eds-accordion__content {
+  padding: 16px;
+  background-color: white;
+}
