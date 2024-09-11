@@ -5,7 +5,7 @@ type Props = {
 }
 
 export const Input = ({ variant }: Props) => (
-  <div className={`eds-input ${variant && variant}`}>
+  <div className={`eds-input ${variant ? variant : ''}`}>
     <input type="text" />
   </div>
 )

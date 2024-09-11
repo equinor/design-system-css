@@ -5,12 +5,13 @@
   "description": "eds component mockups",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 --ci",
     "build-storybook": "storybook build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@equinor/eds-tokens": "^1.0.0-beta.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "react": "^18.3.1",
