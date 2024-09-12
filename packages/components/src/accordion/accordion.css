@@ -8,16 +8,16 @@
     background-color: white;
     user-select: none;
     cursor: pointer;
+    svg:first-of-type {
+      margin-left: -8px;
+    }
   }
   &[open] summary {
     border-bottom: 1px solid black;
   }
-  &[open] .eds-accordion__icon svg {
+  &[open] svg:first-of-type {
     rotate: 90deg;
   }
-}
-.eds-accordion__icon {
-  margin-left: -8px;
 }
 .eds-accordion__actions {
   display: flex;

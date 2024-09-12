@@ -14,17 +14,17 @@ export const Autocomplete = () => {
 
   return (
   <>
-  {/* @ts-ignore */}
-  <Input onFocus={openPopover} style={{anchorName: '--input'}} />
-  {/* @ts-ignore */}
-  <div ref={options} className="eds-autocomplete__options" popover="manual" onClick={closePopover}>
-    <ul>
-      <li><button>item</button></li>
-      <li><button>item</button></li>
-      <li><button>item</button></li>
-      <li><button>item</button></li>
-      <li><button>item</button></li>
-    </ul>
-  </div>
+    {/* @ts-ignore */}
+    <Input onFocus={openPopover} style={{anchorName: '--input'}} />
+    {/* @ts-ignore */}
+    <div ref={options} className="eds-autocomplete__options" popover="manual" onClick={closePopover}>
+      <ul>
+        <li><button>item</button></li>
+        <li><button>item</button></li>
+        <li><button>item</button></li>
+        <li><button>item</button></li>
+        <li><button>item</button></li>
+      </ul>
+    </div>
   </>
 )}
