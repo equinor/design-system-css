@@ -4,22 +4,20 @@
     padding: 16px;
     display: grid;
     grid-template-columns: 32px 1fr auto;
+    align-items: center;
     background-color: white;
     user-select: none;
     cursor: pointer;
-    &::before {
-      content: '>';
-      flex-basis: 32px;
-      transform-origin: left center;
-    }
-
   }
   &[open] summary {
     border-bottom: 1px solid black;
-    &::before {
-      rotate: 90deg;
-    }
   }
+  &[open] .eds-accordion__icon svg {
+    rotate: 90deg;
+  }
+}
+.eds-accordion__icon {
+  margin-left: -8px;
 }
 .eds-accordion__actions {
   display: flex;
