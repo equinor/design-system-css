@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 export const BaselineGrid = styled.div`
-  /*TODO: find color that work in dark mode, or use an existing token if possible*/
   --_line: var(--baseline-grid-color, light-dark(#dfdfdf, #243746));
   background: linear-gradient(
     to bottom,

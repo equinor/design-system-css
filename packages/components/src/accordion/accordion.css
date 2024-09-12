@@ -23,6 +23,7 @@
 }
 .eds-accordion__actions {
   display: flex;
+  align-items: center;
   gap: 8px;
 }
 .eds-accordion__content {
