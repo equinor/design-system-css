@@ -1,0 +1,19 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: eds-storybook-design-tokens
+spec:
+  environments:
+    - name: dev
+      build:
+        from: main
+    - name: prod
+  components:
+    - name: web
+      publicPort: http
+      ports:
+        - name: http
+          port: 8080
+  dnsAppAlias:
+    environment: prod
+    component: web
