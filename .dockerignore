@@ -1,0 +1,5 @@
+**/node_modules/
+**/storybook-build
+.git
+npm-debug.log
+.env
