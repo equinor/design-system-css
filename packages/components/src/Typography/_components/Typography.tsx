@@ -43,7 +43,8 @@ export const Typography = styled.p<StyleHeadingProps>`
     `}
     ${$color &&
     css`
-      --_text-preset-color: ${`var(--eds-color-text-${$color})`};
+    /*currently broken*/
+      --_text-preset-color: ${`var(--eds-color-static-text-standard-${$color})`};
     `}
     font-family: ${`var(--eds-typography-${$type}-font-family)`};
     font-size: ${`var(--eds-typography-${$type}-${$size}-font-size)`};

@@ -9,7 +9,7 @@
     user-select: none;
     cursor: pointer;
     svg:first-of-type {
-      margin-left: -8px;
+      margin-left: -0.3em;
     }
     svg {
       margin-block: -0.5em;

@@ -1,14 +1,71 @@
 @layer eds-input {
   .eds-input {
-    border: 2px solid black;
+    /*temporary vars to figure colors*/
+    --eds-input-color-text-initial: light-dark(#565656, #c2c8cc);
+    --eds-input-color-text-read-only: light-dark(#565656, #c2c8cc);
+    --eds-input-color-text-focus: light-dark(#3d3d3d, #ffffff);
+    --eds-input-color-text-disabled: light-dark(#bebebe, #52616d);
+    --eds-input-color-surface-initial-on-level-1: light-dark(#ffffff, #00000047);
+    --eds-input-color-surface-initial-on-level-2: light-dark(#f7f7f7, #00000047);
+    --_color-default: light-dark(#007079, #97cace);
+    --eds-input-color-border-initial: light-dark(#b3b3b3, #ffffff29);
+    --eds-input-color-border-focus: light-dark(#007079, #97cace);
+    --eds-input-color-message-border-success-initial: #3fa13d;
+    --eds-input-color-message-border-success-focus: light-dark(#15682d, #7bcf78);
+    --eds-input-color-message-border-warning-initial: #e57e00;
+    --eds-input-color-message-border-warning-focus: light-dark(#7f4600, #ffae74);
+    --eds-input-color-message-border-error-initial: #e20337;
+    --eds-input-color-message-border-error-focus: light-dark(#90042c, #ff8a8a);
+    /*end temp vars */
+    box-sizing: border-box;
+    > input {
+      border: 0;
+      outline: 0;
+      font-family: inherit;
+      color: inherit;
+      background-color: transparent;
+    }
+    --_border-color: transparent;
+    border-color: var(--_border-color);
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: 0 1px 0 0 var(--eds-input-color-border-initial);
+    background-color: var(--eds-input-color-surface-initial-on-level-1);
+    color: var(--eds-input-color-text-initial);
+    padding: 6px 8px;
+    &:where(.error, .warning, .success, :focus-within) {
+      box-shadow: none;
+    }
     &.error {
-      border-color: red;
+      --_border-color: var(--eds-input-color-message-border-error-initial);
+      &.debug {
+        --_border-color: var(--eds-input-color-message-border-error-focus);
+      }
     }
     &.warning {
-      border-color: orange;
+      --_border-color: var(--eds-input-color-message-border-warning-initial);
+      &.debug {
+        --_border-color: var(--eds-input-color-message-border-warning-focus);
+      }
     }
     &.success {
-      border-color: green;
+      --_border-color: var(--eds-input-color-message-border-success-initial);
+      &.debug {
+        --_border-color: var(--eds-input-color-message-border-success-focus);
+      }
+    }
+    &.initial:focus-within {
+      --_border-color: var(--eds-input-color-border-focus);
+    }
+    &:focus-within:not(.initial, .debug) {
+      border-color: light-dark(
+        oklch(from var(--_border-color) calc(l * 0.75) c h),
+        oklch(from var(--_border-color) calc(l * 1.35) c h)
+      );
+    }
+    &:has(:disabled) {
+      --_border-color: transparent;
+      color: var(--eds-input-color-text-disabled);
     }
   }
 
