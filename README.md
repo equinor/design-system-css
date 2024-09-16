@@ -11,6 +11,17 @@ A CSS first approach to solving EDS colour tokens. In order to reduce the total 
 - https://eds-storybook-design-tokens.app.radix.equinor.com
   - Stable public url – promoted manually from dev
 
+## Promotion
+
+Promote dev to prod when dev is stable
+
+```sh
+$ rx login --use-device-code
+$ rx create pipeline-job promote --application eds-storybook-design-tokens --from-environment dev --to-environment prod --use-active-deployment
+```
+
+
 ## Spacing & Typography
 
 - [Documentation in Figma](https://www.figma.com/design/ZSh11jqMpemjSCHaENayna/%F0%9F%93%98-EDS-2.0-Spacing-%26-Typography-Documentation?node-id=1-1273&node-type=canvas&t=5OAjnA6LVLx5sYvG-11)
+

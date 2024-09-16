@@ -2,7 +2,6 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "usernamehw.errorlens",
-    "raymondcamden.htmlescape-vscode-extension",
     "seatonjiang.gitmoji-vscode",
     "redhat.vscode-yaml",
     "mrmlnc.vscode-json5"
