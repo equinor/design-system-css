@@ -25,10 +25,10 @@
       color: inherit;
       background-color: transparent;
     }
-    --_border-color: transparent;
-    border-color: var(--_border-color);
-    border-width: 2px;
-    border-style: solid;
+    --_outline-color: transparent;
+    outline-color: var(--_outline-color);
+    outline-width: 1px;
+    outline-style: solid;
     box-shadow: 0 1px 0 0 var(--eds-input-color-border-initial);
     background-color: var(--eds-input-color-surface-initial-on-level-1);
     color: var(--eds-input-color-text-initial);
@@ -37,34 +37,37 @@
       box-shadow: none;
     }
     &.error {
-      --_border-color: var(--eds-input-color-message-border-error-initial);
+      --_outline-color: var(--eds-input-color-message-border-error-initial);
       &.debug {
-        --_border-color: var(--eds-input-color-message-border-error-focus);
+        --_outline-color: var(--eds-input-color-message-border-error-focus);
       }
     }
     &.warning {
-      --_border-color: var(--eds-input-color-message-border-warning-initial);
+      --_outline-color: var(--eds-input-color-message-border-warning-initial);
       &.debug {
-        --_border-color: var(--eds-input-color-message-border-warning-focus);
+        --_outline-color: var(--eds-input-color-message-border-warning-focus);
       }
     }
     &.success {
-      --_border-color: var(--eds-input-color-message-border-success-initial);
+      --_outline-color: var(--eds-input-color-message-border-success-initial);
       &.debug {
-        --_border-color: var(--eds-input-color-message-border-success-focus);
+        --_outline-color: var(--eds-input-color-message-border-success-focus);
       }
     }
+    &:focus-within {
+      outline-width: 2px;
+    }
     &.initial:focus-within {
-      --_border-color: var(--eds-input-color-border-focus);
+      --_outline-color: var(--eds-input-color-border-focus);
     }
     &:focus-within:not(.initial, .debug) {
-      border-color: light-dark(
-        oklch(from var(--_border-color) calc(l * 0.75) c h),
-        oklch(from var(--_border-color) calc(l * 1.35) c h)
+      outline-color: light-dark(
+        oklch(from var(--_outline-color) calc(l * 0.75) c h),
+        oklch(from var(--_outline-color) calc(l * 1.3) calc(c * 0.8) h)
       );
     }
     &:has(:disabled) {
-      --_border-color: transparent;
+      --_outline-color: transparent;
       color: var(--eds-input-color-text-disabled);
     }
   }
