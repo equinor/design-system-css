@@ -1,15 +1,10 @@
-@property --captured-size {
-  syntax: "<size>";
-  initial-value: 0;
-  inherits: false;
-}
 @layer eds.button {
   .eds-button {
     color: canvasText;
     background-color: canvas;
     border: 2px solid canvasText;
     display: grid;
-    gap: 8px;
+    gap: var(--eds-spacing-inline-sm);
     grid-auto-flow: column;
     align-items: center;
     justify-content: center;
@@ -20,28 +15,28 @@
     /*target only icon left of text*/
 /*     >svg:first-child:not(:last-child) {
       fill: red;
-      margin-left: -0.25em;
+      margin-left: -0.20em;
     } */
     /*target only icon right of text*/
 /*     > svg:not(:first-child):last-of-type {
       fill: green;
-      margin-right: -0.25em;
+      margin-right: -0.20em;
     } */
-    /*Alternative*/
+    /*Alternative. subtrackt both sides for optical gap of 8px*/
     > svg {
-      margin-inline: -0.25em;
+      margin-inline: -0.20em;
+       /*undo icon adding height*/
+      margin-block: -0.5em;
     }
     >svg:only-child {
       fill: purple;
-      /*margin-block: -0.5em;*/
-    }
-    /*contains svg and other things*/
-    &:has(svg:not(:only-child)) svg {
-      /*undo icon adding height*/
-      margin-block: -0.5em;
     }
     &:has(svg:only-child) {
       background-color: pink;
     }
+    /*contains svg and other things*/
+/*     &:has(svg:not(:only-child)) svg {
+      margin-block: -0.5em;
+    } */
   }
 }
