@@ -1,33 +1,35 @@
-.eds-accordion {
-  border: 1px solid black;
-  summary {
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 32px 1fr auto;
+@layer eds.accordion {
+  .eds-accordion {
+    border: 1px solid black;
+    summary {
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 32px 1fr auto;
+      align-items: center;
+      background-color: white;
+      user-select: none;
+      cursor: pointer;
+      svg:first-of-type {
+        margin-left: -0.3em;
+      }
+      svg {
+        margin-block: -0.5em;
+      }
+    }
+    &[open] summary {
+      border-bottom: 1px solid black;
+    }
+    &[open] svg:first-of-type {
+      rotate: 90deg;
+    }
+  }
+  .eds-accordion__actions {
+    display: flex;
     align-items: center;
+    gap: 8px;
+  }
+  .eds-accordion__content {
+    padding: 16px;
     background-color: white;
-    user-select: none;
-    cursor: pointer;
-    svg:first-of-type {
-      margin-left: -0.3em;
-    }
-    svg {
-      margin-block: -0.5em;
-    }
   }
-  &[open] summary {
-    border-bottom: 1px solid black;
-  }
-  &[open] svg:first-of-type {
-    rotate: 90deg;
-  }
-}
-.eds-accordion__actions {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.eds-accordion__content {
-  padding: 16px;
-  background-color: white;
 }

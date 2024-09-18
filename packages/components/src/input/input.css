@@ -1,4 +1,4 @@
-@layer eds-input {
+@layer eds.input {
   .eds-input {
     /*temporary vars to figure colors*/
     --eds-input-color-text-initial: light-dark(#565656, #c2c8cc);
