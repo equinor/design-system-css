@@ -7,7 +7,7 @@ type ButtonProps = {
 } & React.HTMLAttributes<HTMLButtonElement>
 export const Button = ({ children, variant, className, ...rest }: ButtonProps) => {
   const updatedChildren = ReactChildren.map(children, (child) => {
-    if (typeof child === 'string') {
+    if (typeof child === 'string' && child.trim().length > 0) {
       return <UIText>{child}</UIText>
     }
     return child

@@ -27,7 +27,7 @@ export const Default: Story = {
         <Button {...args}>Text child</Button>
         <Button {...args}><UIText>UIText</UIText></Button>
         <Button><Icon size={48} path={add} /><UIText>Hello</UIText></Button>
-        <Button><Icon path={add} />Both sides<Icon path={close} /> </Button>
+        <Button><Icon path={add} />Both sides<Icon path={close} /></Button>
         <Button>Hello<Icon path={expand} /></Button>
         <Button><Icon path={add} /></Button>
         <Button>Two icons<Icon path={add} /><Icon path={close} /></Button>
