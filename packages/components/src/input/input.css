@@ -17,12 +17,12 @@
 
     /*generated focus color*/
     /*the calculations can technically be global tokens*/
-    --border-focus-light: calc(l * 0.75) c h;
-    --border-focus-dark: calc(l * 1.3) calc(c * 0.8) h;
+    --rcs-input-border-focus-light: calc(l * 0.75) c h;
+    --rcs-input-border-focus-dark: calc(l * 1.3) calc(c * 0.8) h;
     /*this has to be local due to the input color*/
     --_eds-input-color-message-border-focus: light-dark(
-      oklch(from var(--_outline-color) var(--border-focus-light)),
-      oklch(from var(--_outline-color) var(--border-focus-dark))
+      oklch(from var(--_outline-color) var(--rcs-input-border-focus-light)),
+      oklch(from var(--_outline-color) var(--rcs-input-border-focus-dark))
     );
     /*end temp vars */
     box-sizing: border-box;
@@ -30,17 +30,27 @@
       border: 0;
       outline: 0;
       font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: inherit;
       color: inherit;
       background-color: transparent;
     }
     --_outline-color: transparent;
     outline-color: var(--_outline-color);
+    outline-width: var(--eds-sizing-stroke-thin);
     outline-width: 1px;
     outline-style: solid;
     box-shadow: 0 1px 0 0 var(--eds-input-color-border-initial);
     background-color: var(--eds-input-color-surface-initial-on-level-1);
     color: var(--eds-input-color-text-initial);
-    padding: 6px 8px;
+    padding-block: var(--eds-spacing-inset-xs-stack-stretched);
+    padding-inline: var(--eds-spacing-inset-xs-inline);
+    font-size: var(--eds-typography-ui-body-lg-font-size);
+    font-family: var(--eds-typography-ui-body-font-family);
+    font-weight: var(--eds-typography-ui-body-lg-font-weight-normal);
+    line-height: var(--eds-typography-ui-body-lg-lineheight-default);
+
     &:where(.error, .warning, .success, :focus-within) {
       box-shadow: none;
     }
@@ -63,7 +73,7 @@
       }
     }
     &:where(:focus-within, .debug) {
-      outline-width: 2px;
+      outline-width: var(--eds-sizing-stroke-thick);
       color: var(--eds-input-color-text-focus);
     }
     &.initial:focus-within {
