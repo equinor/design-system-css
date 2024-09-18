@@ -46,8 +46,9 @@ export const Typography = styled.p<StyleHeadingProps>`
     /*currently broken*/
       --_text-preset-color: ${`var(--eds-color-static-text-standard-${$color})`};
     `}
+    --_incoming-font-size: ${`var(--eds-typography-${$type}-${$size}-font-size)`};
+    font-size: var(--override-font-size, --_incoming-font-size);
     font-family: ${`var(--eds-typography-${$type}-font-family)`};
-    font-size: ${`var(--eds-typography-${$type}-${$size}-font-size)`};
     line-height: ${`var(--eds-typography-${$type}-${$size}-lineheight-${$lineHeight})`};
     font-weight: ${`var(--eds-typography-${$type}-${$size}-font-weight-${$fontWeight})`};
     letter-spacing: ${`var(--eds-typography-${$type}-${$size}-tracking-${$letterSpacing})`};
