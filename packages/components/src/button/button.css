@@ -1,0 +1,47 @@
+@property --captured-size {
+  syntax: "<size>";
+  initial-value: 0;
+  inherits: false;
+}
+@layer eds.button {
+  .eds-button {
+    color: canvasText;
+    background-color: canvas;
+    border: 2px solid canvasText;
+    display: grid;
+    gap: 8px;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    /*todo: find correct padding tokens*/
+    padding-block: var(--eds-spacing-inset-md-stack-squared);
+    padding-inline: var(--eds-spacing-inset-md-inline);
+    min-height: 36px;
+    /*target only icon left of text*/
+/*     >svg:first-child:not(:last-child) {
+      fill: red;
+      margin-left: -0.25em;
+    } */
+    /*target only icon right of text*/
+/*     > svg:not(:first-child):last-of-type {
+      fill: green;
+      margin-right: -0.25em;
+    } */
+    /*Alternative*/
+    > svg {
+      margin-inline: -0.25em;
+    }
+    >svg:only-child {
+      fill: purple;
+      /*margin-block: -0.5em;*/
+    }
+    /*contains svg and other things*/
+    &:has(svg:not(:only-child)) svg {
+      /*undo icon adding height*/
+      margin-block: -0.5em;
+    }
+    &:has(svg:only-child) {
+      background-color: pink;
+    }
+  }
+}
