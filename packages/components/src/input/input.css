@@ -26,6 +26,9 @@
     );
     /*end temp vars */
     box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
     > input {
       border: 0;
       outline: 0;
@@ -35,6 +38,14 @@
       line-height: inherit;
       color: inherit;
       background-color: transparent;
+    }
+    > .adornments {
+      display: grid;
+      gap: 8px;
+      align-items: center;
+      svg {
+        margin-block: -0.5em;
+      }
     }
     --_outline-color: transparent;
     outline-color: var(--_outline-color);
