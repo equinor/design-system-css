@@ -1,0 +1,38 @@
+.sbdocs:has(.app) {
+  /*delete the built in storybook wrapper divs for full page app*/
+  display: contents;
+}
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "header  header  header"
+    "sidebar content content";
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+.app__topbar {
+  grid-area: header;
+  height: 64px;
+  background-color: var(--eds-ui-shell-color-surface);
+  border-bottom: 2px solid var(--eds-ui-shell-color-border);
+}
+.app__sidebar {
+  grid-area: sidebar;
+  width: 64px;
+  background-color: var(--eds-ui-shell-color-surface);
+  border-right: 2px solid var(--eds-ui-shell-color-border);
+}
+.app__content {
+  grid-area: content;
+  position: relative;
+  background-color: var(--eds-ui-main-color-surface);
+  overflow-y: auto;
+  color: var(--eds-color-static-text-standard-primary);
+  padding: 32px;
+  h1 {
+    margin-bottom: round(1em, 4px);
+  }
+}
