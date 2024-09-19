@@ -42,7 +42,7 @@ const preview: Preview = {
   globalTypes: {
     density: {
       description: 'Global density for components',
-      defaultValue: 'spacious',
+      defaultValue: 'comfortable',
       toolbar: {
         title: 'Density',
         icon: 'accessibility',
