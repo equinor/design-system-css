@@ -24,6 +24,7 @@
     } */
     /*Alternative. subtrackt both sides for optical gap of 8px*/
     > svg {
+      fill: canvasText;
       margin-inline: -0.20em;
        /*undo icon adding height*/
       margin-block: -0.5em;

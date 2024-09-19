@@ -7,6 +7,12 @@ const meta = {
   parameters: {
     layout: 'fullscreen',
   },
+  decorators: [
+    (Story) => (
+        <Story />
+    ),
+  ],
+  tags: ['autodocs'],
 } satisfies Meta<typeof App>
 
 export default meta

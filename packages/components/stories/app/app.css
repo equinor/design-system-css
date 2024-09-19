@@ -1,6 +1,9 @@
 .sbdocs:has(.app) {
   /*delete the built in storybook wrapper divs for full page app*/
   display: contents;
+  .sb-bar, .sbdocs-title {
+    display: none;
+  }
 }
 .app {
   display: grid;
