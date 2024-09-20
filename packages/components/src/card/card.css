@@ -1,0 +1,13 @@
+@layer eds.card{
+  .eds-card {
+    width: 100%;
+    background-color: white;
+  }
+  .eds-card__content {
+    padding-inline: var(--eds-spacing-inline-lg);
+  }
+  .eds-card__content:only-child {
+    padding-block: var(--eds-spacing-stack-lg);
+  }
+
+}
