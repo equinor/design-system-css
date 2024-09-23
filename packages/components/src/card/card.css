@@ -1,7 +1,27 @@
 @layer eds.card{
   .eds-card {
     width: 100%;
-    background-color: white;
+    --_card-text-color: black;
+    --_card-background-color: white;
+    --_mix-ratio: 10%;
+    background-color: var(--_card-background-color);
+    color: var(--_card-text-color);
+    --override-text-color: var(--_card-text-color);
+    &.elevation-raised {
+      --_mix-ratio: 7%;
+    }
+    &:not(.default) {
+      --_card-background-color: color-mix(in oklab, var(--_card-text-color) var(--_mix-ratio), white);
+    }
+    &.info {
+      --_card-text-color: blue;
+    }
+    &.warning {
+      --_card-text-color: orange;
+    }
+    &.error {
+      --_card-text-color: red;
+    }
   }
   .eds-card__content {
     padding-inline: var(--eds-spacing-inline-lg);
