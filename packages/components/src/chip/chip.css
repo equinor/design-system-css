@@ -1,0 +1,19 @@
+.eds-chip {
+  width: fit-content;
+  display: grid;
+  gap: var(--eds-spacing-inline-xs);
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  border-radius: 1e5px;
+  background-color: pink;
+  padding-block: var(--eds-spacing-inset-sm-stack-squared);
+  padding-inline: var(--eds-spacing-inset-sm-inline);
+  > svg {
+    fill: canvasText;
+    /*subtract inline white space from icon*/
+    margin-inline: -0.20em;
+     /*undo icon adding height*/
+    margin-block: -0.5em;
+  }
+}
