@@ -3,9 +3,15 @@ import { Children as ReactChildren } from 'react'
 import { UIText } from '../'
 
 type Props = {
-  variant?: 'default' | 'info' | 'warning' | 'error'
+  variant?: 'default' | 'info' | 'warning' | 'error' | 'success'
+  token?: boolean
+  active?: boolean
+  disabled?: boolean
 } & React.HTMLAttributes<HTMLDivElement>
-export const Chip = ({children, className, variant = 'default', ...rest }: Props) => {
+export const Chip = ({children, className, token, active, disabled, variant = 'default', ...rest }: Props) => {
+  const typeClass = token ? 'eds-chip-token' : 'eds-chip'
+  const isActive = active ? 'active' : ''
+  const isDisabled = disabled ? 'disabled' : ''
   const updatedChildren = ReactChildren.map(children, (child) => {
     if (typeof child === 'string' && child.trim().length > 0) {
       return <UIText size='sm'>{child}</UIText>
@@ -13,5 +19,5 @@ export const Chip = ({children, className, variant = 'default', ...rest }: Props
     return child
   })
   return (
-   <div className={['eds-chip', variant, className].join(' ')} {...rest}>{updatedChildren}</div>
+   <div tabIndex={0} className={[typeClass, variant, isActive, isDisabled, className].join(' ')} {...rest}>{updatedChildren}</div>
   )}

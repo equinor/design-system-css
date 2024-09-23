@@ -9,8 +9,113 @@
   background-color: pink;
   padding-block: var(--eds-spacing-inset-sm-stack-squared);
   padding-inline: var(--eds-spacing-inset-sm-inline);
+  cursor: pointer;
   > svg {
     fill: canvasText;
+    /*subtract inline white space from icon*/
+    margin-inline: -0.20em;
+     /*undo icon adding height*/
+    margin-block: -0.5em;
+  }
+}
+
+.eds-chip-token {
+  width: fit-content;
+  display: grid;
+  gap: var(--eds-spacing-inline-xs);
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  align-items: center;
+  border-radius: 1e5px;
+  border-width: 1px;
+  border-style: solid;
+  padding-block: var(--eds-spacing-inset-sm-stack-squared);
+  padding-inline: var(--eds-spacing-inset-sm-inline);
+  background-color: var(--_chip-background-color);
+  border-color: var(--_chip-border-color);
+  color: var(--_chip-text-color);
+  cursor: pointer;
+  &.default {
+    --_chip-text-color: var(--eds-color-interactive-text-raised-initial);
+    --_chip-icon-color: var(--eds-color-interactive-icon-raised-initial);
+    --_chip-background-color: var(--eds-color-interactive-surface-raised-initial);
+    --_chip-border-color: var(--eds-color-interactive-border-raised-initial);
+    &:not(.disabled):hover, &:not(.disabled):focus {
+      --_chip-text-color: var(--eds-color-interactive-text-raised-hover);
+      --_chip-icon-color: var(--eds-color-interactive-icon-raised-hover);
+      --_chip-background-color: var(--eds-color-interactive-surface-raised-hover);
+      --_chip-border-color: var(--eds-color-interactive-border-raised-hover);
+    }
+    &.active {
+      --_chip-text-color: var(--eds-color-interactive-text-raised-active);
+      --_chip-icon-color: var(--eds-color-interactive-icon-raised-active);
+      --_chip-background-color: var(--eds-color-interactive-surface-raised-active);
+      --_chip-border-color: var(--eds-color-interactive-border-raised-active);
+      &:hover, &:focus {
+        --_chip-text-color: var(--eds-color-interactive-text-raised-active-hover);
+        --_chip-icon-color: var(--eds-color-interactive-icon-raised-active-hover);
+        --_chip-background-color: var(--eds-color-interactive-surface-raised-active-hover);
+        --_chip-border-color: var(--eds-color-interactive-border-raised-active-hover);
+      }
+    }
+  }
+  &.info {
+    --_chip-text-color: var(--eds-color-message-text-raised-info-initial);
+    --_chip-icon-color: var(--eds-color-message-icon-raised-info-initial);
+    --_chip-background-color: var(--eds-color-message-surface-raised-info-initial);
+    --_chip-border-color: var(--eds-color-message-border-raised-info-initial);
+    &:not(.disabled):hover, &:not(.disabled):focus {
+      --_chip-text-color: var(--eds-color-message-text-raised-info-hover);
+      --_chip-icon-color: var(--eds-color-message-icon-raised-info-hover);
+      --_chip-background-color: var(--eds-color-message-surface-raised-info-hover);
+      --_chip-border-color: var(--eds-color-message-border-raised-info-hover);
+    }
+  }
+  &.warning {
+    --_chip-text-color: var(--eds-color-message-text-raised-warning-initial);
+    --_chip-icon-color: var(--eds-color-message-icon-raised-warning-initial);
+    --_chip-background-color: var(--eds-color-message-surface-raised-warning-initial);
+    --_chip-border-color: var(--eds-color-message-border-raised-warning-initial);
+    &:not(.disabled):hover, &:not(.disabled):focus {
+      --_chip-text-color: var(--eds-color-message-text-raised-warning-hover);
+      --_chip-icon-color: var(--eds-color-message-icon-raised-warning-hover);
+      --_chip-background-color: var(--eds-color-message-surface-raised-warning-hover);
+      --_chip-border-color: var(--eds-color-message-border-raised-warning-hover);
+    }
+  }
+  &.error {
+    --_chip-text-color: var(--eds-color-message-text-raised-error-initial);
+    --_chip-icon-color: var(--eds-color-message-icon-raised-error-initial);
+    --_chip-background-color: var(--eds-color-message-surface-raised-error-initial);
+    --_chip-border-color: var(--eds-color-message-border-raised-error-initial);
+    &:not(.disabled):hover, &:not(.disabled):focus {
+      --_chip-text-color: var(--eds-color-message-text-raised-error-hover);
+      --_chip-icon-color: var(--eds-color-message-icon-raised-error-hover);
+      --_chip-background-color: var(--eds-color-message-surface-raised-error-hover);
+      --_chip-border-color: var(--eds-color-message-border-raised-error-hover);
+    }
+  }
+  &.success {
+    --_chip-text-color: var(--eds-color-message-text-raised-success-initial);
+    --_chip-icon-color: var(--eds-color-message-icon-raised-success-initial);
+    --_chip-background-color: var(--eds-color-message-surface-raised-success-initial);
+    --_chip-border-color: var(--eds-color-message-border-raised-success-initial);
+    &:not(.disabled):hover, &:not(.disabled):focus {
+      --_chip-text-color: var(--eds-color-message-text-raised-success-hover);
+      --_chip-icon-color: var(--eds-color-message-icon-raised-success-hover);
+      --_chip-background-color: var(--eds-color-message-surface-raised-success-hover);
+      --_chip-border-color: var(--eds-color-message-border-raised-success-hover);
+    }
+  }
+  &.disabled {
+    cursor: not-allowed;
+    --_chip-text-color: var(--eds-color-interactive-text-raised-disabled);
+    --_chip-icon-color: var(--eds-color-interactive-icon-raised-disabled);
+    --_chip-background-color: var(--eds-color-interactive-surface-raised-disabled);
+    --_chip-border-color: var(--eds-color-interactive-border-raised-disabled);
+  }
+  > svg {
+    fill: var(--_chip-icon-color);
     /*subtract inline white space from icon*/
     margin-inline: -0.20em;
      /*undo icon adding height*/
