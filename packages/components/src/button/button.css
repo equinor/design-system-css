@@ -8,10 +8,8 @@
     grid-auto-flow: column;
     align-items: center;
     justify-content: center;
-    /*todo: find correct padding tokens*/
     padding-block: var(--eds-spacing-inset-md-stack-squished);
     padding-inline: var(--eds-spacing-inset-md-inline);
-    min-height: 36px;
     /*target only icon left of text*/
 /*     >svg:first-child:not(:last-child) {
       fill: red;
@@ -26,7 +24,7 @@
     > svg {
       fill: canvasText;
       margin-inline: -0.20em;
-       /*undo icon adding height*/
+       /*todo: take text-height into account so icon can be standalone*/
       margin-block: -0.5em;
     }
     >svg:only-child {
