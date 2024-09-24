@@ -1,3 +1,8 @@
+@property --_button-text-height {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: true;
+}
 @layer eds.button {
   .eds-button {
     color: canvasText;
@@ -12,9 +17,11 @@
     grid-auto-flow: column;
     align-items: center;
     justify-content: center;
-    padding-block: calc(var(--eds-spacing-inset-md-stack-squished) -  (var(--eds-sizing-stroke-thick) * 2));
+    padding-block: calc(var(--eds-spacing-inset-md-stack-squished) - (var(--eds-sizing-stroke-thick) * 2));
+    /* padding-block: var(--eds-spacing-inset-md-stack-squished); */
     padding-inline: var(--eds-spacing-inset-md-inline);
     font-size: var(--_button-font-size);
+    --_button-text-height: 1cap;
     cursor: pointer;
     /*this overrides font size in the typography component*/
     --override-font-size: var(--_button-font-size);
@@ -53,7 +60,7 @@
       /*The padding around a symmetrical icon is roughly 20% (16px path inside 24px viewbox)*/
       margin-inline: -0.20em;
        /*make the virtual height of the icon same as text height*/
-      margin-block: calc(-0.5em + (var(--_button-font-size) / 2));
+      margin-block: calc(-0.5em + (var(--_button-text-height) / 2));
     }
   }
 }

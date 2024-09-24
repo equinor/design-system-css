@@ -26,7 +26,7 @@ export const Default: Story = {
       <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
         <Button {...args}><Icon path={add} />Text child</Button>
         <Button {...args}><Icon path={add} /></Button>
-        <Button {...args}><UIText>UIText</UIText></Button>
+        <Button {...args}>Only Text</Button>
         <Button><Icon path={add} /><UIText>Hello</UIText></Button>
         <Button><Icon path={add} />Both sides<Icon path={close} /></Button>
         <Button>Hello<Icon path={expand} /></Button>
