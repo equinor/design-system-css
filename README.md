@@ -19,7 +19,7 @@ Promote dev to prod when dev is stable
 $ rx login --use-device-code
 $ rx create pipeline-job promote --application eds-storybook-design-tokens --from-environment dev --to-environment prod --use-active-deployment
 ```
-
+If you don’t use Codespaces, take a look at the Radix CLI [install script](https://github.com/equinor/design-system-css/blob/main/.devcontainer/radix.sh) to see how to install it on your own machine.
 
 ## Spacing & Typography
 
