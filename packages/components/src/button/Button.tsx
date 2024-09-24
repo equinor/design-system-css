@@ -1,17 +1,19 @@
 import './button.css'
 import { Children as ReactChildren } from 'react'
-import { UIText } from '../'
+import { UIText, TypographySize } from '../'
 
 type ButtonProps = {
   variant?: "error" | "warning" | "success"
+  size?: TypographySize
 } & React.HTMLAttributes<HTMLButtonElement>
-export const Button = ({ children, variant, className, ...rest }: ButtonProps) => {
+export const Button = ({ children, variant, size = 'lg', className, ...rest }: ButtonProps) => {
+  const sizeClass = `size-${size}`
   const updatedChildren = ReactChildren.map(children, (child) => {
     if (typeof child === 'string' && child.trim().length > 0) {
-      return <UIText>{child}</UIText>
+      return <UIText size={size}>{child}</UIText>
     }
     return child
   })
   return (
-  <button className={['eds-button', className].join(' ')} {...rest}>{updatedChildren}</button>
+  <button className={['eds-button', sizeClass, className].join(' ')} {...rest}>{updatedChildren}</button>
 )}

@@ -2,40 +2,57 @@
   .eds-button {
     color: canvasText;
     background-color: canvas;
-    border: 2px solid canvasText;
+    border-width: var(--eds-sizing-stroke-thick);
+    border-style: solid;
+    border-color: canvasText;
+    border-radius: var(--eds-spacing-border-radius-rounded);
     display: grid;
-    gap: var(--eds-spacing-inline-sm);
+    /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacint & Typography Documentation*/
+    gap: 0.618em;
     grid-auto-flow: column;
     align-items: center;
     justify-content: center;
-    padding-block: var(--eds-spacing-inset-md-stack-squished);
+    padding-block: calc(var(--eds-spacing-inset-md-stack-squished) -  (var(--eds-sizing-stroke-thick) * 2));
     padding-inline: var(--eds-spacing-inset-md-inline);
-    /*target only icon left of text*/
-/*     >svg:first-child:not(:last-child) {
-      fill: red;
-      margin-left: -0.20em;
-    } */
-    /*target only icon right of text*/
-/*     > svg:not(:first-child):last-of-type {
-      fill: green;
-      margin-right: -0.20em;
-    } */
-    /*Alternative. subtrackt both sides for optical gap of 8px*/
+    font-size: var(--_button-font-size);
+    /*this overrides font size in the typography component*/
+    --override-font-size: var(--_button-font-size);
+    &.size-xs {
+      --_button-font-size: var(--eds-typography-ui-body-xs-font-size);
+    }
+    &.size-sm {
+      --_button-font-size: var(--eds-typography-ui-body-sm-font-size);
+    }
+    &.size-md {
+      --_button-font-size: var(--eds-typography-ui-body-md-font-size);
+    }
+    &.size-lg {
+      --_button-font-size: var(--eds-typography-ui-body-lg-font-size);
+    }
+    &.size-xl {
+      --_button-font-size: var(--eds-typography-ui-body-xl-font-size);
+    }
+    &.size-2xl {
+      --_button-font-size: var(--eds-typography-ui-body-2xl-font-size);
+    }
+    &.size-3xl {
+      --_button-font-size: var(--eds-typography-ui-body-3xl-font-size);
+    }
+    &.size-4xl {
+      --_button-font-size: var(--eds-typography-ui-body-4xl-font-size);
+    }
+    &.size-5xl {
+      --_button-font-size: var(--eds-typography-ui-body-5xl-font-size);
+    }
+    &.size-6xl {
+      --_button-font-size: var(--eds-typography-ui-body-6xl-font-size);
+    }
     > svg {
       fill: canvasText;
+      /*The padding around a symmetrical icon is roughly 20% (16px path inside 24px viewbox)*/
       margin-inline: -0.20em;
-       /*todo: take text-height into account so icon can be standalone*/
-      margin-block: -0.5em;
+       /*make the virtual height of the icon same as text height*/
+      margin-block: calc(-0.5em + (var(--_button-font-size) / 2));
     }
-    >svg:only-child {
-      fill: purple;
-    }
-    &:has(svg:only-child) {
-      background-color: pink;
-    }
-    /*contains svg and other things*/
-/*     &:has(svg:not(:only-child)) svg {
-      margin-block: -0.5em;
-    } */
   }
 }

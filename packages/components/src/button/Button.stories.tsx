@@ -24,12 +24,12 @@ export const Default: Story = {
   render: (args) => {
     return (
       <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start'}}>
-        <Button {...args}>Text child</Button>
+        <Button {...args}><Icon path={add} />Text child</Button>
+        <Button {...args}><Icon path={add} /></Button>
         <Button {...args}><UIText>UIText</UIText></Button>
         <Button><Icon size={48} path={add} /><UIText>Hello</UIText></Button>
         <Button><Icon path={add} />Both sides<Icon path={close} /></Button>
         <Button>Hello<Icon path={expand} /></Button>
-        <Button><Icon path={add} /></Button>
         <Button>Two icons<Icon path={add} /><Icon path={close} /></Button>
       </div>
   )},
