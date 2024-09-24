@@ -1,17 +1,31 @@
 .eds-chip {
   width: fit-content;
   display: grid;
-  gap: var(--eds-spacing-inline-xs);
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   align-items: center;
   border-radius: 1e5px;
-  background-color: pink;
+  gap: var(--eds-spacing-inline-xs);
   padding-block: var(--eds-spacing-inset-sm-stack-squared);
   padding-inline: var(--eds-spacing-inset-sm-inline);
+  background-color: var(--_chip-background-color);
+  border-color: var(--_chip-border-color);
+  color: var(--_chip-text-color);
   cursor: pointer;
+  &.default {
+    --_chip-input-color: var(--eds-color-interactive-text-raised-initial);
+    &:not(.disabled):hover, &:not(.disabled):focus {
+      --_chip-input-color: var(--eds-color-interactive-text-raised-hover);
+    }
+    &.active {
+      --_chip-input-color: var(--eds-color-interactive-text-raised-active);
+      &:hover, &:focus {
+        --_chip-input-color: var(--eds-color-interactive-text-raised-active-hover);
+      }
+    }
+  }
   > svg {
-    fill: canvasText;
+    fill: var(--_chip-icon-color);
     /*subtract inline white space from icon*/
     margin-inline: -0.20em;
      /*undo icon adding height*/
@@ -22,13 +36,13 @@
 .eds-chip-token {
   width: fit-content;
   display: grid;
-  gap: var(--eds-spacing-inline-xs);
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   align-items: center;
   border-radius: 1e5px;
   border-width: 1px;
   border-style: solid;
+  gap: var(--eds-spacing-inline-xs);
   padding-block: var(--eds-spacing-inset-sm-stack-squared);
   padding-inline: var(--eds-spacing-inset-sm-inline);
   background-color: var(--_chip-background-color);

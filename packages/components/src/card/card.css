@@ -6,7 +6,7 @@
     --_mix-ratio: 10%;
     background-color: var(--_card-background-color);
     color: var(--_card-text-color);
-    --override-text-color: var(--_card-text-color);
+   /*  --override-text-color: var(--_card-text-color); */
     &.elevation-raised {
       --_mix-ratio: 7%;
     }
