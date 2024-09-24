@@ -1,3 +1,4 @@
+/*todo: create generic "captured" @property variables in eds token*/
 @property --captured-size-1 {
   syntax: "<length>";
   initial-value: 0px;

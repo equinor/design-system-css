@@ -10,7 +10,6 @@ export const Icon = ({ path, className, size = 'lg', ...rest }: IconProps) => {
   return (
     <svg
       className={['eds-icon', sizeClass, className].join(' ')}
-      xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
       <path fillRule="evenodd" clipRule="evenodd" d={path} />
