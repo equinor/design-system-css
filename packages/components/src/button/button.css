@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
     /*todo: find correct padding tokens*/
-    padding-block: var(--eds-spacing-inset-md-stack-squared);
+    padding-block: var(--eds-spacing-inset-md-stack-squished);
     padding-inline: var(--eds-spacing-inset-md-inline);
     min-height: 36px;
     /*target only icon left of text*/
