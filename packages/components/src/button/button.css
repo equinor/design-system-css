@@ -15,6 +15,7 @@
     padding-block: calc(var(--eds-spacing-inset-md-stack-squished) -  (var(--eds-sizing-stroke-thick) * 2));
     padding-inline: var(--eds-spacing-inset-md-inline);
     font-size: var(--_button-font-size);
+    cursor: pointer;
     /*this overrides font size in the typography component*/
     --override-font-size: var(--_button-font-size);
     &.size-xs {

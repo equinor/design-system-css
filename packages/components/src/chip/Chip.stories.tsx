@@ -31,26 +31,26 @@ export const Default: Story = {
           <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '8px'}}>
       {/*      <Chip {...args}>I'm a chip</Chip>
             <Chip ><Icon size={24} path={info_circle} /><UIText>default UIText</UIText></Chip>
-            <Chip><Icon size={16} path={info_circle} />Both sides<Icon size={16} path={close} /></Chip>
-            <Chip><Icon size={16} path={warning_outlined} />warning</Chip>
-            <Chip><Icon size={16} path={add} /></Chip> */}
-            <Chip token><Icon size={16} path={info_circle} />Default chip</Chip>
-            <Chip token active><Icon size={16} path={info_circle} />Chip active</Chip>
-            <Chip token disabled><Icon size={16} path={info_circle} />Chip disabled</Chip>
-            <Chip token variant='info'><Icon size={16} path={info_circle} />Info</Chip>
-            <Chip token variant='warning'><Icon size={16} path={info_circle} />Warning</Chip>
-            <Chip token variant='error'><Icon size={16} path={info_circle} />Error</Chip>
-            <Chip token variant='success'><Icon size={16} path={info_circle} />Success</Chip>
+            <Chip><Icon size={'xs'} path={info_circle} />Both sides<Icon size={'xs'} path={close} /></Chip>
+            <Chip><Icon size={'xs'} path={warning_outlined} />warning</Chip>
+            <Chip><Icon size={'xs'} path={add} /></Chip> */}
+            <Chip token><Icon size={'xs'} path={info_circle} />Default chip</Chip>
+            <Chip token active><Icon size={'xs'} path={info_circle} />Chip active</Chip>
+            <Chip token disabled><Icon size={'xs'} path={info_circle} />Chip disabled</Chip>
+            <Chip token variant='info'><Icon size={'xs'} path={info_circle} />Info</Chip>
+            <Chip token variant='warning'><Icon size={'xs'} path={info_circle} />Warning</Chip>
+            <Chip token variant='error'><Icon size={'xs'} path={info_circle} />Error</Chip>
+            <Chip token variant='success'><Icon size={'xs'} path={info_circle} />Success</Chip>
         </div>
         <BodyText color='primary'>Chips with generated colors</BodyText>
         <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start'}}>
-            <Chip><Icon size={16} path={info_circle} />Default chip</Chip>
-            <Chip active><Icon size={16} path={info_circle} />Chip active</Chip>
-            <Chip disabled><Icon size={16} path={info_circle} />Chip disabled</Chip>
-            <Chip variant='info'><Icon size={16} path={info_circle} />Info</Chip>
-            <Chip variant='warning'><Icon size={16} path={info_circle} />Warning</Chip>
-            <Chip variant='error'><Icon size={16} path={info_circle} />Error</Chip>
-            <Chip variant='success'><Icon size={16} path={info_circle} />Success</Chip>
+            <Chip><Icon size={'xs'} path={info_circle} />Default chip</Chip>
+            <Chip active><Icon size={'xs'} path={info_circle} />Chip active</Chip>
+            <Chip disabled><Icon size={'xs'} path={info_circle} />Chip disabled</Chip>
+            <Chip variant='info'><Icon size={'xs'} path={info_circle} />Info</Chip>
+            <Chip variant='warning'><Icon size={'xs'} path={info_circle} />Warning</Chip>
+            <Chip variant='error'><Icon size={'xs'} path={info_circle} />Error</Chip>
+            <Chip variant='success'><Icon size={'xs'} path={info_circle} />Success</Chip>
         </div>
       </div>
     </Card>

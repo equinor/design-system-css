@@ -19,7 +19,7 @@ export const Autocomplete = () => {
       onFocus={openPopover}
       /* @ts-ignore */
       style={{anchorName: '--input'}}
-      rightAdornments={<Icon size={24}
+      rightAdornments={<Icon size='lg'
       path={arrow_drop_down}
       className="eds-autocomplete__input-icon" />} />
     {/* @ts-ignore */}

@@ -23,11 +23,11 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: (args) => {
     return (
-      <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start'}}>
+      <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
         <Button {...args}><Icon path={add} />Text child</Button>
         <Button {...args}><Icon path={add} /></Button>
         <Button {...args}><UIText>UIText</UIText></Button>
-        <Button><Icon size={48} path={add} /><UIText>Hello</UIText></Button>
+        <Button><Icon path={add} /><UIText>Hello</UIText></Button>
         <Button><Icon path={add} />Both sides<Icon path={close} /></Button>
         <Button>Hello<Icon path={expand} /></Button>
         <Button>Two icons<Icon path={add} /><Icon path={close} /></Button>

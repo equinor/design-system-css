@@ -1,0 +1,47 @@
+@property --captured-size-1 {
+  syntax: "<length>";
+  initial-value: 0px;
+  inherits: false;
+}
+@layer eds.icon {
+  .eds-icon {
+    --_size: var(--captured-size-1);
+    width: var(--_size);
+    height: var(--_size);
+    --_path-scale: tan(atan2(var(--_size), 24px));
+    font-size: var(--_size);
+    > path {
+      scale: var(--_path-scale);
+    }
+    &.size-xs {
+      --captured-size-1: var(--eds-sizing-icon-xs);
+    }
+    &.size-sm {
+      --captured-size-1: var(--eds-sizing-icon-sm);
+    }
+    &.size-md {
+      --captured-size-1: var(--eds-sizing-icon-md);
+    }
+    &.size-lg {
+      --captured-size-1: var(--eds-sizing-icon-lg);
+    }
+    &.size-xl {
+      --captured-size-1: var(--eds-sizing-icon-xl);
+    }
+    &.size-2xl {
+      --captured-size-1: var(--eds-sizing-icon-2xl);
+    }
+    &.size-3xl {
+      --captured-size-1: var(--eds-sizing-icon-3xl);
+    }
+    &.size-4xl {
+      --captured-size-1: var(--eds-sizing-icon-4xl);
+    }
+    &.size-5xl {
+      --captured-size-1: var(--eds-sizing-icon-5xl);
+    }
+    &.size-6xl {
+      --captured-size-1: var(--eds-sizing-icon-6xl);
+    }
+  }
+}

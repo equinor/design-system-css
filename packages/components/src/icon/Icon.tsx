@@ -1,19 +1,18 @@
 
-type Props = {
+import './icon.css'
+import { TypographySize } from '../'
+export type IconProps = {
   path: string
-  size?: number
+  size?: TypographySize
 } & React.SVGAttributes<SVGElement>
-export const Icon = ({ path, style, size = 24, ...rest }: Props) => {
-  const pathSize = size / 24
+export const Icon = ({ path, className, size = 'lg', ...rest }: IconProps) => {
+  const sizeClass = `size-${size}`
   return (
     <svg
-      style={{fontSize: `${size}px`, ...style}}
-      width={size}
-      height={size}
-      viewBox={`0 0 ${size} ${size}`}
+      className={['eds-icon', sizeClass, className].join(' ')}
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <path style={{scale: `${pathSize}`}} fillRule="evenodd" clipRule="evenodd" d={path} />
+      <path fillRule="evenodd" clipRule="evenodd" d={path} />
     </svg>
   )}
