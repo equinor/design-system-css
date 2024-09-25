@@ -1,6 +1,7 @@
 import { DocsContainer } from '@storybook/blocks'
 import * as React from 'react'
 import '@equinor/eds-tokens/css/variables-verbose.css'
+import '../assets/registered-properties.css'
 import '../assets/colors-trimmed.css'
 import { Preview } from '@storybook/react'
 
