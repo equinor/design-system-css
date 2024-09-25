@@ -7,7 +7,7 @@
     border-color: canvasText;
     border-radius: var(--eds-spacing-border-radius-rounded);
     display: grid;
-    /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacint & Typography Documentation*/
+    /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation*/
     gap: 0.618em;
     grid-auto-flow: column;
     align-items: center;
