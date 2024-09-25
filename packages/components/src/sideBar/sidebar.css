@@ -1,0 +1,48 @@
+@layer eds.sidebar {
+  .eds-sidebar {
+    box-sizing: content-box;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      'content'
+      'footer';
+    background-color: var(--eds-ui-shell-color-surface);
+    overflow: auto;
+    width: 64px;
+    border-right: 2px solid var(--eds-ui-shell-color-border);
+  }
+
+  .eds-sidebar__main {
+    grid-area: content;
+  }
+
+  .eds-sidebar__footer {
+    grid-area: footer;
+  }
+
+  .eds-sidebar__link {
+    display: block;
+    border-bottom: 2px solid canvasText;
+    min-height: 56px;
+    display: grid;
+    place-items: center;
+    fill: canvasText;
+    &:where(:hover, :focus) {
+      fill: canvasText;
+      background-color: lightgrey;
+    }
+  }
+
+  .eds-sidebar__toggle {
+    margin-inline: auto;
+    display: grid;
+    min-height: 56px;
+    place-items: center;
+    width: 100%;
+    border: 0;
+    background-color: var(--eds-ui-shell-color-surface);
+    cursor: pointer;
+    fill: canvasText;
+  }
+}

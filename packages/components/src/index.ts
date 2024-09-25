@@ -6,4 +6,6 @@ export * from './chip/Chip'
 export * from './input/Input'
 export * from './Typography'
 export * from './icon'
+export * from './sideBar/SideBar'
+
 

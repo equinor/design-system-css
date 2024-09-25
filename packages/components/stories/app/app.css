@@ -24,9 +24,6 @@
 }
 .app__sidebar {
   grid-area: sidebar;
-  width: 64px;
-  background-color: var(--eds-ui-shell-color-surface);
-  border-right: 2px solid var(--eds-ui-shell-color-border);
 }
 .app__content {
   grid-area: content;
