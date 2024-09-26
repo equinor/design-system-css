@@ -1,5 +1,156 @@
 @layer eds.table {
+  :root {
+    /*modified: removed "on-level-1/2/3" and put diff in data-level selectors*/
+    --eds-table-cell-color-message-surface-error: light-dark(#ffd2d1, #ff666b47);
+    --eds-table-cell-color-interactive-text-initial: light-dark(#3d3d3d, #d6d9dc);
+    --eds-table-cell-color-interactive-text-hover: light-dark(#1f1f1f, #e9ebed);
+    --eds-table-cell-color-interactive-text-active: light-dark(#3d3d3d, #d6d9dc);
+    --eds-table-cell-color-interactive-text-active-hover: light-dark(#1f1f1f, #e9ebed);
+    --eds-table-cell-color-interactive-text-disabled: light-dark(#bebebe, #52616d);
+    --eds-table-cell-color-interactive-icon-initial: light-dark(#6f6f6f, #a6afb5);
+    --eds-table-cell-color-interactive-icon-hover: light-dark(#1f1f1f, #e9ebed);
+    --eds-table-cell-color-interactive-icon-active: light-dark(#007079, #97cace);
+    --eds-table-cell-color-interactive-icon-active-hover: light-dark(#004f55, #b3e2e5);
+    --eds-table-cell-color-interactive-icon-disabled: light-dark(#bebebe, #52616d);
+    --eds-table-cell-color-interactive-border-initial: light-dark(#dcdcdc, #ffffff29);
+    --eds-table-cell-color-interactive-border-hover: light-dark(#bebebe, #ffffff33);
+    --eds-table-cell-color-interactive-border-active: light-dark(#dcdcdc, #ffffff29);
+    --eds-table-cell-color-interactive-border-active-hover: light-dark(#bebebe, #ffffff33);
+    --eds-table-cell-color-interactive-border-disabled: light-dark(#dcdcdc, #ffffff29);
+    --eds-table-cell-color-interactive-surface-initial: light-dark(rgba(255, 255, 255, 0), #00000000);
+    --eds-table-cell-color-interactive-surface-hover: light-dark(#dcdcdc, #344c5b);
+    --eds-table-cell-color-interactive-surface-active: light-dark(#deedee, #17485d);
+    --eds-table-cell-color-interactive-surface-active-hover: light-dark(#c9e0e2, #1e5d78);
+    --eds-table-cell-color-interactive-surface-disabled: light-dark(rgba(255, 255, 255, 0), #00000000);
+    --eds-table-header-color-interactive-text-initial: light-dark(#3d3d3d, #d6d9dc);
+    --eds-table-header-color-interactive-text-hover: light-dark(#3d3d3d, #d6d9dc);
+    --eds-table-header-color-interactive-text-active: light-dark(#007079, #97cace);
+    --eds-table-header-color-interactive-text-active-hover: light-dark(#004f55, #b3e2e5);
+    --eds-table-header-color-interactive-text-disabled: light-dark(#bebebe, #52616d);
+    --eds-table-header-color-interactive-icon-initial: light-dark(#6f6f6f, #a6afb5);
+    --eds-table-header-color-interactive-icon-hover: light-dark(#3d3d3d, #d6d9dc);
+    --eds-table-header-color-interactive-icon-active: light-dark(#007079, #97cace);
+    --eds-table-header-color-interactive-icon-active-hover: light-dark(#004f55, #b3e2e5);
+    --eds-table-header-color-interactive-icon-disabled: light-dark(#6f6f6f, #a6afb5);
+    --eds-table-header-color-interactive-border-initial: light-dark(#dcdcdc, #ffffff29);
+    --eds-table-header-color-interactive-border-hover: light-dark(#bebebe, #ffffff33);
+    --eds-table-header-color-interactive-border-active: light-dark(#007079, #97cace);
+    --eds-table-header-color-interactive-border-active-hover: light-dark(#004f55, #b3e2e5);
+    --eds-table-header-color-interactive-border-disabled: light-dark(#dcdcdc, #ffffff29);
+    --eds-table-header-color-interactive-surface-initial: light-dark(#ffffff, #243746);
+    --eds-table-header-color-interactive-surface-hover: light-dark(#dcdcdc, #344c5b);
+    --eds-table-header-color-interactive-surface-active: light-dark(#eaeaea, #2c4251);
+    --eds-table-header-color-interactive-surface-active-hover: light-dark(#dcdcdc, #344c5b);
+    --eds-table-header-color-interactive-surface-disabled: light-dark(rgba(255, 255, 255, 0), #00000000);
+    --eds-table-header-color-static-text: light-dark(#3d3d3d, #ffffff);
+    --eds-table-header-color-static-icon: light-dark(#3d3d3d, #ffffff);
+    --eds-table-header-color-static-border: light-dark(#dcdcdc, #ffffff29);
+    --eds-table-header-color-static-surface: light-dark(#ffffff, #243746);
+  }
+  [data-level="2"] {
+    --eds-table-header-color-interactive-surface-initial: light-dark(#f7f7f7, #2c4251);
+    --eds-table-header-color-static-surface: light-dark(#f7f7f7, #2c4251);
+  }
+
+  [data-level="3"] {
+    /*27 level 3 overrides out of 53 level 3 tokens*/
+    --eds-color-static-border-standard: light-dark(#ffffff, #2c4251);
+    --eds-color-static-surface-standard: light-dark(#ffffff, #2c4251);
+    --eds-color-message-surface-standard-info: light-dark(#d5eaf4, #2c4251);
+    --eds-color-message-surface-standard-success: light-dark(#d9f7e2, #2c4251);
+    --eds-color-message-surface-standard-warning: light-dark(#ffe7d6, #2c4251);
+    --eds-color-message-surface-standard-error: light-dark(#ffd2d1, #2c4251);
+    --eds-table-cell-color-interactive-icon-initial: light-dark(#565656, #c2c8cc);
+    --eds-table-cell-color-interactive-icon-active: light-dark(#007079, #d1edef);
+    --eds-table-cell-color-interactive-icon-active-hover: light-dark(#004f55, #e0f4f5);
+    --eds-table-cell-color-interactive-surface-active: light-dark(#deedee, #1e5d78);
+    --eds-table-cell-color-interactive-surface-active-hover: light-dark(#c9e0e2, #257193);
+    --eds-table-header-color-interactive-text-initial: light-dark(#3d3d3d, #ffffff);
+    --eds-table-header-color-interactive-text-hover: light-dark(#3d3d3d, #ffffff);
+    --eds-table-header-color-interactive-text-active: light-dark(#007079, #b3e2e5);
+    --eds-table-header-color-interactive-text-active-hover: light-dark(#004f55, #d1edef);
+    --eds-table-header-color-interactive-text-disabled: light-dark(#bebebe, #616161);
+    --eds-table-header-color-interactive-icon-initial: light-dark(#3d3d3d, #ffffff);
+    --eds-table-header-color-interactive-icon-hover: light-dark(#3d3d3d, #ffffff);
+    --eds-table-header-color-interactive-icon-active: light-dark(#007079, #b3e2e5);
+    --eds-table-header-color-interactive-icon-active-hover: light-dark(#004f55, #d1edef);
+    --eds-table-header-color-interactive-icon-disabled: light-dark(#3d3d3d, #ffffff);
+    --eds-table-header-color-interactive-border-active: light-dark(#007079, #b3e2e5);
+    --eds-table-header-color-interactive-border-active-hover: light-dark(#004f55, #d1edef);
+    --eds-table-header-color-interactive-surface-initial: light-dark(#f7f7f7, #344c5b);
+    --eds-table-header-color-interactive-surface-active: light-dark(#eaeaea, #344c5b);
+    --eds-table-header-color-static-surface: light-dark(#f7f7f7, #344c5b);
+    --eds-table-header-color-interactive-surface-active-hover: light-dark(#dcdcdc, #3f5664);
+  }
   .eds-table {
-    color: canvasText;
+    border-spacing: 0;
+    caption {
+      caption-side: top;
+      margin-bottom: 16px;
+    }
+    th {
+      height: 48px;
+      box-sizing: border-box;
+      padding-inline: 16px;
+      padding-block: 0;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1.429em;
+      text-align: left;
+      > div {
+        display: flex;
+        align-items: center;
+      }
+    }
+    tbody {
+      td {
+        height: 48px;
+        box-sizing: border-box;
+        padding-inline: 16px;
+        padding-block: 0;
+        font-size:  0.875rem;
+        font-weight: 500;
+        line-height: 1.429em;
+        text-align: left;
+      }
+    }
+    &.colors-from-tokens {
+      th {
+        color: var(--eds-table-header-color-interactive-text-initial);
+        border-bottom: 2px solid var(--eds-table-header-color-interactive-border-initial);
+        background-color: var(--eds-table-header-color-interactive-surface-initial);
+        &:hover {
+          color: var(--eds-table-header-color-interactive-text-hover);
+          border-bottom: 2px solid var(--eds-table-header-color-interactive-border-hover);
+          background-color: var(--eds-table-header-color-interactive-surface-hover);
+        }
+      }
+      tbody {
+        tr {
+          background-color: transparent;
+          color: var(--eds-table-cell-color-interactive-text-initial);
+          border-bottom: 1px solid var(--eds-table-cell-color-interactive-border-initial);
+          &:hover {
+            background-color: var(--eds-table-cell-color-interactive-surface-hover);
+            color: var(--eds-table-cell-color-interactive-text-hover);
+            border-color: var(--eds-table-cell-color-interactive-border-hover);
+          }
+        }
+        tr.active {
+          background-color: var(--eds-table-cell-color-interactive-surface-active);
+          color: var(--eds-table-cell-color-interactive-text-active);
+          border-color: var(--eds-table-cell-color-interactive-border-active);
+          &:hover {
+            background-color: var(--eds-table-cell-color-interactive-surface-active-hover);
+            color: var(--eds-table-cell-color-interactive-text-active-hover);
+            border-color: var(--eds-table-cell-color-interactive-border-active-hover);
+          }
+        }
+        td {
+          color: inherit;
+          border-bottom: inherit;
+        }
+      }
+    }
   }
 }
