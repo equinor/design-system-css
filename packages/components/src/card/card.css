@@ -1,10 +1,23 @@
 @layer eds.card{
+  :root {
+    --eds-color-message-surface-standard-info: light-dark(#d5eaf4, #243746);
+    --eds-color-message-surface-standard-success: light-dark(#d9f7e2, #243746);
+    --eds-color-message-surface-standard-warning: light-dark(#ffe7d6, #243746);
+    --eds-color-message-surface-standard-error: light-dark(#ffd2d1, #243746);
+  }
+  [data-level="3"] {
+    --eds-color-message-surface-standard-info: light-dark(#d5eaf4, #2c4251);
+    --eds-color-message-surface-standard-success: light-dark(#d9f7e2, #2c4251);
+    --eds-color-message-surface-standard-warning: light-dark(#ffe7d6, #2c4251);
+    --eds-color-message-surface-standard-error: light-dark(#ffd2d1, #2c4251);
+  }
   .eds-card {
     width: 100%;
     --_card-text-color: black;
     --_card-background-color: white;
     --_mix-ratio: 10%;
     background-color: var(--_card-background-color);
+    border: 1px solid transparent;
     color: var(--_card-text-color);
    /*  --override-text-color: var(--_card-text-color); */
     &.elevation-raised {
@@ -21,6 +34,32 @@
     }
     &.error {
       --_card-text-color: red;
+    }
+    &.success {
+      --_card-text-color: green;
+    }
+    &.colors-from-tokens {
+      &.info {
+        background-color: var(--eds-color-message-surface-standard-info);
+        color: var(--eds-color-message-text-raised-info-initial);
+        border-color: var(--eds-color-message-border-standard-info);
+      }
+      &.warning {
+        background-color: var(--eds-color-message-surface-standard-warning);
+        color: var(--eds-color-message-text-raised-warning-initial);
+        border-color: var(--eds-color-message-border-standard-warning);
+      }
+      &.error {
+        background-color: var(--eds-color-message-surface-standard-error);
+        color: var(--eds-color-message-text-raised-error-initial);
+        border-color: var(--eds-color-message-border-standard-error);
+      }
+      &.success {
+        background-color: var(--eds-color-message-surface-standard-success);
+        color: var(--eds-color-message-text-raised-success-initial);
+        border-color: var(--eds-color-message-border-standard-success);
+      }
+
     }
   }
   .eds-card__content {
