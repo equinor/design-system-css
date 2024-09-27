@@ -51,24 +51,6 @@ export const Table = ({className, caption = "Table caption", ...rest }: Props) =
         <td>Australia</td>
         <td>2.1</td>
       </tr>
-{/*       <tr>
-        <td>89-012</td>
-        <td>Mango</td>
-        <td>South Africa</td>
-        <td>2.5</td>
-      </tr>
-      <tr>
-        <td>89-123</td>
-        <td>Pineapple</td>
-        <td>Paraguay</td>
-        <td>1.9</td>
-      </tr>
-      <tr>
-        <td>89-456</td>
-        <td>Pomegranate</td>
-        <td>Persia</td>
-        <td>4.5</td>
-      </tr> */}
     </tbody>
     <tfoot>
       <tr>
