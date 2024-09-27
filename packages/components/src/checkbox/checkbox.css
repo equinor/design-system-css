@@ -1,0 +1,46 @@
+.eds-checkbox {
+  display: inline-grid;
+  grid: [input] 1fr / [input] 1fr;
+  position: relative;
+  isolation: isolate;
+  padding: 12px;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+  }
+  &:hover::before {
+    background-color: red;
+  }
+  > svg {
+    grid-area: input;
+    z-index: 1;
+    pointer-events: none;
+  }
+  > input {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    grid-area: input;
+    scale: 2;
+    cursor: pointer;
+    &:not(:checked) ~ svg path[name='checked'] {
+      display: none;
+    }
+    &:not(:checked) ~ svg path[name='not-checked'] {
+      display: inline;
+    }
+    &:checked ~ svg path[name='not-checked'] {
+      display: none;
+    }
+    &:checked ~ svg path[name='checked'] {
+      display: inline;
+    }
+  }
+}
