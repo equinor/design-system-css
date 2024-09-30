@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
 import {Icon, UIText} from '../'
 import {add, expand, close } from '@equinor/eds-icons'
+import { CircularProgress, DotProgress } from '@equinor/eds-core-react'
+import { CSSProperties } from 'styled-components'
 
 const meta = {
   title: 'Inputs/Button',
@@ -27,7 +29,8 @@ export const Default: Story = {
         <Button {...args}><Icon icon={add} />Text child</Button>
         <Button {...args}><Icon icon={add} /></Button>
         <Button {...args}>Only Text</Button>
-        <Button><Icon icon={add} /><UIText>Hello</UIText></Button>
+        <Button><CircularProgress size={16} /></Button>
+        <Button><DotProgress style={{'--eds_interactive__icon_on_interactive_colors': '#007079'} as CSSProperties} size={32} /></Button>
         <Button><Icon icon={add} />Both sides<Icon icon={close} /></Button>
         <Button>Hello<Icon icon={expand} /></Button>
         <Button>Two icons<Icon icon={add} /><Icon icon={close} /></Button>
