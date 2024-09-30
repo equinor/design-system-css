@@ -29,8 +29,8 @@ export const Default: Story = {
         <Button {...args}><Icon icon={add} />Text child</Button>
         <Button {...args}><Icon icon={add} /></Button>
         <Button {...args}>Only Text</Button>
-        <Button><CircularProgress size={16} /></Button>
-        <Button><DotProgress style={{'--eds_interactive__icon_on_interactive_colors': '#007079'} as CSSProperties} size={32} /></Button>
+        <Button><CircularProgress size={16} style={{fontSize: '16px'}} /></Button>
+        <Button><DotProgress style={{fontSize: '8px','--eds_interactive__icon_on_interactive_colors': '#007079'} as CSSProperties} size={32} /></Button>
         <Button><Icon icon={add} />Both sides<Icon icon={close} /></Button>
         <Button>Hello<Icon icon={expand} /></Button>
         <Button>Two icons<Icon icon={add} /><Icon icon={close} /></Button>
