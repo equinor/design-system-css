@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@equinor/eds-core-react": "^0.42.0",
     "@equinor/eds-icons": "^0.21.0",
     "@equinor/eds-tokens": "^1.0.0-beta.4",
     "@equinor/eds-utils": "^0.8.5",
