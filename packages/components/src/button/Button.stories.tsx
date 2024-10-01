@@ -26,7 +26,7 @@ export const Default: Story = {
   render: (args) => {
     return (
       <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
-        <Button {...args}><Icon icon={add} />Text child</Button>
+        <Button {...args}><Icon icon={add} />{`Text with \n two lines`}</Button>
         <Button {...args}><Icon icon={add} /></Button>
         <Button {...args}>Only Text</Button>
         <Button><CircularProgress size={16} style={{fontSize: '16px'}} /></Button>

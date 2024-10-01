@@ -12,6 +12,8 @@
     grid-auto-flow: column;
     align-items: center;
     justify-content: center;
+    text-align: start;
+    white-space: pre-line;
     /*subtract border-width from padding*/
     padding-block: calc(var(--eds-spacing-inset-md-stack-squished) - (var(--eds-sizing-stroke-thick) * 2));
     padding-inline: var(--eds-spacing-inset-md-inline);
