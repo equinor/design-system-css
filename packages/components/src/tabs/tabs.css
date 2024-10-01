@@ -1,0 +1,63 @@
+@layer eds.tabs {
+  .eds-tabs {
+    display: flex;
+    > button {
+      color: canvasText;
+      background-color: canvas;
+      border: 0;
+      border-bottom: var(--eds-sizing-stroke-thick) solid canvasText;
+      display: grid;
+      cursor: pointer;
+      /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation*/
+      gap: 0.618em;
+      grid-auto-flow: column;
+      align-items: center;
+      justify-content: center;
+      text-align: start;
+      white-space: pre-line;
+      /*subtract border-width from padding*/
+      /*Todo: add correct spacings*/
+      padding-block-start: var(--eds-spacing-inset-md-stack-squished);
+      padding-block-end: calc(var(--eds-spacing-inset-md-stack-squished) - (var(--eds-sizing-stroke-thick)));
+      padding-inline: var(--eds-spacing-inset-md-inline);
+      font-size: var(--eds-typography-ui-body-lg-font-size);
+      --captured-size-1: calc(round(1cap, 4px) / 2);
+      --_button-text-height: var(--captured-size-1);
+      &:hover {
+        background-color: lightgray;
+      }
+      &[aria-selected='true'] {
+        background-color: lightgray;
+      }
+      > svg {
+        fill: canvasText;
+        /*The padding around a symmetrical icon is roughly 20% (16px path inside 24px viewbox)*/
+        margin-inline: -0.20em;
+         /*make the virtual height of the icon same as text height*/
+        margin-block: calc(-0.5em + var(--_button-text-height));
+      }
+    }
+    &.colors-from-tokens {
+      > button {
+        color: var(--eds-color-interactive-text-standard-quaternary-initial);
+        background-color: var(--eds-color-interactive-surface-standard-quaternary-initial);
+        border-color: var(--eds-color-interactive-border-standard-quaternary-initial);
+        &:hover {
+          color: var(--eds-color-interactive-text-standard-quaternary-hover);
+          background-color: var(--eds-color-interactive-surface-standard-quaternary-hover);
+          border-color: var(--eds-color-interactive-border-standard-quaternary-hover);
+        }
+        &[aria-selected='true'] {
+          color: var(--eds-color-interactive-text-standard-quaternary-active);
+          background-color: var(--eds-color-interactive-surface-standard-quaternary-active);
+          border-color: var(--eds-color-interactive-border-standard-quaternary-active);
+          &:hover {
+            color: var(--eds-color-interactive-text-standard-quaternary-active-hover);
+            background-color: var(--eds-color-interactive-surface-standard-quaternary-active-hover);
+            border-color: var(--eds-color-interactive-border-standard-quaternary-active-hover);
+          }
+        }
+      }
+    }
+  }
+}

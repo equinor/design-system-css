@@ -7,5 +7,6 @@ export * from './input/Input'
 export * from './Typography'
 export * from './icon'
 export * from './sideBar/SideBar'
+export * from './tabs/Tabs'
 
 
