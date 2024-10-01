@@ -7,14 +7,16 @@ import { Preview } from '@storybook/react'
 
 const DocsContainerWithWrapper = ({ children, context, ...props }) => {
   return (
-    <div data-density={context.store.globals.globals.density} data-color-scheme={context.store.globals.globals.theme}>
+    <div
+      data-density={context.store.userGlobals.globals.density}
+      data-color-scheme={context.store.userGlobals.globals.theme}
+    >
       <DocsContainer context={context} {...props}>
         {children}
       </DocsContainer>
     </div>
   )
 }
-
 const preview: Preview = {
   /*   viewMode: 'docs',*/
   parameters: {
