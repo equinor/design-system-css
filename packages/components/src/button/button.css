@@ -2,7 +2,7 @@
   .eds-button {
     color: canvasText;
     background-color: canvas;
-    border-width: var(--eds-sizing-stroke-thick);
+    border-width: var(--eds-sizing-stroke-thin);
     border-style: solid;
     border-color: canvasText;
     border-radius: var(--eds-spacing-border-radius-rounded);
@@ -14,12 +14,12 @@
     justify-content: center;
     text-align: start;
     white-space: pre-line;
-    /*subtract border-width from padding*/
-    padding-block: calc(var(--eds-spacing-inset-md-stack-squished) - (var(--eds-sizing-stroke-thick) * 2));
+    /*subtract border-width from padding total: comfortable 24px spacious: 36px*/
+    padding-block: calc(var(--eds-spacing-inset-md-stack-squished) - (var(--eds-sizing-stroke-thin) * 2));
     padding-inline: var(--eds-spacing-inset-md-inline);
     font-size: var(--_button-font-size);
     /*use registered property to resolve value based on button font size which can then be passed on to the icon*/
-    --captured-size-1: calc(round(1cap, 4px) / 2);
+    --captured-size-1: calc(round(nearest, 1cap, 4px) / 2);
     --_button-text-height: var(--captured-size-1);
     cursor: pointer;
     /*this overrides font size in the typography component*/
