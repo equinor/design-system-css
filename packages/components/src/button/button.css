@@ -1,10 +1,9 @@
 @layer eds.button {
   .eds-button {
+    position: relative;
     color: canvasText;
     background-color: canvas;
-    border-width: var(--eds-sizing-stroke-thin);
-    border-style: solid;
-    border-color: canvasText;
+    border: 0;
     border-radius: var(--eds-spacing-border-radius-rounded);
     display: grid;
     /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation*/
@@ -15,7 +14,7 @@
     text-align: start;
     white-space: pre-line;
     /*subtract border-width from padding total: comfortable 24px spacious: 36px*/
-    padding-block: calc(var(--eds-spacing-inset-md-stack-squished) - (var(--eds-sizing-stroke-thin) * 2));
+    padding-block: var(--eds-spacing-inset-md-stack-squished);
     padding-inline: var(--eds-spacing-inset-md-inline);
     font-size: var(--_button-font-size);
     /*use registered property to resolve value based on button font size which can then be passed on to the icon*/
@@ -24,6 +23,14 @@
     cursor: pointer;
     /*this overrides font size in the typography component*/
     --override-font-size: var(--_button-font-size);
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      outline: var(--eds-sizing-stroke-thick) solid canvasText;
+      outline-offset: calc(var(--eds-sizing-stroke-thick) * -1);
+      border-radius: inherit;
+    }
     &.size-xs {
       --_button-font-size: var(--eds-typography-ui-body-xs-font-size);
     }
