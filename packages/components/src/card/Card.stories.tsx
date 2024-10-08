@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Card } from './Card'
-import { BodyText } from '../'
+import { BodyText, Icon, Button } from '../'
+import {add_circle_outlined} from '@equinor/eds-icons'
 
 const meta = {
   title: 'Surfaces/Card',
@@ -24,7 +25,18 @@ export const Default: Story = {
   render: (args) => {
     return (
         <Card {...args}>
-          <div className="eds-card__content"><BodyText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nisi eaque non, tenetur eos ut, vitae ipsum voluptate cum excepturi asperiores corrupti quibusdam, doloremque adipisci in eveniet nihil? Aliquid, tenetur.</BodyText></div>
+          <div className="eds-card__content u-rich-text">
+            <BodyText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nisi eaque non, tenetur eos ut, vitae ipsum voluptate cum excepturi asperiores corrupti quibusdam, doloremque Multiline with inline icons <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> adipisci in eveniet nihil? Aliquid, tenetur.</BodyText>
+            <BodyText size='xl'>This is one line with <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> inline icons</BodyText>
+            <Button><Icon icon={add_circle_outlined} />A Button</Button>
+          </div>
           </Card>
   )},
 }
+
+/* 'xs'
+| 'sm'
+| 'md'
+| 'lg'
+| 'xl'
+| '2xl' */

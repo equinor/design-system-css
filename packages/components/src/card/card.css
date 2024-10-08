@@ -70,5 +70,10 @@
   .eds-card__content:only-child {
     padding-block: var(--eds-spacing-stack-lg);
   }
+  .u-rich-text {
+    >:is(* + *) {
+      margin-top: 1em !important;
 
+    }
+  }
 }
