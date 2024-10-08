@@ -1,17 +1,26 @@
 .eds-chip {
+  position: relative;
   width: fit-content;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   align-items: center;
   border-radius: 1e5px;
-  gap: var(--eds-spacing-inline-xs);
-  padding-block: var(--eds-spacing-inset-sm-stack-squared);
-  padding-inline: var(--eds-spacing-inset-sm-inline);
+  font-size: var(--eds-typography-ui-body-sm-font-size);
+  gap: 0.618em;
+  padding-block: var(--eds-spacing-inset-xs-stack-squared);
+  padding-inline: var(--eds-spacing-inset-xs-inline);
   background-color: var(--_chip-background-color);
-  border-color: var(--_chip-border-color);
   color: var(--_chip-text-color);
   cursor: pointer;
+  &::after {
+    border-radius: inherit;
+    content: '';
+    position: absolute;
+    inset: 0;
+    outline: var(--eds-sizing-stroke-thin) solid var(--_chip-border-color);
+    outline-offset: calc(var(--eds-sizing-stroke-thin) * -1);
+  }
   &.default {
     --_chip-input-color: var(--eds-color-interactive-text-raised-initial);
     &:not(.disabled):hover, &:not(.disabled):focus {
@@ -34,21 +43,28 @@
 }
 
 .eds-chip-token {
+  position: relative;
   width: fit-content;
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   align-items: center;
   border-radius: 1e5px;
-  border-width: 1px;
-  border-style: solid;
-  gap: var(--eds-spacing-inline-xs);
+  font-size: var(--eds-typography-ui-body-sm-font-size);
+  gap: 0.618em;
   padding-block: var(--eds-spacing-inset-sm-stack-squared);
   padding-inline: var(--eds-spacing-inset-sm-inline);
   background-color: var(--_chip-background-color);
-  border-color: var(--_chip-border-color);
   color: var(--_chip-text-color);
   cursor: pointer;
+  &::after {
+    border-radius: inherit;
+    content: '';
+    position: absolute;
+    inset: 0;
+    outline: var(--eds-sizing-stroke-thin) solid var(--_chip-border-color);
+    outline-offset: calc(var(--eds-sizing-stroke-thin) * -1);
+  }
   &.default {
     --_chip-text-color: var(--eds-color-interactive-text-raised-initial);
     --_chip-icon-color: var(--eds-color-interactive-icon-raised-initial);
