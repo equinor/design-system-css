@@ -61,7 +61,7 @@ export const Typography = styled.p<StyleHeadingProps>`
     }
     /* vertically center inline icons.
      * Need to capture 1ex - 1cap from typography and pass it down to svg,
-     * as icons have their own font-size based in their height*/
+     * as icons have their own font-size set based on their height*/
     --captured-size-1: calc(1ex - 1cap);
     --_vertical-align-icon: var(--captured-size-1);
     & > svg {
