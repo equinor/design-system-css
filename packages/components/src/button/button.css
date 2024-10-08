@@ -27,8 +27,8 @@
       content: '';
       position: absolute;
       inset: 0;
-      outline: var(--eds-sizing-stroke-thick) solid canvasText;
-      outline-offset: calc(var(--eds-sizing-stroke-thick) * -1);
+      outline: var(--eds-sizing-stroke-thin) solid canvasText;
+      outline-offset: calc(var(--eds-sizing-stroke-thin) * -1);
       border-radius: inherit;
     }
     &.size-xs {
