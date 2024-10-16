@@ -38,6 +38,10 @@
       line-height: inherit;
       color: inherit;
       background-color: transparent;
+      height: 1lh;
+      /* total height target: comfortable 24px spacious 36px */
+      --_trim: calc(-1 * (1lh - 1cap) / 2);
+      margin-block: round(down, var(--_trim), 4px);
     }
     > .adornments {
       display: grid;
@@ -57,10 +61,10 @@
     color: var(--eds-input-color-text-initial);
     padding-block: var(--eds-spacing-inset-xs-stack-stretched);
     padding-inline: var(--eds-spacing-inset-xs-inline);
-    font-size: var(--eds-typography-ui-body-lg-font-size);
+    font-size: var(--eds-typography-ui-body-md-font-size);
     font-family: var(--eds-typography-ui-body-font-family);
-    font-weight: var(--eds-typography-ui-body-lg-font-weight-normal);
-    line-height: var(--eds-typography-ui-body-lg-lineheight-default);
+    font-weight: var(--eds-typography-ui-body-md-font-weight-normal);
+    line-height: var(--eds-typography-ui-body-md-lineheight-squished);
 
     &:where(.error, .warning, .success, :focus-within) {
       box-shadow: none;
