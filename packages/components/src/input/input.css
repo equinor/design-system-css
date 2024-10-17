@@ -36,12 +36,13 @@
       font-size: inherit;
       font-weight: inherit;
       line-height: inherit;
+      padding: 0;
       color: inherit;
       background-color: transparent;
       height: 1lh;
       /* total height target: comfortable 24px spacious 36px */
       --_trim: calc(-1 * (1lh - 1cap) / 2);
-      margin-block: round(down, var(--_trim), 4px);
+      margin-block: round(nearest, var(--_trim), 2px);
     }
     > .adornments {
       display: grid;
