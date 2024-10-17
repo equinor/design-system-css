@@ -28,7 +28,9 @@
     box-sizing: border-box;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    gap: 0.618em;
     align-items: center;
+    cursor: text;
     > input {
       border: 0;
       outline: 0;
@@ -40,13 +42,13 @@
       color: inherit;
       background-color: transparent;
       height: 1lh;
-      /* total height target: comfortable 24px spacious 36px */
+      /* total height target: comfortable: 24px, spacious: 36px */
       --_trim: calc(-1 * (1lh - 1cap) / 2);
       margin-block: round(nearest, var(--_trim), 2px);
     }
     > .adornments {
       display: grid;
-      gap: 8px;
+      gap: 0.618em;
       align-items: center;
       svg {
         margin-block: -0.5em;

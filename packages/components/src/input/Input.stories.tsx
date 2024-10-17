@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
 import { BodyText } from '../Typography'
+import { Icon } from '../icon'
+import { close, warning_outlined, search } from '@equinor/eds-icons'
 
 const meta = {
   title: 'Inputs/Input',
@@ -27,7 +29,7 @@ export const Default: Story = {
         <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
           <BodyText color='primary'>generated focus</BodyText>
           <Input {...args} />
-          <Input variant='error' />
+          <Input leftAdornments={<Icon icon={search} size="md" />} variant='error' />
           <Input variant='warning' />
           <Input variant='success' />
 
