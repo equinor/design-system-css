@@ -16,6 +16,9 @@
   [data-color-scheme="dark"] {
     color-scheme: dark;
   }
+  [data-color-background="bente"] {
+    --bg: var(--eds-ui-main-color-surface);
+  }
   html {
     height: 100%;
   }
@@ -23,6 +26,7 @@
     min-height: 100%;
   }
   body {
+    --bg: var(--eds-color-neutral-background-default);
     :has(.hide-grid-lines__input:checked) {
       --baseline-grid-color: transparent;
     }
@@ -31,7 +35,7 @@
   *:not(#a#b) {
    & .docs-story {
     /*--eds-ui-main-color-surface*/
-    background-color: var(--eds-color-neutral-background-default) !important;
+    background-color: var(--bg) !important;
   }
 }
 

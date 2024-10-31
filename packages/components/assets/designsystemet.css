@@ -96,7 +96,9 @@
   --eds-color-accent-contrast-default: var(--accent-14);
   --eds-color-accent-contrast-subtle: var(--accent-15);
   --eds-color-neutral-background-default: light-dark(var(--neutral-1), var(--brand1-1));
-  --eds-color-neutral-background-subtle: light-dark(var(--neutral-2), var(--brand1-2));
+  /*manually changed to neutral-1 for white background. Needs work to handle
+  "ui-deep" and surfaces with white bg in light mode but lighter blue in dark mode*/
+  --eds-color-neutral-background-subtle: light-dark(var(--neutral-1), var(--brand1-2));
   --eds-color-neutral-surface-default: light-dark(var(--neutral-3), var(--brand1-3));
   --eds-color-neutral-surface-hover: light-dark(var(--neutral-4), var(--brand1-4));
   --eds-color-neutral-surface-active: light-dark(var(--neutral-5), var(--brand1-5));

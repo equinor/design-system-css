@@ -19,7 +19,12 @@ const meta = {
 } satisfies Meta<typeof Tabs>
 
 const tabs = [
-  {label: 'item 1', icon: info_circle},
+  {label: 'proposed colors', icon: info_circle},
+  {label: 'item 2'},
+  {label: 'item 3', icon: warning_outlined},
+]
+const tabsds = [
+  {label: 'designsys colors', icon: info_circle},
   {label: 'item 2'},
   {label: 'item 3', icon: warning_outlined},
 ]
@@ -33,7 +38,7 @@ export const Default: Story = {
       <Card token style={{backgroundColor: 'var(--eds-color-neutral-background-subtle)'}}>
         <div className="eds-card__content">
         <Tabs style={{marginBlockEnd: '16px'}} tabs={tabs} token />
-        <Tabs tabs={tabs} className='colors-from-ds' />
+        <Tabs tabs={tabsds} className='colors-from-ds' />
         </div>
       </Card>
 
