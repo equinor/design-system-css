@@ -30,10 +30,10 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: () => {
     return (
-      <Card token>
+      <Card token style={{backgroundColor: 'var(--eds-color-neutral-background-subtle)'}}>
         <div className="eds-card__content">
         <Tabs style={{marginBlockEnd: '16px'}} tabs={tabs} token />
-        <Tabs tabs={tabs} />
+        <Tabs tabs={tabs} className='colors-from-ds' />
         </div>
       </Card>
 

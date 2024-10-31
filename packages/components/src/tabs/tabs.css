@@ -30,7 +30,6 @@
         background-color: lightgray;
       }
       > svg {
-        fill: canvasText;
         /*The padding around a symmetrical icon is roughly 20% (16px path inside 24px viewbox)*/
         margin-inline: -0.20em;
          /*make the virtual height of the icon same as text height*/
@@ -40,21 +39,45 @@
     &.colors-from-tokens {
       > button {
         color: var(--eds-color-interactive-text-standard-quaternary-initial);
+        fill: var(--eds-color-interactive-icon-standard-quaternary-initial);
         background-color: var(--eds-color-interactive-surface-standard-quaternary-initial);
         border-color: var(--eds-color-interactive-border-standard-quaternary-initial);
         &:hover {
           color: var(--eds-color-interactive-text-standard-quaternary-hover);
+          fill: var(--eds-color-interactive-icon-standard-quaternary-hover);
           background-color: var(--eds-color-interactive-surface-standard-quaternary-hover);
           border-color: var(--eds-color-interactive-border-standard-quaternary-hover);
         }
         &[aria-selected='true'] {
           color: var(--eds-color-interactive-text-standard-quaternary-active);
+          fill: var(--eds-color-interactive-icon-standard-quaternary-active);
           background-color: var(--eds-color-interactive-surface-standard-quaternary-active);
           border-color: var(--eds-color-interactive-border-standard-quaternary-active);
           &:hover {
             color: var(--eds-color-interactive-text-standard-quaternary-active-hover);
+            fill: var(--eds-color-interactive-icon-standard-quaternary-active-hover);
             background-color: var(--eds-color-interactive-surface-standard-quaternary-active-hover);
             border-color: var(--eds-color-interactive-border-standard-quaternary-active-hover);
+          }
+        }
+      }
+    }
+    &.colors-from-ds {
+      > button {
+        color: var(--eds-color-neutral-text-subtle);
+        fill: var(--eds-color-neutral-text-subtle);
+        background-color: transparent;
+        border-color: var(--eds-color-neutral-border-subtle);
+        &:hover {
+          background-color: var(--eds-color-neutral-surface-hover);
+          border-color: var(--eds-color-neutral-border-default);
+        }
+        &[aria-selected='true'] {
+          color: var(--eds-color-accent-text-default);
+          fill: var(--eds-color-accent-text-default);
+          border-color: var(--eds-color-accent-base-active);
+          &:hover {
+            background-color: var(--eds-color-accent-surface-active);
           }
         }
       }
