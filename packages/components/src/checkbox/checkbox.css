@@ -3,11 +3,12 @@
   grid: [input] 1fr / [input] 1fr;
   position: relative;
   isolation: isolate;
-  padding: 12px;
+  padding-inline: var(--eds-spacing-inset-sm-inline);
+  padding-block: var(--eds-spacing-inset-sm-stack-squared);
   &::before {
     content: "";
     position: absolute;
-    width: 40px;
+    width: 100%;
     aspect-ratio: 1 / 1;
     top: 50%;
     left: 50%;
@@ -15,7 +16,7 @@
     border-radius: 100%;
   }
   &:hover::before {
-    background-color: red;
+    background-color: rgb(0 0 0 / .2);
   }
   > svg {
     grid-area: input;
