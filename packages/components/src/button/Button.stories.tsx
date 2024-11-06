@@ -28,6 +28,7 @@ export const Default: Story = {
       <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start', flexWrap: 'wrap'}}>
         <Button {...args}><Icon icon={add} />{`Text with \n two lines`}</Button>
         <Button {...args}><Icon icon={add} /></Button>
+        <Button {...args} data-icon><Icon icon={add} /></Button>
         <Button {...args}>Only Text</Button>
         <Button><CircularProgress size={16} style={{fontSize: '16px'}} /></Button>
         <Button><DotProgress style={{fontSize: '8px','--eds_interactive__icon_on_interactive_colors': '#007079'} as CSSProperties} size={32} /></Button>

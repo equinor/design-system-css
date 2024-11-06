@@ -69,4 +69,20 @@
       margin-block: calc(-0.5em + var(--_button-text-height));
     }
   }
+  [data-icon] {
+    &.eds-button {
+      border-radius: 50%;
+      /*These lead to wrong size because the figma mockup assumes an icon size of 28x28*/
+      /*  padding-block: var(--eds-spacing-inset-xs-stack-squared);
+      padding-inline: var(--eds-spacing-inset-xs-inline); */
+      /*If an icon button is supposed to be 44x44 we need to set width/height, intrinsic padding + icon is not safe.
+      --eds-sizing-selectable-lg happens to have the correct values for both spacious and comfortable (44 and 36)*/
+      width: var(--eds-sizing-selectable-lg);
+      aspect-ratio: 1;
+      > svg {
+        margin-inline: unset;
+        margin-block: unset;
+      }
+    }
+  }
 }
