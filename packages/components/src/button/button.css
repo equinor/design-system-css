@@ -77,8 +77,10 @@
       padding-inline: var(--eds-spacing-inset-xs-inline); */
       /*If an icon button is supposed to be 44x44 we need to set width/height, intrinsic padding + icon is not safe.
       --eds-sizing-selectable-lg happens to have the correct values for both spacious and comfortable (44 and 36)*/
-      width: var(--eds-sizing-selectable-lg);
-      aspect-ratio: 1;
+      width: var(--icon-button-override-size, var(--eds-sizing-selectable-lg));
+      height: var(--icon-button-override-size, var(--eds-sizing-selectable-lg));
+      place-content: center;
+      /* aspect-ratio: 1; */
       > svg {
         margin-inline: unset;
         margin-block: unset;

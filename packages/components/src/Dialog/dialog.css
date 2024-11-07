@@ -12,9 +12,19 @@
   border: 1px solid canvasText;
 }
 .eds-dialog__header {
+
   padding-inline: var(--eds-spacing-inset-md-inline);
   padding-block: var(--eds-spacing-inset-md-stack-squared);
   border-bottom: 1px solid canvasText;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  > button {
+    --icon-button-override-size: var( --eds-sizing-selectable-md);
+    margin-block: calc(-100%);
+    /*aligning the svg path inside button with the header padding*/
+    margin-inline: calc((-1 * var(--eds-spacing-inset-md-inline)) + 4px);
+  }
 }
 .eds-dialog__content {
   padding-inline: var(--eds-spacing-inset-md-inline);

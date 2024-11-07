@@ -1,6 +1,9 @@
 import './dialog.css'
 import {useRef, useEffect} from 'react'
 import { Text } from '../Typography'
+import { Button } from '../button/Button'
+import { Icon } from '../icon'
+import { close } from '@equinor/eds-icons'
 import {
   useGlobalKeyPress,
 } from '@equinor/eds-utils'
@@ -32,6 +35,7 @@ export const Dialog = ({children, className, open, onClose, token, ...rest }: Pr
     <div className="eds-dialog__inner">
       <div className="eds-dialog__header">
         <Text variant='body'>Dialog heading</Text>
+        <Button data-icon onClick={()=> onClose && onClose()}><Icon icon={close} /></Button>
       </div>
       <div className="eds-dialog__content">
         {children}
