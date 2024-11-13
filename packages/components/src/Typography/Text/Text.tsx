@@ -1,6 +1,6 @@
 import { forwardRef, ElementType } from 'react'
 import { Typography } from '../_components/Typography'
-import { TypographyProps, TypographyElement } from '../typography.types'
+import { TypographyProps, TypographyElement, TypographyColor, TypographyProminence } from '../typography.types'
 import { OverridableComponent } from '@equinor/eds-utils'
 
 export type TextProps = TypographyProps & {
@@ -8,20 +8,35 @@ export type TextProps = TypographyProps & {
    * @default false
    */
   baselined?: boolean
-    /** header: uses the "equinor" typeface. Please use the "as" prop to assign the correct header level when variant is header. Always "baselined"
-     * body: uses "inter" typeface. Is always "baselined"
-     * ui: uses inter typeface. For use in ui components such as buttons, tabs, chips etc. Unlocks "baselined" prop which is false by default to center text vertically.
-   * @default 'body'
-   */
-  variant?: 'ui' | 'body' | 'header'
   monoSpacedNumbers?: boolean
-  color?: 'neutral' | 'accent' | 'info' | 'success' | 'warning' | 'error'
-  prominence?: 'primary' | 'secondary' | 'disabled' | 'contrast'
   as?: ElementType
 }
 const INTER_VERTICAL_OFFSET = 0.002
 const EQUINOR_VERTICAL_OFFSET = 0.06
 //prominence/color
+const getColor = (color: TypographyColor, prominence: TypographyProminence) => {
+  const colorBase = `--eds-color-${color}`
+  let textColor
+  switch (prominence) {
+    case 'primary':
+      textColor = `var(${colorBase}-text-default)`
+      break;
+    case 'secondary':
+      textColor = `var(${colorBase}-text-subtle)`
+      break;
+    case 'disabled':
+      textColor = `var(--eds-color-neutral-border-default)`
+      break;
+    case 'contrast':
+      textColor = `var(${colorBase}-contrast-default)`
+      break;
+    default:
+      textColor = `var(${colorBase}-text-default)`
+      break;
+  }
+  return textColor
+
+}
 
 export const Text: OverridableComponent<TextProps, HTMLElement> =
   forwardRef(function Text(
@@ -35,6 +50,7 @@ export const Text: OverridableComponent<TextProps, HTMLElement> =
       lines,
       color = 'neutral',
       prominence = 'primary',
+      customColor,
       as,
       baselined = false,
       children,
@@ -45,11 +61,13 @@ export const Text: OverridableComponent<TextProps, HTMLElement> =
     const variantType: TypographyElement = variant === 'header' ? variant : 'ui-body'
     const offset = variant === 'header' ? EQUINOR_VERTICAL_OFFSET : INTER_VERTICAL_OFFSET
     const gridOn = variant === 'ui' ? baselined : true
+    const textColor = customColor ? customColor : getColor(color, prominence)
+
     return (
       <Typography
         ref={ref}
         as={as}
-        $color={color}
+        $color={textColor}
         $type={variantType}
         $offset={offset}
         $size={size}

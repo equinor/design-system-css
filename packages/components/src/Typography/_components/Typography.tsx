@@ -45,8 +45,7 @@ export const Typography = styled.p<StyleHeadingProps>`
     `}
     ${$color &&
     css`
-    /*currently broken*/
-      --_text-preset-color: ${`var(--eds-color-static-text-standard-${$color})`};
+      --_text-preset-color: ${$color};
     `}
     font-size: ${`var(--override-font-size, var(--eds-typography-${$type}-${$size}-font-size))`};
     font-family: ${`var(--eds-typography-${$type}-font-family)`};
@@ -55,7 +54,7 @@ export const Typography = styled.p<StyleHeadingProps>`
     letter-spacing: ${`var(--eds-typography-${$type}-${$size}-tracking-${$letterSpacing})`};
     font-variant-numeric: ${$monoSpacedNumbers ? 'tabular-nums' : 'normal'};
     /*TODO: determine if --override-text-color/link-color is needed or if inherit covers all the bases. override overrides all, while inherit only applies when color prop is not set*/
-    color: var(--override-text-color, var(--_text-preset-color, inherit));
+    color: var(--override-text-color, var(--_text-preset-color));
     --_offset: calc(${$offset} * 1em);
     --_grid-base: 4px;
     &[href],

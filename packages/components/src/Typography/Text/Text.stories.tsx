@@ -1,3 +1,4 @@
+import { CSSProperties } from 'react'
 import { Text, TextProps } from './Text'
 import { StoryFn, Meta } from '@storybook/react'
 import { BaselineGrid } from '../../../.storybook/components/BaselineGrid'
@@ -200,5 +201,67 @@ export const Trunkated: StoryFn<TextProps> = () => {
       corrupti ad sint excepturi expedita odit recusandae rerum cumque
       repudiandae tempora a fuga nulla. Tempore minima eligendi officiis.
     </Text>
+  )
+}
+export const Colors: StoryFn<TextProps> = () => {
+  const size = '2xl'
+  return (
+    <div
+      style={{backgroundColor: 'var(--eds-color-neutral-background-subtle)',
+      padding: '16px',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '4px'
+      }}>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)'} as CSSProperties}>
+      <Text size={size}>neutral primary (default)</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)'} as CSSProperties}>
+      <Text size={size} prominence='secondary'>neutral secondary</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)'} as CSSProperties}>
+      <Text size={size} prominence='disabled'>neutral disabled</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-base-default)'} as CSSProperties}>
+      <Text size={size} prominence='contrast'>neutral contrast</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-accent-background-subtle)'} as CSSProperties}>
+      <Text size={size} color='accent'>accent primary</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-accent-background-subtle)'} as CSSProperties}>
+      <Text size={size} color='accent' prominence='secondary'>accent secondary</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-accent-base-default)'} as CSSProperties}>
+      <Text size={size} color='accent' prominence='contrast'>accent contrast</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-warning-background-subtle)'} as CSSProperties}>
+      <Text size={size} color='warning'>warning primary</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-warning-background-subtle)'} as CSSProperties}>
+      <Text size={size} color='warning' prominence='secondary'>warning secondary</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-warning-base-default)'} as CSSProperties}>
+      <Text size={size} color='warning' prominence='contrast'>warning contrast</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-danger-background-subtle)'} as CSSProperties}>
+      <Text size={size} color='danger'>danger primary</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-danger-background-subtle)'} as CSSProperties}>
+      <Text size={size} color='danger' prominence='secondary'>danger secondary</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-danger-base-default)'} as CSSProperties}>
+      <Text size={size} color='danger' prominence='contrast'>danger contrast</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)'} as CSSProperties}>
+      <Text customColor='light-dark(rebeccapurple, pink)' size={size}>customColor (light-dark(rebeccapurple, pink))</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)', color: 'red'} as CSSProperties}>
+      <Text customColor='inherit' size={size}>customColor (inherit)</Text>
+    </div>
+    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)', '--override-text-color': 'light-dark(green, lightgreen)'} as CSSProperties}>
+    <Text size={size} color='danger' prominence='secondary'>override all text color with --override-text-color on parent</Text>
+    </div>
+
+    </div>
   )
 }
