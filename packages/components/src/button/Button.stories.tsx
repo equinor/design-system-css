@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
-import {Icon, UIText} from '../'
+import {Icon} from '../'
 import {add, expand, close } from '@equinor/eds-icons'
 import { CircularProgress, DotProgress } from '@equinor/eds-core-react'
 import { CSSProperties } from 'styled-components'

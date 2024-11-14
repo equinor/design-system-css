@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react'
-import { Heading } from '../Typography'
+import { Text } from '../Typography'
 /* import { Icon } from '..'
 import { account_circle, gear, help_outline, log_out, expand } from '../icon' */
 
@@ -7,7 +7,7 @@ import './table.css'
 type Props = {caption?: string} & HTMLAttributes<HTMLTableElement>
 export const Table = ({className, caption = "Table caption", ...rest }: Props) => (
   <table className={['eds-table', 'colors-from-tokens', className].join(' ')} {...rest}>
-      <caption><Heading as="h3" color="primary">{caption}</Heading></caption>
+      <caption><Text as="h3" variant="header">{caption}</Text></caption>
       <thead>
       <tr>
         <th>

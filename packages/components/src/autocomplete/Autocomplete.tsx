@@ -1,6 +1,6 @@
 import './autocomplete.css'
 import '../input/Input'
-import { Input, UIText, Icon } from '../'
+import { Input, Text, Icon } from '../'
 import { useRef } from 'react'
 import {arrow_drop_down} from '@equinor/eds-icons'
 
@@ -28,11 +28,11 @@ export const Autocomplete = () => {
     {/* @ts-ignore */}
     <div ref={options} className="eds-autocomplete__options" popover="manual" onClick={closePopover}>
       <ul>
-        <li><UIText>Kahoot! ASA</UIText></li>
-        <li><UIText>Microsoft Corporation</UIText></li>
-        <li><UIText>Testla Inc</UIText></li>
-        <li><UIText>Apple Inc</UIText></li>
-        <li><UIText>NVIDIA corporation</UIText></li>
+        <li><Text varaint='ui'>Kahoot! ASA</Text></li>
+        <li><Text varaint='ui'>Microsoft Corporation</Text></li>
+        <li><Text varaint='ui'>Testla Inc</Text></li>
+        <li><Text varaint='ui'>Apple Inc</Text></li>
+        <li><Text varaint='ui'>NVIDIA corporation</Text></li>
       </ul>
     </div>
   </>

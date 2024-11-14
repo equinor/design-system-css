@@ -1,6 +1,6 @@
 import { useState, HTMLAttributes } from 'react'
 import type { IconData } from '@equinor/eds-icons'
-import { UIText, Icon } from '../'
+import { Text, Icon } from '../'
 import './tabs.css'
 
 type Tab = {
@@ -26,7 +26,7 @@ export const Tabs = ({ tabs, className, token, ...rest }: Props) => {
           onClick={() => setSelectedTab(index)}
          >
           {tab.icon && <Icon size='sm' icon={tab.icon} />}
-          <UIText>{tab.label}</UIText>
+          <Text variant='ui'>{tab.label}</Text>
         </button>
       })}
     </div>

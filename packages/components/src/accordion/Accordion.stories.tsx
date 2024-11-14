@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Accordion } from './Accordion'
-import { BodyText } from '../Typography'
+import { Text } from '../Typography'
 
 const meta = {
   title: 'Surfaces/Accordion',
@@ -24,7 +24,7 @@ export const Default: Story = {
   render: (args) => {
     return (
       <Accordion {...args}>
-       <BodyText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, quaerat saepe? Nobis obcaecati nesciunt blanditiis nam reprehenderit eum repellat. Ipsa porro incidunt modi. Adipisci nisi doloremque ex voluptatem laboriosam quisquam.</BodyText>
+       <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, quaerat saepe? Nobis obcaecati nesciunt blanditiis nam reprehenderit eum repellat. Ipsa porro incidunt modi. Adipisci nisi doloremque ex voluptatem laboriosam quisquam.</Text>
       </Accordion>
   )},
 }

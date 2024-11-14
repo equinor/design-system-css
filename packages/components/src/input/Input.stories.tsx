@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
-import { BodyText } from '../Typography'
+import { Text } from '../Typography'
 import { Icon } from '../icon'
 import { close, warning_outlined, search } from '@equinor/eds-icons'
 
@@ -27,7 +27,7 @@ export const Default: Story = {
     return (
       <div style={{display: 'flex', justifyContent: 'center', alignItems: 'start', gap: '16px'}}>
         <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-          <BodyText color='primary'>generated focus</BodyText>
+          <Text>generated focus</Text>
           <Input {...args} />
           <Input leftAdornments={<Icon icon={search} size="md" />} variant='error' />
           <Input variant='warning' />
@@ -35,7 +35,7 @@ export const Default: Story = {
 
         </div>
         <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-          <BodyText color='primary'>Original tokens (focused)</BodyText>
+          <Text>Original tokens (focused)</Text>
           <Input className='debug' {...args}  />
           <Input className='debug' variant='error' />
           <Input className='debug' variant='warning' />

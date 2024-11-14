@@ -1,6 +1,6 @@
 import './chip.css'
 import { Children as ReactChildren } from 'react'
-import { UIText } from '../'
+import { Text } from '../'
 
 type Props = {
   variant?: 'default' | 'info' | 'warning' | 'error' | 'success'
@@ -14,7 +14,7 @@ export const Chip = ({children, className, token, active, disabled, variant = 'd
   const isDisabled = disabled ? 'disabled' : ''
   const updatedChildren = ReactChildren.map(children, (child) => {
     if (typeof child === 'string' && child.trim().length > 0) {
-      return <UIText size='sm'>{child}</UIText>
+      return <Text variant='ui' size='sm'>{child}</Text>
     }
     return child
   })

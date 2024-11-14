@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
 import { Card } from './Card'
-import { BodyText, Icon, Button } from '../'
+import { Text, Icon, Button } from '../'
 import {add_circle_outlined} from '@equinor/eds-icons'
 
 const meta = {
@@ -27,15 +27,15 @@ export const Default: Story = {
       <>
         <Card {...args}>
           <div className="eds-card__content u-rich-text">
-            <BodyText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nisi eaque non, tenetur eos ut, vitae ipsum voluptate cum excepturi asperiores corrupti quibusdam, doloremque <strong>Multiline</strong> with inline icons <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> adipisci in eveniet nihil? Aliquid, tenetur.</BodyText>
-            <BodyText size='xl'>This is one line with <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> inline icons</BodyText>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nisi eaque non, tenetur eos ut, vitae ipsum voluptate cum excepturi asperiores corrupti quibusdam, doloremque <strong>Multiline</strong> with inline icons <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> adipisci in eveniet nihil? Aliquid, tenetur.</Text>
+            <Text size='xl'>This is one line with <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> inline icons</Text>
             <Button><Icon icon={add_circle_outlined} />A Button</Button>
           </div>
           </Card>
             <Card {...args} className="colors-from-ds">
             <div className="eds-card__content u-rich-text">
-              <BodyText>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nisi eaque non, tenetur eos ut, vitae ipsum voluptate cum excepturi asperiores corrupti quibusdam, doloremque <strong>Multiline</strong> with inline icons <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> adipisci in eveniet nihil? Aliquid, tenetur.</BodyText>
-              <BodyText size='xl'>This is one line with <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> inline icons</BodyText>
+              <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis nisi eaque non, tenetur eos ut, vitae ipsum voluptate cum excepturi asperiores corrupti quibusdam, doloremque <strong>Multiline</strong> with inline icons <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> adipisci in eveniet nihil? Aliquid, tenetur.</Text>
+              <Text size='xl'>This is one line with <Icon size='xs' icon={add_circle_outlined} /><Icon size='sm' icon={add_circle_outlined} /><Icon size='md' icon={add_circle_outlined} /><Icon size='lg' icon={add_circle_outlined} /><Icon size='xl' icon={add_circle_outlined} /> inline icons</Text>
               <Button><Icon icon={add_circle_outlined} />A Button</Button>
             </div>
             </Card>
