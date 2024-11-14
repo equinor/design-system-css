@@ -43,16 +43,16 @@ export const Typography = styled.p<StyleHeadingProps>`
       overflow: hidden;
       text-overflow: ellipsis;
     `}
-    ${$color &&
+    ${$monoSpacedNumbers &&
     css`
-      --_text-preset-color: ${$color};
+      font-variant-numeric: tabular-nums;
     `}
+    --_text-preset-color: ${$color};
     font-size: ${`var(--override-font-size, var(--eds-typography-${$type}-${$size}-font-size))`};
     font-family: ${`var(--eds-typography-${$type}-font-family)`};
     line-height: ${`var(--eds-typography-${$type}-${$size}-lineheight-${$lineHeight})`};
     font-weight: ${`var(--eds-typography-${$type}-${$size}-font-weight-${$fontWeight})`};
     letter-spacing: ${`var(--eds-typography-${$type}-${$size}-tracking-${$letterSpacing})`};
-    font-variant-numeric: ${$monoSpacedNumbers ? 'tabular-nums' : 'normal'};
     /*TODO: determine if --override-text-color/link-color is needed or if inherit covers all the bases. override overrides all, while inherit only applies when color prop is not set*/
     color: var(--override-text-color, var(--_text-preset-color));
     --_offset: calc(${$offset} * 1em);

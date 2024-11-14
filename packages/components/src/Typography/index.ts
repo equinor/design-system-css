@@ -1,5 +1,2 @@
-export * from './BodyText/BodyText'
-export * from './UIText/UIText'
-export * from './Heading/Heading'
 export * from './typography.types'
 export * from './Text/Text'
