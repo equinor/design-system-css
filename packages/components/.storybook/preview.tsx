@@ -2,7 +2,7 @@ import { DocsContainer } from '@storybook/blocks'
 import * as React from 'react'
 import '@equinor/eds-tokens/css/variables.css'
 import '../assets/colors-trimmed.css'
-import '../assets/designsystemet.css'
+import '../assets/dynamic-colors.css'
 import { Preview } from '@storybook/react'
 
 const DocsContainerWithWrapper = ({ children, context, ...props }) => {

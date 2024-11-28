@@ -1,0 +1,312 @@
+@property --accent-modifier {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --accent-9 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --neutral-modifier {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --neutral-9 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --success-modifier {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --success-9 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --info-modifier {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --info-9 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --warning-modifier {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --warning-9 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --error-modifier {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+@property --error-9 {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: transparent;
+}
+:root {
+  --accent-base: #007079; /*moss-green-1100*/
+  --neutral-light-base: #4a4a4a; /*neutral-1200*/
+  --neutral-dark-base: #435460; /*slate-grey-1100*/
+  --success-base: #3fa13d; /*success-green-900*/
+  --info-base: #0084c4; /*blue-sky-1000*/
+  --warning-base: #e57e00; /*orange-800*/
+  --error-base: #e20337; /*red-cold-900*/
+
+  /*calculate at what luminocity base modifier mix color switches from black to white*/
+  --y1: clamp(0, (y / 0.1 - 1) * -infinity, 1);
+  /*calculate on-base text color*/
+  --y2: clamp(0, (y / 0.36 - 1) * -infinity, 1);
+
+  /*lightness-values (based on designsystemet moss-green measured lightness values)*/
+  --l-1: 0.997;
+  --l-2: 0.965;
+  --l-3: 0.910;
+  --l-4: 0.857;
+  --l-5: 0.804;
+  --l-6: 0.788;
+  --l-7: 0.594;
+  --l-8: 0.413;
+  --l-12: 0.491;
+  --l-13: 0.289;
+  /*light relative color syntax*/
+  --light-1: var(--l-1) calc(sin(var(--l-1) * pi) * c) h;
+  --light-2: var(--l-2) calc(sin(var(--l-2) * pi) * c) h;
+  --light-3: var(--l-3) calc(sin(var(--l-3) * pi) * c) h;
+  --light-4: var(--l-4) calc(sin(var(--l-4) * pi) * c) h;
+  --light-5: var(--l-5) calc(sin(var(--l-5) * pi) * c) h;
+  --light-6: var(--l-6) calc(sin(var(--l-6) * pi) * c) h;
+  --light-7: var(--l-7) calc(sin(var(--l-7) * pi) * c) h;
+  --light-8: var(--l-8) calc(sin(var(--l-8) * pi) * c) h;
+  --light-12: var(--l-12) calc(sin(var(--l-12) * pi) * c) h;
+  --light-13: var(--l-13) calc(sin(var(--l-13) * pi) * c) h;
+  /*dark mode values*/
+  --ld-1: 0.218;
+  --ld-2: 0.253;
+  --ld-3: 0.304;
+  --ld-4: 0.356;
+  --ld-5: 0.407;
+  --ld-6: 0.433;
+  --ld-7: 0.534;
+  --ld-8: 0.796;
+  --ld-12: 0.706;
+  --ld-13: 0.910;
+   /*dark relative color syntax*/
+  --dark-1: var(--ld-1) calc(sin(var(--ld-1) * pi) * c) h;
+  --dark-2: var(--ld-2) calc(sin(var(--ld-2) * pi) * c) h;
+  --dark-3: var(--ld-3) calc(sin(var(--ld-3) * pi) * c) h;
+  --dark-4: var(--ld-4) calc(sin(var(--ld-4) * pi) * c) h;
+  --dark-5: var(--ld-5) calc(sin(var(--ld-5) * pi) * c) h;
+  --dark-6: var(--ld-6) calc(sin(var(--ld-6) * pi) * c) h;
+  --dark-7: var(--ld-7) calc(sin(var(--ld-7) * pi) * c) h;
+  --dark-8: var(--ld-8) calc(sin(var(--ld-8) * pi) * c) h;
+  --dark-9: clamp(0.3, 1 - l, 0.74) c h;
+  --dark-12: var(--ld-12) calc(sin(var(--ld-12) * pi) * c) h;
+  --dark-13: var(--ld-13) calc(sin(var(--ld-13) * pi) * c) h;
+
+/*how much to darken/lighten base color for hover and active*/
+  --base-hover-modifier: 15%;
+  --base-active-modifier: 25%;
+
+  --neutral-1: light-dark(oklch(from var(--neutral-light-base) var(--light-1)), oklch(from var(--neutral-dark-base) var(--dark-1)));
+  --neutral-2: light-dark(oklch(from var(--neutral-light-base) var(--light-2)), oklch(from var(--neutral-dark-base) var(--dark-2)));
+  --neutral-3: light-dark(oklch(from var(--neutral-light-base) var(--light-3)), oklch(from var(--neutral-dark-base) var(--dark-3)));
+  --neutral-4: light-dark(oklch(from var(--neutral-light-base) var(--light-4)), oklch(from var(--neutral-dark-base) var(--dark-4)));
+  --neutral-5: light-dark(oklch(from var(--neutral-light-base) var(--light-5)), oklch(from var(--neutral-dark-base) var(--dark-5)));
+  --neutral-6: light-dark(oklch(from var(--neutral-light-base) var(--light-6)), oklch(from var(--neutral-dark-base) var(--dark-6)));
+  --neutral-7: light-dark(oklch(from var(--neutral-light-base) var(--light-7)), oklch(from var(--neutral-dark-base) var(--dark-7)));
+  --neutral-8: light-dark(oklch(from var(--neutral-light-base) var(--light-8)), oklch(from var(--neutral-dark-base) var(--dark-8)));
+  --neutral-9: light-dark(var(--neutral-light-base), oklch(from var(--neutral-dark-base) var(--dark-9)));
+  --neutral-modifier: color(from var(--neutral-9) xyz-d65 var(--y1) var(--y1) var(--y1));
+  --neutral-10: color-mix(in oklab, var(--neutral-9), var(--neutral-modifier) var(--base-hover-modifier));
+  --neutral-11: color-mix(in oklab, var(--neutral-9), var(--neutral-modifier) var(--base-active-modifier));
+  --neutral-12: light-dark(oklch(from var(--neutral-light-base) var(--light-12)), oklch(from var(--neutral-dark-base) var(--dark-12)));
+  --neutral-13: light-dark(oklch(from var(--neutral-light-base) var(--light-13)), oklch(from var(--neutral-dark-base) var(--dark-13)));
+  --neutral-14: color(from var(--neutral-9) xyz-d65 var(--y2) var(--y2) var(--y2));
+
+  --accent-1: light-dark(oklch(from var(--accent-base) var(--light-1)), oklch(from var(--accent-base) var(--dark-1)));
+  --accent-2: light-dark(oklch(from var(--accent-base) var(--light-2)), oklch(from var(--accent-base) var(--dark-2)));
+  --accent-3: light-dark(oklch(from var(--accent-base) var(--light-3)), oklch(from var(--accent-base) var(--dark-3)));
+  --accent-4: light-dark(oklch(from var(--accent-base) var(--light-4)), oklch(from var(--accent-base) var(--dark-4)));
+  --accent-5: light-dark(oklch(from var(--accent-base) var(--light-5)), oklch(from var(--accent-base) var(--dark-5)));
+  --accent-6: light-dark(oklch(from var(--accent-base) var(--light-6)), oklch(from var(--accent-base) var(--dark-6)));
+  --accent-7: light-dark(oklch(from var(--accent-base) var(--light-7)), oklch(from var(--accent-base) var(--dark-7)));
+  --accent-8: light-dark(oklch(from var(--accent-base) var(--light-8)), oklch(from var(--accent-base) var(--dark-8)));
+  --accent-9: light-dark(var(--accent-base), oklch(from var(--accent-base) var(--dark-9)));
+  --accent-modifier: color(from var(--accent-9) xyz-d65 var(--y1) var(--y1) var(--y1));
+  --accent-10: color-mix(in oklab, var(--accent-9), var(--accent-modifier) var(--base-hover-modifier));
+  --accent-11: color-mix(in oklab, var(--accent-9), var(--accent-modifier) var(--base-active-modifier));
+  --accent-12: light-dark(oklch(from var(--accent-base) var(--light-12)), oklch(from var(--accent-base) var(--dark-12)));
+  --accent-13: light-dark(oklch(from var(--accent-base) var(--light-13)), oklch(from var(--accent-base) var(--dark-13)));
+  --accent-14: color(from var(--accent-9) xyz-d65 var(--y2) var(--y2) var(--y2));
+
+  --success-1: light-dark(oklch(from var(--success-base) var(--light-1)), oklch(from var(--success-base) var(--dark-1)));
+  --success-2: light-dark(oklch(from var(--success-base) var(--light-2)), oklch(from var(--success-base) var(--dark-2)));
+  --success-3: light-dark(oklch(from var(--success-base) var(--light-3)), oklch(from var(--success-base) var(--dark-3)));
+  --success-4: light-dark(oklch(from var(--success-base) var(--light-4)), oklch(from var(--success-base) var(--dark-4)));
+  --success-5: light-dark(oklch(from var(--success-base) var(--light-5)), oklch(from var(--success-base) var(--dark-5)));
+  --success-6: light-dark(oklch(from var(--success-base) var(--light-6)), oklch(from var(--success-base) var(--dark-6)));
+  --success-7: light-dark(oklch(from var(--success-base) var(--light-7)), oklch(from var(--success-base) var(--dark-7)));
+  --success-8: light-dark(oklch(from var(--success-base) var(--light-8)), oklch(from var(--success-base) var(--dark-8)));
+  --success-9: light-dark(var(--success-base), oklch(from var(--success-base) var(--dark-9)));
+  --success-modifier: color(from var(--success-9) xyz-d65 var(--y1) var(--y1) var(--y1));
+  --success-10: color-mix(in oklab, var(--success-9), var(--success-modifier) var(--base-hover-modifier));
+  --success-11: color-mix(in oklab, var(--success-9), var(--success-modifier) var(--base-active-modifier));
+  --success-12: light-dark(oklch(from var(--success-base) var(--light-12)), oklch(from var(--success-base) var(--dark-12)));
+  --success-13: light-dark(oklch(from var(--success-base) var(--light-13)), oklch(from var(--success-base) var(--dark-13)));
+  --success-14: color(from var(--success-9) xyz-d65 var(--y2) var(--y2) var(--y2));
+
+  --info-1: light-dark(oklch(from var(--info-base) var(--light-1)), oklch(from var(--info-base) var(--dark-1)));
+  --info-2: light-dark(oklch(from var(--info-base) var(--light-2)), oklch(from var(--info-base) var(--dark-2)));
+  --info-3: light-dark(oklch(from var(--info-base) var(--light-3)), oklch(from var(--info-base) var(--dark-3)));
+  --info-4: light-dark(oklch(from var(--info-base) var(--light-4)), oklch(from var(--info-base) var(--dark-4)));
+  --info-5: light-dark(oklch(from var(--info-base) var(--light-5)), oklch(from var(--info-base) var(--dark-5)));
+  --info-6: light-dark(oklch(from var(--info-base) var(--light-6)), oklch(from var(--info-base) var(--dark-6)));
+  --info-7: light-dark(oklch(from var(--info-base) var(--light-7)), oklch(from var(--info-base) var(--dark-7)));
+  --info-8: light-dark(oklch(from var(--info-base) var(--light-8)), oklch(from var(--info-base) var(--dark-8)));
+  --info-9: light-dark(var(--info-base), oklch(from var(--info-base) var(--dark-9)));
+  --info-modifier: color(from var(--info-9) xyz-d65 var(--y1) var(--y1) var(--y1));
+  --info-10: color-mix(in oklab, var(--info-9), var(--info-modifier) var(--base-hover-modifier));
+  --info-11: color-mix(in oklab, var(--info-9), var(--info-modifier) var(--base-active-modifier));
+  --info-12: light-dark(oklch(from var(--info-base) var(--light-12)), oklch(from var(--info-base) var(--dark-12)));
+  --info-13: light-dark(oklch(from var(--info-base) var(--light-13)), oklch(from var(--info-base) var(--dark-13)));
+  --info-14: color(from var(--info-9) xyz-d65 var(--y2) var(--y2) var(--y2));
+
+  --warning-1: light-dark(oklch(from var(--warning-base) var(--light-1)), oklch(from var(--warning-base) var(--dark-1)));
+  --warning-2: light-dark(oklch(from var(--warning-base) var(--light-2)), oklch(from var(--warning-base) var(--dark-2)));
+  --warning-3: light-dark(oklch(from var(--warning-base) var(--light-3)), oklch(from var(--warning-base) var(--dark-3)));
+  --warning-4: light-dark(oklch(from var(--warning-base) var(--light-4)), oklch(from var(--warning-base) var(--dark-4)));
+  --warning-5: light-dark(oklch(from var(--warning-base) var(--light-5)), oklch(from var(--warning-base) var(--dark-5)));
+  --warning-6: light-dark(oklch(from var(--warning-base) var(--light-6)), oklch(from var(--warning-base) var(--dark-6)));
+  --warning-7: light-dark(oklch(from var(--warning-base) var(--light-7)), oklch(from var(--warning-base) var(--dark-7)));
+  --warning-8: light-dark(oklch(from var(--warning-base) var(--light-8)), oklch(from var(--warning-base) var(--dark-8)));
+  --warning-9: light-dark(var(--warning-base), oklch(from var(--warning-base) var(--dark-9)));
+  --warning-modifier: color(from var(--warning-9) xyz-d65 var(--y1) var(--y1) var(--y1));
+  --warning-10: color-mix(in oklab, var(--warning-9), var(--warning-modifier) var(--base-hover-modifier));
+  --warning-11: color-mix(in oklab, var(--warning-9), var(--warning-modifier) var(--base-active-modifier));
+  --warning-12: light-dark(oklch(from var(--warning-base) var(--light-12)), oklch(from var(--warning-base) var(--dark-12)));
+  --warning-13: light-dark(oklch(from var(--warning-base) var(--light-13)), oklch(from var(--warning-base) var(--dark-13)));
+  --warning-14: color(from var(--warning-9) xyz-d65 var(--y2) var(--y2) var(--y2));
+
+  --error-1: light-dark(oklch(from var(--error-base) var(--light-1)), oklch(from var(--error-base) var(--dark-1)));
+  --error-2: light-dark(oklch(from var(--error-base) var(--light-2)), oklch(from var(--error-base) var(--dark-2)));
+  --error-3: light-dark(oklch(from var(--error-base) var(--light-3)), oklch(from var(--error-base) var(--dark-3)));
+  --error-4: light-dark(oklch(from var(--error-base) var(--light-4)), oklch(from var(--error-base) var(--dark-4)));
+  --error-5: light-dark(oklch(from var(--error-base) var(--light-5)), oklch(from var(--error-base) var(--dark-5)));
+  --error-6: light-dark(oklch(from var(--error-base) var(--light-6)), oklch(from var(--error-base) var(--dark-6)));
+  --error-7: light-dark(oklch(from var(--error-base) var(--light-7)), oklch(from var(--error-base) var(--dark-7)));
+  --error-8: light-dark(oklch(from var(--error-base) var(--light-8)), oklch(from var(--error-base) var(--dark-8)));
+  --error-9: light-dark(var(--error-base), oklch(from var(--error-base) var(--dark-9)));
+  --error-modifier: color(from var(--error-9) xyz-d65 var(--y1) var(--y1) var(--y1));
+  --error-10: color-mix(in oklab, var(--error-9), var(--error-modifier) var(--base-hover-modifier));
+  --error-11: color-mix(in oklab, var(--error-9), var(--error-modifier) var(--base-active-modifier));
+  --error-12: light-dark(oklch(from var(--error-base) var(--light-12)), oklch(from var(--error-base) var(--dark-12)));
+  --error-13: light-dark(oklch(from var(--error-base) var(--light-13)), oklch(from var(--error-base) var(--dark-13)));
+  --error-14: color(from var(--error-9) xyz-d65 var(--y2) var(--y2) var(--y2));
+
+  --eds-color-accent-background-default: var(--accent-1);
+  --eds-color-accent-background-subtle: var(--accent-2);
+  --eds-color-accent-surface-default: var(--accent-3);
+  --eds-color-accent-surface-hover: var(--accent-4);
+  --eds-color-accent-surface-active: var(--accent-5);
+  --eds-color-accent-border-subtle: var(--accent-6);
+  --eds-color-accent-border-default: var(--accent-7);
+  --eds-color-accent-border-strong: var(--accent-8);
+  --eds-color-accent-base-default: var(--accent-9);
+  --eds-color-accent-base-hover: var(--accent-10);
+  --eds-color-accent-base-active: var(--accent-11);
+  --eds-color-accent-text-subtle: var(--accent-12);
+  --eds-color-accent-text-default: var(--accent-13);
+  --eds-color-accent-contrast-default: var(--accent-14);
+
+  --eds-color-neutral-background-default: var(--neutral-1);
+  --eds-color-neutral-background-subtle: var(--neutral-2);
+  --eds-color-neutral-surface-default: var(--neutral-3);
+  --eds-color-neutral-surface-hover: var(--neutral-4);
+  --eds-color-neutral-surface-active: var(--neutral-5);
+  --eds-color-neutral-border-subtle: var(--neutral-6);
+  --eds-color-neutral-border-default: var(--neutral-7);
+  --eds-color-neutral-border-strong: var(--neutral-8);
+  --eds-color-neutral-base-default: var(--neutral-9);
+  --eds-color-neutral-base-hover: var(--neutral-10);
+  --eds-color-neutral-base-active: var(--neutral-11);
+  --eds-color-neutral-text-subtle: var(--neutral-12);
+  --eds-color-neutral-text-default: var(--neutral-13);
+  --eds-color-neutral-contrast-default: var(--neutral-14);
+
+  --eds-color-success-background-default: var(--success-1);
+  --eds-color-success-background-subtle: var(--success-2);
+  --eds-color-success-surface-default: var(--success-3);
+  --eds-color-success-surface-hover: var(--success-4);
+  --eds-color-success-surface-active: var(--success-5);
+  --eds-color-success-border-subtle: var(--success-6);
+  --eds-color-success-border-default: var(--success-7);
+  --eds-color-success-border-strong: var(--success-8);
+  --eds-color-success-base-default: var(--success-9);
+  --eds-color-success-base-hover: var(--success-10);
+  --eds-color-success-base-active: var(--success-11);
+  --eds-color-success-text-subtle: var(--success-12);
+  --eds-color-success-text-default: var(--success-13);
+  --eds-color-success-contrast-default: var(--success-14);
+
+  --eds-color-info-background-default: var(--info-1);
+  --eds-color-info-background-subtle: var(--info-2);
+  --eds-color-info-surface-default: var(--info-3);
+  --eds-color-info-surface-hover: var(--info-4);
+  --eds-color-info-surface-active: var(--info-5);
+  --eds-color-info-border-subtle: var(--info-6);
+  --eds-color-info-border-default: var(--info-7);
+  --eds-color-info-border-strong: var(--info-8);
+  --eds-color-info-base-default: var(--info-9);
+  --eds-color-info-base-hover: var(--info-10);
+  --eds-color-info-base-active: var(--info-11);
+  --eds-color-info-text-subtle: var(--info-12);
+  --eds-color-info-text-default: var(--info-13);
+  --eds-color-info-contrast-default: var(--info-14);
+
+  --eds-color-warning-background-default: var(--warning-1);
+  --eds-color-warning-background-subtle: var(--warning-2);
+  --eds-color-warning-surface-default: var(--warning-3);
+  --eds-color-warning-surface-hover: var(--warning-4);
+  --eds-color-warning-surface-active: var(--warning-5);
+  --eds-color-warning-border-subtle: var(--warning-6);
+  --eds-color-warning-border-default: var(--warning-7);
+  --eds-color-warning-border-strong: var(--warning-8);
+  --eds-color-warning-base-default: var(--warning-9);
+  --eds-color-warning-base-hover: var(--warning-10);
+  --eds-color-warning-base-active: var(--warning-11);
+  --eds-color-warning-text-subtle: var(--warning-12);
+  --eds-color-warning-text-default: var(--warning-13);
+  --eds-color-warning-contrast-default: var(--warning-14);
+
+  --eds-color-error-background-default: var(--error-1);
+  --eds-color-error-background-subtle: var(--error-2);
+  --eds-color-error-surface-default: var(--error-3);
+  --eds-color-error-surface-hover: var(--error-4);
+  --eds-color-error-surface-active: var(--error-5);
+  --eds-color-error-border-subtle: var(--error-6);
+  --eds-color-error-border-default: var(--error-7);
+  --eds-color-error-border-strong: var(--error-8);
+  --eds-color-error-base-default: var(--error-9);
+  --eds-color-error-base-hover: var(--error-10);
+  --eds-color-error-base-active: var(--error-11);
+  --eds-color-error-text-subtle: var(--error-12);
+  --eds-color-error-text-default: var(--error-13);
+  --eds-color-error-contrast-default: var(--error-14);
+
+}
+
