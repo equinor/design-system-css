@@ -49,12 +49,12 @@
 	inherits: true;
 	initial-value: transparent;
 }
-@property --error-modifier {
+@property --danger-modifier {
 	syntax: "<color>";
 	inherits: true;
 	initial-value: transparent;
 }
-@property --error-9 {
+@property --danger-9 {
 	syntax: "<color>";
 	inherits: true;
 	initial-value: transparent;
@@ -66,7 +66,7 @@
   --success-base: #3fa13d; /*success-green-900*/
   --info-base: #0084c4; /*blue-sky-1000*/
   --warning-base: #e57e00; /*orange-800*/
-  --error-base: #e20337; /*red-cold-900*/
+  --danger-base: #e20337; /*red-cold-900*/
 
   /*calculate at what luminocity base modifier mix color switches from black to white*/
   --y1: clamp(0, (y / 0.1 - 1) * -infinity, 1);
@@ -203,21 +203,21 @@
   --warning-13: light-dark(oklch(from var(--warning-base) var(--light-13)), oklch(from var(--warning-base) var(--dark-13)));
   --warning-14: color(from var(--warning-9) xyz-d65 var(--y2) var(--y2) var(--y2));
 
-  --error-1: light-dark(oklch(from var(--error-base) var(--light-1)), oklch(from var(--error-base) var(--dark-1)));
-  --error-2: light-dark(oklch(from var(--error-base) var(--light-2)), oklch(from var(--error-base) var(--dark-2)));
-  --error-3: light-dark(oklch(from var(--error-base) var(--light-3)), oklch(from var(--error-base) var(--dark-3)));
-  --error-4: light-dark(oklch(from var(--error-base) var(--light-4)), oklch(from var(--error-base) var(--dark-4)));
-  --error-5: light-dark(oklch(from var(--error-base) var(--light-5)), oklch(from var(--error-base) var(--dark-5)));
-  --error-6: light-dark(oklch(from var(--error-base) var(--light-6)), oklch(from var(--error-base) var(--dark-6)));
-  --error-7: light-dark(oklch(from var(--error-base) var(--light-7)), oklch(from var(--error-base) var(--dark-7)));
-  --error-8: light-dark(oklch(from var(--error-base) var(--light-8)), oklch(from var(--error-base) var(--dark-8)));
-  --error-9: light-dark(var(--error-base), oklch(from var(--error-base) var(--dark-9)));
-  --error-modifier: color(from var(--error-9) xyz-d65 var(--y1) var(--y1) var(--y1));
-  --error-10: color-mix(in oklab, var(--error-9), var(--error-modifier) var(--base-hover-modifier));
-  --error-11: color-mix(in oklab, var(--error-9), var(--error-modifier) var(--base-active-modifier));
-  --error-12: light-dark(oklch(from var(--error-base) var(--light-12)), oklch(from var(--error-base) var(--dark-12)));
-  --error-13: light-dark(oklch(from var(--error-base) var(--light-13)), oklch(from var(--error-base) var(--dark-13)));
-  --error-14: color(from var(--error-9) xyz-d65 var(--y2) var(--y2) var(--y2));
+  --danger-1: light-dark(oklch(from var(--danger-base) var(--light-1)), oklch(from var(--danger-base) var(--dark-1)));
+  --danger-2: light-dark(oklch(from var(--danger-base) var(--light-2)), oklch(from var(--danger-base) var(--dark-2)));
+  --danger-3: light-dark(oklch(from var(--danger-base) var(--light-3)), oklch(from var(--danger-base) var(--dark-3)));
+  --danger-4: light-dark(oklch(from var(--danger-base) var(--light-4)), oklch(from var(--danger-base) var(--dark-4)));
+  --danger-5: light-dark(oklch(from var(--danger-base) var(--light-5)), oklch(from var(--danger-base) var(--dark-5)));
+  --danger-6: light-dark(oklch(from var(--danger-base) var(--light-6)), oklch(from var(--danger-base) var(--dark-6)));
+  --danger-7: light-dark(oklch(from var(--danger-base) var(--light-7)), oklch(from var(--danger-base) var(--dark-7)));
+  --danger-8: light-dark(oklch(from var(--danger-base) var(--light-8)), oklch(from var(--danger-base) var(--dark-8)));
+  --danger-9: light-dark(var(--danger-base), oklch(from var(--danger-base) var(--dark-9)));
+  --danger-modifier: color(from var(--danger-9) xyz-d65 var(--y1) var(--y1) var(--y1));
+  --danger-10: color-mix(in oklab, var(--danger-9), var(--danger-modifier) var(--base-hover-modifier));
+  --danger-11: color-mix(in oklab, var(--danger-9), var(--danger-modifier) var(--base-active-modifier));
+  --danger-12: light-dark(oklch(from var(--danger-base) var(--light-12)), oklch(from var(--danger-base) var(--dark-12)));
+  --danger-13: light-dark(oklch(from var(--danger-base) var(--light-13)), oklch(from var(--danger-base) var(--dark-13)));
+  --danger-14: color(from var(--danger-9) xyz-d65 var(--y2) var(--y2) var(--y2));
 
   --eds-color-accent-background-default: var(--accent-1);
   --eds-color-accent-background-subtle: var(--accent-2);
@@ -294,20 +294,20 @@
   --eds-color-warning-text-default: var(--warning-13);
   --eds-color-warning-contrast-default: var(--warning-14);
 
-  --eds-color-error-background-default: var(--error-1);
-  --eds-color-error-background-subtle: var(--error-2);
-  --eds-color-error-surface-default: var(--error-3);
-  --eds-color-error-surface-hover: var(--error-4);
-  --eds-color-error-surface-active: var(--error-5);
-  --eds-color-error-border-subtle: var(--error-6);
-  --eds-color-error-border-default: var(--error-7);
-  --eds-color-error-border-strong: var(--error-8);
-  --eds-color-error-base-default: var(--error-9);
-  --eds-color-error-base-hover: var(--error-10);
-  --eds-color-error-base-active: var(--error-11);
-  --eds-color-error-text-subtle: var(--error-12);
-  --eds-color-error-text-default: var(--error-13);
-  --eds-color-error-contrast-default: var(--error-14);
+  --eds-color-danger-background-default: var(--danger-1);
+  --eds-color-danger-background-subtle: var(--danger-2);
+  --eds-color-danger-surface-default: var(--danger-3);
+  --eds-color-danger-surface-hover: var(--danger-4);
+  --eds-color-danger-surface-active: var(--danger-5);
+  --eds-color-danger-border-subtle: var(--danger-6);
+  --eds-color-danger-border-default: var(--danger-7);
+  --eds-color-danger-border-strong: var(--danger-8);
+  --eds-color-danger-base-default: var(--danger-9);
+  --eds-color-danger-base-hover: var(--danger-10);
+  --eds-color-danger-base-active: var(--danger-11);
+  --eds-color-danger-text-subtle: var(--danger-12);
+  --eds-color-danger-text-default: var(--danger-13);
+  --eds-color-danger-contrast-default: var(--danger-14);
 
 }
 
