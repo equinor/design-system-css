@@ -104,6 +104,12 @@
       --_outline-color: transparent;
       color: var(--eds-input-color-text-disabled);
     }
+
+    &.colors-from-ds {
+      box-shadow: 0 1px 0 0 var(--eds-color-neutral-border-default);
+      background-color: var(--eds-color-neutral-background-default);
+      color: var(--eds-color-neutral-text-default);
+    }
   }
 
 }

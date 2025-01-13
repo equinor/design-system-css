@@ -1,3 +1,9 @@
+
+@layer base {
+  .warning{
+    background-color: red;
+  }
+}
 @layer eds.card{
   :root {
     --eds-color-message-surface-standard-info: light-dark(#d5eaf4, #243746);
@@ -102,3 +108,4 @@
     }
   }
 }
+
