@@ -1,49 +1,50 @@
-.eds-checkbox {
-  display: inline-grid;
-  grid: [input] 1fr / [input] 1fr;
-  position: relative;
-  isolation: isolate;
-  padding-inline: var(--eds-spacing-inset-sm-inline);
-  padding-block: var(--eds-spacing-inset-sm-stack-squared);
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-  }
-  &:hover::before {
-    background-color: var(--eds-color-accent-surface-default);
-  }
-  > svg {
-    grid-area: input;
-    z-index: 1;
-    pointer-events: none;
-    fill: var(--eds-color-accent-base-default);
-  }
-  > input {
-    appearance: none;
-    width: 100%;
-    height: 100%;
-    margin: 0px;
-    grid-area: input;
-    scale: 2;
-    cursor: pointer;
-    &:not(:checked) ~ svg path[name='checked'] {
-      display: none;
+@layer eds.checkbox {
+  .eds-checkbox {
+    display: inline-grid;
+    grid: [input] 1fr / [input] 1fr;
+    position: relative;
+    isolation: isolate;
+    padding-inline: var(--eds-spacing-inset-sm-inline);
+    padding-block: var(--eds-spacing-inset-sm-stack-squared);
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 100%;
     }
-    &:not(:checked) ~ svg path[name='not-checked'] {
-      display: inline;
+    &:hover::before {
+      background-color: var(--eds-color-accent-surface-default);
     }
-    &:checked ~ svg path[name='not-checked'] {
-      display: none;
+    > svg {
+      grid-area: input;
+      z-index: 1;
+      pointer-events: none;
+      fill: var(--eds-color-accent-base-default);
     }
-    &:checked ~ svg path[name='checked'] {
-      display: inline;
+    > input {
+      appearance: none;
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      grid-area: input;
+      scale: 2;
+      cursor: pointer;
+      &:not(:checked) ~ svg path[name='checked'] {
+        display: none;
+      }
+      &:not(:checked) ~ svg path[name='not-checked'] {
+        display: inline;
+      }
+      &:checked ~ svg path[name='not-checked'] {
+        display: none;
+      }
+      &:checked ~ svg path[name='checked'] {
+        display: inline;
+      }
     }
   }
-
 }
