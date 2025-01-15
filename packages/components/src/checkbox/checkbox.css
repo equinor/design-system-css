@@ -16,12 +16,13 @@
     border-radius: 100%;
   }
   &:hover::before {
-    background-color: rgb(0 0 0 / .2);
+    background-color: var(--eds-color-accent-surface-default);
   }
   > svg {
     grid-area: input;
     z-index: 1;
     pointer-events: none;
+    fill: var(--eds-color-accent-base-default);
   }
   > input {
     appearance: none;
@@ -44,4 +45,5 @@
       display: inline;
     }
   }
+
 }

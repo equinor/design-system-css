@@ -4,7 +4,7 @@ import { checkbox, checkbox_outline } from '@equinor/eds-icons'
 type CheckboxProps = {
   label?: string
 } & React.HTMLAttributes<HTMLInputElement>
-export const Checkbox = ({className, label, ...rest }: CheckboxProps) => {
+export const Checkbox = ({className, ...rest }: CheckboxProps) => {
   return (
     <span className={['eds-checkbox', className].join(' ')}>
       <input type='checkbox' {...rest} />
