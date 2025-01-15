@@ -1,0 +1,18 @@
+@layer eds.banner {
+  .eds-banner {
+    display: flex;
+    align-items: center;
+    gap: 0.625em;
+    padding-inline: var(--eds-spacing-inset-md-inline);
+    padding-block: var(--eds-spacing-inset-md-stack-squared);
+    background-color: var(--eds-color-neutral-background-default);
+    > svg {
+      flex-shrink: 0;
+      /* remove height */
+      margin-block: -0.5em;
+      /* make icon flush with left padding */
+      margin-inline-start: -0.3em;
+    }
+  }
+
+}
