@@ -1,0 +1,29 @@
+@layer eds.snackbar {
+  .eds-snackbar {
+    &:not(:popover-open) {
+      display: none;
+    }
+    border: 0;
+    inset: unset;
+    bottom: 64px;
+    left: 50%;
+    translate: -50%;
+    display: flex;
+    align-items: center;
+    gap: var(--eds-spacing-inline-md);
+    padding-inline: var(--eds-spacing-inset-md-inline);
+    padding-block: var(--eds-spacing-inset-md-stack-squished);
+    background-color: var(--eds-color-neutral-text-default);
+    color: var(--eds-color-neutral-background-default);
+    --override-text-color: var(--eds-color-neutral-background-default);
+    fill: var(--eds-color-neutral-background-default);
+    > svg {
+      flex-shrink: 0;
+      /* remove height */
+      margin-block: -0.5em;
+      /* make icon flush with left padding */
+      margin-inline-start: -0.3em;
+    }
+  }
+
+}
