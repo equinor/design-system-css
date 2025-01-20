@@ -3,7 +3,6 @@ import { useState } from 'react'
 
 import { Dialog } from './Dialog'
 import { Text, Icon, Button } from '../'
-import {close} from '@equinor/eds-icons'
 
 const meta = {
   title: 'Feedback/Dialog',
