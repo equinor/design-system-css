@@ -1,6 +1,6 @@
 @layer eds.table {
   :root {
-    /*modified: removed "on-level-1/2/3" and put diff in data-level selectors*/
+    /*modified Bente/Maja tokens: removed "on-level-1/2/3" and put diff in data-level selectors*/
     --eds-table-cell-color-message-surface-error: light-dark(#ffd2d1, #ff666b47);
     --eds-table-cell-color-interactive-text-initial: light-dark(#3d3d3d, #d6d9dc);
     --eds-table-cell-color-interactive-text-hover: light-dark(#1f1f1f, #e9ebed);
@@ -84,18 +84,18 @@
   }
   .eds-table {
     border-spacing: 0;
+    font-family: var(--eds-typography-ui-body-font-family);
     caption {
       caption-side: top;
-      margin-bottom: 16px;
+      margin-bottom: var(--eds-spacing-stack-md);
     }
     th {
-      height: 48px;
       box-sizing: border-box;
-      padding-inline: 16px;
-      padding-block: 0;
-      font-size: 0.875rem;
-      font-weight: 700;
-      line-height: 1.429em;
+      padding-inline: var(--eds-spacing-inset-xs-inline);
+      padding-block: var(--eds-spacing-inset-xs-stack-squared);
+      font-size: var(--eds-typography-ui-body-md-font-size);
+      line-height: var(--eds-typography-ui-body-md-line-height-default);
+      font-weight: var(--eds-typography-ui-body-md-font-weight-bolder);
       text-align: left;
       > div {
         display: flex;
@@ -104,13 +104,12 @@
     }
     tbody {
       td {
-        height: 48px;
         box-sizing: border-box;
-        padding-inline: 16px;
-        padding-block: 0;
-        font-size:  0.875rem;
-        font-weight: 500;
-        line-height: 1.429em;
+        padding-inline: var(--eds-spacing-inset-xs-inline);
+        padding-block: var(--eds-spacing-inset-xs-stack-squared);
+        font-size: var(--eds-typography-ui-body-md-font-size);
+        line-height: var(--eds-typography-ui-body-md-line-height-default);
+        font-weight: var(--eds-typography-ui-body-md-font-weight-bolder);
         text-align: left;
       }
     }
