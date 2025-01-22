@@ -94,7 +94,7 @@
       padding-inline: var(--eds-spacing-inset-xs-inline);
       padding-block: var(--eds-spacing-inset-xs-stack-squared);
       font-size: var(--eds-typography-ui-body-md-font-size);
-      line-height: var(--eds-typography-ui-body-md-line-height-default);
+      line-height: var(--eds-typography-ui-body-md-lineheight-default);
       font-weight: var(--eds-typography-ui-body-md-font-weight-bolder);
       text-align: left;
       > div {
@@ -108,7 +108,7 @@
         padding-inline: var(--eds-spacing-inset-xs-inline);
         padding-block: var(--eds-spacing-inset-xs-stack-squared);
         font-size: var(--eds-typography-ui-body-md-font-size);
-        line-height: var(--eds-typography-ui-body-md-line-height-default);
+        line-height: var(--eds-typography-ui-body-md-lineheight-default);
         font-weight: var(--eds-typography-ui-body-md-font-weight-normal);
         text-align: left;
       }
