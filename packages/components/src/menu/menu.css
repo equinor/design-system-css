@@ -13,7 +13,8 @@
     flex-direction: column;
     border-radius: var(--eds-spacing-border-radius-rounded);
     overflow: clip;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2),0 4px 5px rgba(0, 0, 0, 0.12),0 2px 4px rgba(0, 0, 0, 0.14);
+    --_shadow: light-dark(black, white);
+    box-shadow: 0 1px 10px rgba(from var(--_shadow) r g b / 0.2),0 4px 5px rgba(from var(--_shadow) r g b / 0.12),0 2px 4px rgba(from var(--_shadow) r g b / 0.14);
     &:not(:popover-open) {
       display: none;
     }
@@ -26,7 +27,7 @@
       position: relative;
       text-decoration: none;
       &:hover{
-        background-color: var(--eds-color-neutral-surface-default);
+        background-color: var(--eds-color-neutral-surface-hover);
       }
       &.active {
         background-color: var(--eds-color-accent-surface-default);
