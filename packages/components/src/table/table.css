@@ -101,6 +101,13 @@
         display: flex;
         align-items: center;
       }
+      color: var(--eds-color-neutral-text-default);
+      border-bottom: 2px solid var(--eds-color-neutral-border-default);
+      background-color: var(--eds-color-neutral-surface-default);
+      &:hover {
+        border-color: var(--eds-color-neutral-border-default);
+        background-color: var(--eds-color-neutral-surface-hover);
+      }
     }
     tbody {
       td {
@@ -111,9 +118,30 @@
         line-height: var(--eds-typography-ui-body-md-lineheight-default);
         font-weight: var(--eds-typography-ui-body-md-font-weight-normal);
         text-align: left;
+        color: inherit;
+        border-bottom: inherit;
+      }
+      tr {
+        color: var(--eds-color-neutral-text-default);
+        /* border-bottom: 2px solid var(--eds-color-neutral-border-default); */
+        background-color: var(--eds-color-neutral-background-default);
+        &:hover {
+          /* border-color: var(--eds-color-neutral-border-default); */
+          background-color: var(--eds-color-neutral-surface-default);
+        }
+      }
+      tr.active {
+        background-color: var(--eds-color-accent-surface-default);
+        /* color: var(--eds-table-cell-color-interactive-text-active); */
+        /* border-color: var(--eds-table-cell-color-interactive-border-active); */
+        &:hover {
+          background-color: var(--eds-color-accent-surface-hover);
+         /*  color: var(--eds-table-cell-color-interactive-text-active-hover);
+          border-color: var(--eds-table-cell-color-interactive-border-active-hover); */
+        }
       }
     }
-    &.colors-from-tokens {
+    [data-color-background="bente"] & {
       th {
         color: var(--eds-table-header-color-interactive-text-initial);
         border-bottom: 2px solid var(--eds-table-header-color-interactive-border-initial);
@@ -144,10 +172,6 @@
             color: var(--eds-table-cell-color-interactive-text-active-hover);
             border-color: var(--eds-table-cell-color-interactive-border-active-hover);
           }
-        }
-        td {
-          color: inherit;
-          border-bottom: inherit;
         }
       }
     }
