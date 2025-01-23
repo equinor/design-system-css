@@ -84,7 +84,7 @@
       }
       &:hover {
         /*creating a transparent color from base here for now*/
-        background-color: rgb(from var(--eds-color-accent-base-default) r g b / 0.2);
+        background-color: light-dark(rgb(from var(--eds-color-accent-base-default) r g b / 0.2), rgb(from var(--eds-color-accent-base-default) r g b / 0.3));
       }
     }
     &.tertiary {
