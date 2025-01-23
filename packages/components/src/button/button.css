@@ -1,8 +1,9 @@
 @layer eds.button {
   .eds-button {
     position: relative;
-    color: canvasText;
-    background-color: canvas;
+    color: var(--eds-color-accent-contrast-default);
+    --override-text-color: var(--eds-color-accent-contrast-default);
+    background-color: var(--eds-color-accent-base-default);
     border: 0;
     border-radius: var(--eds-spacing-border-radius-rounded);
     display: grid;
@@ -23,14 +24,16 @@
     cursor: pointer;
     /*this overrides font size in the typography component*/
     --override-font-size: var(--_button-font-size);
+    --_outline-color: var(--eds-color-accent-base-default);
     &::after {
       content: '';
       position: absolute;
       inset: 0;
-      outline: var(--eds-sizing-stroke-thin) solid canvasText;
+      outline: var(--eds-sizing-stroke-thin) solid var(--_outline-color);
       outline-offset: calc(var(--eds-sizing-stroke-thin) * -1);
       border-radius: inherit;
     }
+
     &.size-xs {
       --_button-font-size: var(--eds-typography-ui-body-xs-font-size);
     }
@@ -62,11 +65,30 @@
       --_button-font-size: var(--eds-typography-ui-body-6xl-font-size);
     }
     > svg {
-      fill: canvasText;
+      fill: var(--eds-color-accent-contrast-default);
       /*The padding around a symmetrical icon is roughly 20% (16px path inside 24px viewbox)*/
       margin-inline: -0.20em;
        /*make the virtual height of the icon same as text height*/
       margin-block: calc(-0.5em + var(--_button-text-height));
+    }
+    &:hover{
+      background-color: var(--eds-color-accent-base-hover);
+    }
+
+    &:where(.secondary, .tertiary) {
+      background-color: transparent;
+      color: var(--eds-color-accent-text-default);
+      --override-text-color: var(--eds-color-accent-text-default);
+      > svg {
+        fill: var(--eds-color-accent-text-default);
+      }
+      &:hover {
+        /*creating a transparent color from base here for now*/
+        background-color: rgb(from var(--eds-color-accent-base-default) r g b / 0.2);
+      }
+    }
+    &.tertiary {
+      --_outline-color: transparent;
     }
   }
   [data-icon] {

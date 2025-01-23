@@ -3,10 +3,10 @@ import { Children as ReactChildren, isValidElement, ReactElement, cloneElement }
 import { Text, TypographySize, Icon } from '../'
 
 type ButtonProps = {
-  variant?: "error" | "warning" | "success"
+  variant?: "primary" | "secondary" | "tertiary"
   size?: TypographySize
 } & React.HTMLAttributes<HTMLButtonElement>
-export const Button = ({ children, variant, size = 'md', className, ...rest }: ButtonProps) => {
+export const Button = ({ children, variant = 'primary', size = 'md', className, ...rest }: ButtonProps) => {
   const sizeClass = `size-${size}`
   const updatedChildren = ReactChildren.map(children, (child) => {
     if (typeof child === 'string' && child.trim().length > 0) {
@@ -20,5 +20,5 @@ export const Button = ({ children, variant, size = 'md', className, ...rest }: B
     return child
   })
   return (
-  <button className={['eds-button', sizeClass, className].join(' ')} {...rest}>{updatedChildren}</button>
+  <button className={['eds-button', sizeClass, variant, className].join(' ')} {...rest}>{updatedChildren}</button>
 )}
