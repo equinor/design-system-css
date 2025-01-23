@@ -30,7 +30,7 @@ export const Default: Story = {
         <Snackbar {...args} id="s1" >
           <Icon icon={alarm}></Icon>
           <Text>Im a snackbar!</Text>
-          <Button style={{marginLeft: 'auto', backgroundColor: 'canvasText'}}>Button</Button>
+          <Button style={{marginLeft: 'auto'}}>Button</Button>
         </Snackbar>
       </>
   )},
