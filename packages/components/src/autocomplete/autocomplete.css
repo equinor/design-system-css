@@ -1,6 +1,6 @@
 @layer eds.autocomplete {
   .eds-autocomplete__input-icon {
-    fill: var(--eds-input-color-icon-initial);
+    fill: var(--eds-color-neutral-text-default);
   }
   .eds-autocomplete__options {
     inset: auto;
@@ -20,9 +20,9 @@
         /*todo: find correct paddings*/
         padding-block: var(--eds-spacing-inset-lg-stack-stretched);
         padding-inline: var(--eds-spacing-inset-lg-inline);
-        background-color: white;
+        background-color: light-dark(white, var(--eds-color-neutral-surface-default));
         &:hover {
-          background-color: rgb(218, 218, 218);
+          background-color: var(--eds-color-neutral-surface-hover);
         }
       }
     }
