@@ -35,7 +35,7 @@ export const Dialog = ({children, className, open, onClose, token, ...rest }: Pr
     <div className="eds-dialog__inner">
       <div className="eds-dialog__header">
         <Text variant='body'>Dialog heading</Text>
-        <Button data-icon onClick={()=> onClose && onClose()}><Icon icon={close} /></Button>
+        <Button variant="tertiary" data-icon onClick={()=> onClose && onClose()}><Icon icon={close} /></Button>
       </div>
       <div className="eds-dialog__content">
         {children}

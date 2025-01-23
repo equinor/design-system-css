@@ -7,15 +7,15 @@
   }
 }
 .eds-dialog__inner {
-  background-color: canvas;
+  background-color: var(--eds-color-neutral-background-default);
   border-radius: var(--eds-spacing-border-radius-rounded);
-  border: 1px solid canvasText;
+  border: 1px solid var(--eds-color-neutral-border-strong);
 }
 .eds-dialog__header {
 
   padding-inline: var(--eds-spacing-inset-md-inline);
   padding-block: var(--eds-spacing-inset-md-stack-squared);
-  border-bottom: 1px solid canvasText;
+  border-bottom: 1px solid var(--eds-color-neutral-border-default);
   display: flex;
   justify-content: space-between;
   align-items: center;

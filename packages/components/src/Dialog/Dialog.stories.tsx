@@ -32,7 +32,7 @@ export const Default: Story = {
         <Text variant="body">Are you sure you want to <br /> delete this item?</Text>
         <div className="eds-dialog__actions">
           <Button onClick={()=>setOpen(false)}>Delete</Button>
-          <Button onClick={()=>setOpen(false)}>Cancel</Button>
+          <Button variant="secondary" onClick={()=>setOpen(false)}>Cancel</Button>
         </div>
       </Dialog>
       </>
