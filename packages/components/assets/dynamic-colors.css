@@ -119,6 +119,31 @@
   --dark-12: var(--ld-12) calc(sin(var(--ld-12) * pi) * c) h;
   --dark-13: var(--ld-13) calc(sin(var(--ld-13) * pi) * c) h;
 
+  &:has([data-lightness="radix"]) {
+    /*lightness-values taken from radix measured l-values*/
+    --l-1: 0.993;
+    --l-2: 0.982;
+    --l-3: 0.960;
+    --l-4: 0.935;
+    --l-5: 0.901;
+    --l-6: 0.859;
+    --l-7: 0.801;
+    --l-8: 0.725;
+    --l-12: 0.517;
+    --l-13: 0.349;
+    /*dark mode values*/
+    --ld-1: 0.186;
+    --ld-2: 0.214;
+    --ld-3: 0.272;
+    --ld-4: 0.322;
+    --ld-5: 0.367;
+    --ld-6: 0.417;
+    --ld-7: 0.478;
+    --ld-8: 0.554;
+    --ld-12: 0.786;
+    --ld-13: 0.907;
+    }
+
 /*how much to darken/lighten base color for hover and active*/
   --base-hover-modifier: 15%;
   --base-active-modifier: 25%;

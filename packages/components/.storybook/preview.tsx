@@ -11,6 +11,7 @@ const DocsContainerWithWrapper = ({ children, context, ...props }) => {
       data-density={context.store.userGlobals.globals.density}
       data-color-scheme={context.store.userGlobals.globals.theme}
       data-color-background={context.store.userGlobals.globals.background}
+      data-lightness={context.store.userGlobals.globals.lightness}
     >
       <DocsContainer context={context} {...props}>
         {children}
@@ -65,12 +66,22 @@ const preview: Preview = {
       },
     },
     background: {
-      description: 'Story background color source',
+      description: 'Story color source',
       defaultValue: 'bente',
       toolbar: {
-        title: 'background',
+        title: 'color source',
         icon: 'browser',
         items: ['bente', 'designsystemet'],
+        dynamicTitle: true,
+      },
+    },
+    lightness: {
+      description: 'lightness source',
+      defaultValue: 'designsystemet',
+      toolbar: {
+        title: 'lightness source',
+        icon: 'circlehollow',
+        items: ['radix', 'designsystemet'],
         dynamicTitle: true,
       },
     },
