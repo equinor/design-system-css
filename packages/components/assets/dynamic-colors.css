@@ -80,10 +80,10 @@
   --l-4: 0.857;
   --l-5: 0.804;
   --l-6: 0.788;
-  --l-7: 0.594;
-  --l-8: 0.413;
-  --l-12: 0.491;
-  --l-13: 0.289;
+  --l-7: 0.584;
+  --l-8: 0.482;
+  --l-12: 0.390;
+  --l-13: 0.237;
   /*light relative color syntax*/
   --light-1: var(--l-1) calc(sin(var(--l-1) * pi) * c) h;
   --light-2: var(--l-2) calc(sin(var(--l-2) * pi) * c) h;
@@ -102,10 +102,10 @@
   --ld-4: 0.356;
   --ld-5: 0.407;
   --ld-6: 0.433;
-  --ld-7: 0.534;
-  --ld-8: 0.796;
-  --ld-12: 0.706;
-  --ld-13: 0.910;
+  --ld-7: 0.574;
+  --ld-8: 0.700;
+  --ld-12: 0.821;
+  --ld-13: 0.947;
    /*dark relative color syntax*/
   --dark-1: var(--ld-1) calc(sin(var(--ld-1) * pi) * c) h;
   --dark-2: var(--ld-2) calc(sin(var(--ld-2) * pi) * c) h;
