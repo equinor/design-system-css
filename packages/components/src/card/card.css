@@ -19,79 +19,74 @@
   }
   .eds-card {
     width: 100%;
-    --_card-text-color: black;
-    --_card-background-color: white;
-    --_mix-ratio: 10%;
-    background-color: var(--_card-background-color);
     border: 1px solid transparent;
     border-radius: var(--eds-spacing-border-radius-rounded);
-    color: var(--_card-text-color);
-   /*  --override-text-color: var(--_card-text-color); */
-    &.elevation-raised {
-      --_mix-ratio: 7%;
-    }
-    &:not(.default) {
-      --_card-background-color: color-mix(in oklab, var(--_card-text-color) var(--_mix-ratio), white);
-    }
+    background-color: light-dark(white, var(--eds-color-neutral-surface-default));
+    color: var(--eds-color-neutral-text-default);
+    fill: var(--eds-color-neutral-text-default);
+    --_card-shadow: light-dark(rgb(0 0 0 / .15), transparent);
+
+    box-shadow: 0 1px 10px var(--_card-shadow), 0 4px 5px var(--_card-shadow), 0 2px 4px var(--_card-shadow);
     &.info {
-      --_card-text-color: blue;
+      background-color: var(--eds-color-info-surface-default);
+      color: var(--eds-color-info-text-subtle);
+      fill: var(--eds-color-info-text-subtle);
+      border-color: var(--eds-color-info-border-subtle);
+      --override-text-color: var(--eds-color-info-text-subtle);
     }
     &.warning {
-      --_card-text-color: orange;
+      background-color: var(--eds-color-warning-surface-default);
+      color: var(--eds-color-warning-text-subtle);
+      fill: var(--eds-color-warning-text-subtle);
+      border-color: var(--eds-color-warning-border-subtle);
+      --override-text-color: var(--eds-color-warning-text-subtle);
     }
     &.error {
-      --_card-text-color: red;
+      background-color: var(--eds-color-danger-surface-default);
+      color: var(--eds-color-danger-text-subtle);
+      fill: var(--eds-color-danger-text-subtle);
+      border-color: var(--eds-color-danger-border-subtle);
+      --override-text-color: var(--eds-color-danger-text-subtle);
     }
     &.success {
-      --_card-text-color: green;
+      background-color: var(--eds-color-success-surface-default);
+      color: var(--eds-color-success-text-subtle);
+      fill: var(--eds-color-success-text-subtle);
+      border-color: var(--eds-color-success-border-subtle);
+      --override-text-color: var(--eds-color-success-text-subtle);
+
     }
-    &.colors-from-tokens {
+  }
+  [data-color-background="bente"] {
+    .eds-card {
       background-color: var(--eds-ui-floating-color-surface);
       &.info {
         background-color: var(--eds-color-message-surface-standard-info);
         color: var(--eds-color-message-text-raised-info-initial);
         fill: var(--eds-color-message-icon-raised-info-initial);
         border-color: var(--eds-color-message-border-standard-info);
+        --override-text-color: var(--eds-color-message-text-raised-info-initial);
       }
       &.warning {
         background-color: var(--eds-color-message-surface-standard-warning);
         color: var(--eds-color-message-text-raised-warning-initial);
         fill: var(--eds-color-message-icon-raised-warning-initial);
         border-color: var(--eds-color-message-border-standard-warning);
+        --override-text-color: var(--eds-color-message-text-raised-warning-initial);
       }
       &.error {
         background-color: var(--eds-color-message-surface-standard-error);
         color: var(--eds-color-message-text-raised-error-initial);
         fill: var(--eds-color-message-icon-raised-error-initial);
         border-color: var(--eds-color-message-border-standard-error);
+        --override-text-color: var(--eds-color-message-text-raised-error-initial);
       }
       &.success {
         background-color: var(--eds-color-message-surface-standard-success);
         color: var(--eds-color-message-text-raised-success-initial);
         fill: var(--eds-color-message-icon-raised-success-initial);
         border-color: var(--eds-color-message-border-standard-success);
-      }
-    }
-    &.colors-from-ds {
-      background-color: var(--eds-color-neutral-background-subtle);
-      &.info {
-        background-color: red;
-      }
-      &.warning {
-        background-color: var(--eds-color-warning-surface-default);
-        color: var(--eds-color-warning-text-default);
-        fill: var(--eds-color-warning-text-default);
-        border-color: var(--eds-color-warning-border-subtle);
-      }
-      &.error {
-        background-color: var(--eds-color-danger-surface-default);
-        color: var(--eds-color-danger-text-default);
-        fill: var(--eds-color-danger-text-default);
-        border-color: var(--eds-color-danger-border-subtle);
-      }
-      &.success {
-        background-color: red;
-
+        --override-text-color: var(--eds-color-message-text-raised-success-initial);
       }
     }
   }
