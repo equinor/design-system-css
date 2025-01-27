@@ -7,10 +7,10 @@
     grid-template-areas:
       'content'
       'footer';
-    background-color: var(--eds-ui-shell-color-surface);
+    background-color: light-dark(white, var(--eds-color-neutral-background-subtle));
     overflow: auto;
     width: 64px;
-    border-right: 2px solid var(--eds-ui-shell-color-border);
+    border-right: 2px solid var(--eds-color-neutral-border-subtle);
   }
 
   .eds-sidebar__main {
@@ -23,14 +23,13 @@
 
   .eds-sidebar__link {
     display: block;
-    border-bottom: 2px solid canvasText;
+    border-bottom: 2px solid var(--eds-color-neutral-border-subtle);
     min-height: 56px;
     display: grid;
     place-items: center;
-    fill: canvasText;
+    fill: var(--eds-color-neutral-text-default);
     &:where(:hover, :focus) {
-      fill: canvasText;
-      background-color: lightgrey;
+      background-color: var(--eds-color-neutral-surface-hover);
     }
   }
 
@@ -41,8 +40,17 @@
     place-items: center;
     width: 100%;
     border: 0;
-    background-color: var(--eds-ui-shell-color-surface);
+    background-color: light-dark(white, var(--eds-color-neutral-background-subtle));
     cursor: pointer;
-    fill: canvasText;
+    fill: var(--eds-color-neutral-text-default);
+  }
+  [data-color-background="bente"] {
+    .eds-sidebar {
+      background-color: var(--eds-ui-shell-color-surface);
+      border-right: 2px solid var(--eds-ui-shell-color-border);
+    }
+    .eds-sidebar__toggle {
+      background-color: var(--eds-ui-shell-color-surface);
+    }
   }
 }
