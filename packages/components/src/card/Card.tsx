@@ -2,7 +2,7 @@ import './card.css'
 
 type Props = {
   //elevation?: 'none' | 'raised' | 'overlay'
-  variant?: 'default' | 'info' | 'warning' | 'error'
+  variant?: 'default' | 'info' | 'warning' | 'error' | 'success'
 } & React.HTMLAttributes<HTMLDivElement>
 export const Card = ({children, className, variant = 'default', ...rest }: Props) => {
   //const elevationParsed = `elevation-${elevation}`
