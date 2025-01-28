@@ -47,3 +47,15 @@
     color: var(--eds-color-static-text-standard-primary);
   }
 }
+
+.card-grid {
+  --layout-grid-min: 40ch;
+  --layout-grid-gap: var(--eds-spacing-inset-xl-inline);
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, var(--layout-grid-min)), 1fr)
+  );
+  gap: var(--layout-grid-gap);
+
+}
