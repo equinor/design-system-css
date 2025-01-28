@@ -48,7 +48,7 @@
   }
 }
 
-.card-grid {
+.u-card-grid {
   --layout-grid-min: 40ch;
   --layout-grid-gap: var(--eds-spacing-inset-xl-inline);
   display: grid;
@@ -57,5 +57,16 @@
     minmax(min(100%, var(--layout-grid-min)), 1fr)
   );
   gap: var(--layout-grid-gap);
-
+}
+.u-fieldset {
+  font-family: var(--eds-typography-ui-body-font-family);
+  width:fit-content;
+  margin: 0;
+  padding: var(--eds-spacing-stack-md);
+  border-radius: var(--eds-spacing-border-radius-rounded);
+  border: var(--eds-sizing-stroke-thin) solid var(--eds-color-neutral-border-subtle);
+}
+.u-flex {
+  display: flex;
+  gap: var(--eds-spacing-inline-xs);
 }
