@@ -1,12 +1,15 @@
 @layer eds.accordion {
   .eds-accordion {
-    border: 1px solid black;
+    /* --_border: light-dark(rgb(0 0 0 / 50%), rgb(255 255 255 / 50%)); */
+    border: var(--eds-sizing-stroke-thin) solid var(--eds-color-neutral-border-default);
+    /* border: var(--eds-sizing-stroke-thin) solid var(--_border); */
+    border-radius: var(--eds-spacing-border-radius-rounded);
     summary {
       padding: 16px;
       display: grid;
       grid-template-columns: 32px 1fr auto;
       align-items: center;
-      background-color: white;
+      background-color: transparent;
       user-select: none;
       cursor: pointer;
       svg:first-of-type {
@@ -17,7 +20,8 @@
       }
     }
     &[open] summary {
-      border-bottom: 1px solid black;
+      border-bottom: var(--eds-sizing-stroke-thin) solid var(--eds-color-neutral-border-default);
+      /* border-bottom: var(--eds-sizing-stroke-thin) solid var(--_border); */
     }
     &[open] svg:first-of-type {
       rotate: 90deg;
@@ -30,6 +34,6 @@
   }
   .eds-accordion__content {
     padding: 16px;
-    background-color: white;
+    background-color: transparent;
   }
 }
