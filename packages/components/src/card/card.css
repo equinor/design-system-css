@@ -92,8 +92,8 @@
     padding-block: var(--eds-spacing-stack-lg);
   }
   .u-rich-text {
-    >:is(* + *) {
-      margin-top: 1em !important;
+    >:is(* + *):not([popover]) {
+      margin-top: 1.5em !important;
 
     }
   }
