@@ -1,8 +1,8 @@
 @layer eds.accordion {
   .eds-accordion {
-    /* --_border: light-dark(rgb(0 0 0 / 50%), rgb(255 255 255 / 50%)); */
-    border: var(--eds-sizing-stroke-thin) solid var(--eds-color-neutral-border-default);
-    /* border: var(--eds-sizing-stroke-thin) solid var(--_border); */
+    --_border: light-dark(rgb(0 0 0 / .4), rgb(255 255 255 / .4));
+    /* border: var(--eds-sizing-stroke-thin) solid var(--eds-color-neutral-border-default); */
+    border: var(--eds-sizing-stroke-thin) solid var(--_border);
     border-radius: var(--eds-spacing-border-radius-rounded);
     summary {
       padding: 16px;
@@ -18,10 +18,13 @@
       svg {
         margin-block: -0.5em;
       }
+      &:hover {
+        background-color: light-dark(rgb(0 0 0 / .06), rgb(255 255 255 / .2));
+      }
     }
     &[open] summary {
-      border-bottom: var(--eds-sizing-stroke-thin) solid var(--eds-color-neutral-border-default);
-      /* border-bottom: var(--eds-sizing-stroke-thin) solid var(--_border); */
+      /* border-bottom: var(--eds-sizing-stroke-thin) solid var(--eds-color-neutral-border-default); */
+      border-bottom: var(--eds-sizing-stroke-thin) solid var(--_border);
     }
     &[open] svg:first-of-type {
       rotate: 90deg;
