@@ -1,8 +1,20 @@
-import {Accordion, Button, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox} from '../../src'
+import {Accordion, Button, Chip, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox} from '../../src'
 import {useState} from 'react'
-import {alarm} from '@equinor/eds-icons'
+import {alarm, info_circle} from '@equinor/eds-icons'
 
 import './app.css';
+
+const Chips = ()=> (
+  <div className="u-flex">
+    <Chip><Icon size={'xs'} icon={info_circle} />Default chip</Chip>
+    <Chip active><Icon size={'xs'} icon={info_circle} />Chip active</Chip>
+    <Chip disabled><Icon size={'xs'} icon={info_circle} />Chip disabled</Chip>
+    <Chip variant='info'><Icon size={'xs'} icon={info_circle} />Info</Chip>
+    <Chip variant='warning'><Icon size={'xs'} icon={info_circle} />Warning</Chip>
+    <Chip variant='error'><Icon size={'xs'} icon={info_circle} />Error</Chip>
+    <Chip variant='success'><Icon size={'xs'} icon={info_circle} />Success</Chip>
+  </div>
+)
 
 export const App = () => {
   const [MenuOpen, setMenuOpen] = useState(false)
@@ -48,8 +60,8 @@ export const App = () => {
                   <Text>Look at me I'm a snackbar!</Text>
                   <Button style={{marginLeft: 'auto'}}>Button</Button>
                 </Snackbar>
-
               </div>
+              <Chips/>
             </div>
           </Card>
           <Card variant="success">
@@ -58,22 +70,26 @@ export const App = () => {
             <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
             <Accordion>
                 <Text>Should accordion use transparent borders like this to better work on different background colors?</Text>
-              </Accordion>
+            </Accordion>
+            <Chips/>
             </div>
           </Card>
           <Card  variant="info">
             <div className="eds-card__content u-rich-text">
-            <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
+              <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
+              <Chips/>
             </div>
           </Card>
           <Card variant='warning'>
             <div className="eds-card__content u-rich-text">
-            <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
+              <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
+              <Chips/>
             </div>
           </Card>
           <Card variant='error'>
             <div className="eds-card__content u-rich-text">
-            <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
+              <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
+              <Chips/>
             </div>
           </Card>
         </div>

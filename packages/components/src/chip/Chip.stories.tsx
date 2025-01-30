@@ -27,18 +27,18 @@ export const Default: Story = {
     return (
       <Card>
         <div className="eds-card__content" style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-          <Text>Chips with original tokens</Text>
-          <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '8px'}}>
-            <Chip token><Icon size={'xs'} icon={info_circle} />Default chip</Chip>
-            <Chip token active><Icon size={'xs'} icon={info_circle} />Chip active</Chip>
-            <Chip token disabled><Icon size={'xs'} icon={info_circle} />Chip disabled</Chip>
-            <Chip token variant='info'><Icon size={'xs'} icon={info_circle} />Info</Chip>
-            <Chip token variant='warning'><Icon size={'xs'} icon={info_circle} />Warning</Chip>
-            <Chip token variant='error'><Icon size={'xs'} icon={info_circle} />Error</Chip>
-            <Chip token variant='success'><Icon size={'xs'} icon={info_circle} />Success</Chip>
+          <Text>Chips with bente colors</Text>
+          <div data-color-background="bente" style={{display: 'flex', gap: '8px', alignItems: 'flex-start', marginBottom: '8px'}}>
+            <Chip><Icon size={'xs'} icon={info_circle} />Default chip</Chip>
+            <Chip active><Icon size={'xs'} icon={info_circle} />Chip active</Chip>
+            <Chip disabled><Icon size={'xs'} icon={info_circle} />Chip disabled</Chip>
+            <Chip variant='info'><Icon size={'xs'} icon={info_circle} />Info</Chip>
+            <Chip variant='warning'><Icon size={'xs'} icon={info_circle} />Warning</Chip>
+            <Chip variant='error'><Icon size={'xs'} icon={info_circle} />Error</Chip>
+            <Chip variant='success'><Icon size={'xs'} icon={info_circle} />Success</Chip>
         </div>
-        <Text>Chips with generated colors</Text>
-        <div style={{display: 'flex', gap: '8px', alignItems: 'flex-start'}}>
+        <Text>Chips with designsystemet colors</Text>
+        <div data-color-background="designsystemet" style={{display: 'flex', gap: '8px', alignItems: 'flex-start'}}>
             <Chip><Icon size={'xs'} icon={info_circle} />Default chip</Chip>
             <Chip active><Icon size={'xs'} icon={info_circle} />Chip active</Chip>
             <Chip disabled><Icon size={'xs'} icon={info_circle} />Chip disabled</Chip>

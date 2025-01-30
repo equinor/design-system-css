@@ -4,12 +4,10 @@ import { Text } from '../'
 
 type Props = {
   variant?: 'default' | 'info' | 'warning' | 'error' | 'success'
-  token?: boolean
   active?: boolean
   disabled?: boolean
 } & React.HTMLAttributes<HTMLDivElement>
-export const Chip = ({children, className, token, active, disabled, variant = 'default', ...rest }: Props) => {
-  const typeClass = token ? 'eds-chip-token' : 'eds-chip'
+export const Chip = ({children, className, active, disabled, variant = 'default', ...rest }: Props) => {
   const isActive = active ? 'active' : ''
   const isDisabled = disabled ? 'disabled' : ''
   const updatedChildren = ReactChildren.map(children, (child) => {
@@ -19,5 +17,5 @@ export const Chip = ({children, className, token, active, disabled, variant = 'd
     return child
   })
   return (
-   <div tabIndex={0} className={[typeClass, variant, isActive, isDisabled, className].join(' ')} {...rest}>{updatedChildren}</div>
+   <div tabIndex={0} className={['eds-chip', variant, isActive, isDisabled, className].join(' ')} {...rest}>{updatedChildren}</div>
   )}

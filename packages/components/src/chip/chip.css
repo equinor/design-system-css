@@ -1,154 +1,179 @@
-.eds-chip {
-  position: relative;
-  width: fit-content;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  align-items: center;
-  border-radius: 1e5px;
-  font-size: var(--eds-typography-ui-body-sm-font-size);
-  gap: 0.618em;
-  padding-block: var(--eds-spacing-inset-xs-stack-squared);
-  padding-inline: var(--eds-spacing-inset-xs-inline);
-  background-color: var(--_chip-background-color);
-  color: var(--_chip-text-color);
-  cursor: pointer;
-  &::after {
-    border-radius: inherit;
-    content: '';
-    position: absolute;
-    inset: 0;
-    outline: var(--eds-sizing-stroke-thin) solid var(--_chip-border-color);
-    outline-offset: calc(var(--eds-sizing-stroke-thin) * -1);
-  }
-  &.default {
-    --_chip-input-color: var(--eds-color-interactive-text-raised-initial);
-    &:not(.disabled):hover, &:not(.disabled):focus {
-      --_chip-input-color: var(--eds-color-interactive-text-raised-hover);
+@layer eds.chip {
+  .eds-chip {
+    position: relative;
+    width: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    align-items: center;
+    border-radius: 1e5px;
+    font-size: var(--eds-typography-ui-body-sm-font-size);
+    gap: 0.618em;
+    padding-block: var(--eds-spacing-inset-sm-stack-squared);
+    padding-inline: var(--eds-spacing-inset-sm-inline);
+    background-color: var(--_chip-background-color);
+    color: var(--_chip-text-color);
+    --override-text-color: var(--_chip-text-color);
+    cursor: pointer;
+    &::after {
+      border-radius: inherit;
+      content: '';
+      position: absolute;
+      inset: 0;
+      outline: var(--eds-sizing-stroke-thin) solid var(--_chip-border-color);
+      outline-offset: calc(var(--eds-sizing-stroke-thin) * -1);
     }
-    &.active {
-      --_chip-input-color: var(--eds-color-interactive-text-raised-active);
-      &:hover, &:focus {
-        --_chip-input-color: var(--eds-color-interactive-text-raised-active-hover);
+    &.default {
+      --_chip-text-color: var(--eds-color-neutral-text-default);
+      --_chip-icon-color: var(--eds-color-neutral-text-subtle);
+      --_chip-background-color: var(--eds-color-neutral-surface-default);
+      --_chip-border-color: var(--eds-color-neutral-border-subtle);
+      &:not(.disabled):hover, &:not(.disabled):focus {
+        --_chip-border-color: var(--eds-color-neutral-border-strong);
+      }
+      &.active {
+        --_chip-text-color: var(--eds-color-accent-text-default);
+        --_chip-icon-color: var(--eds-color-accent-text-subtle);
+        --_chip-background-color: var(--eds-color-accent-surface-default);
+        --_chip-border-color: var(--eds-color-accent-border-subtle);
+        &:hover, &:focus {
+          --_chip-border-color: var(--eds-color-accent-border-strong);
+        }
+      }
+    }
+    &.info {
+      --_chip-text-color: var(--eds-color-info-text-default);
+      --_chip-icon-color: var(--eds-color-info-text-subtle);
+      --_chip-background-color: var(--eds-color-info-surface-default);
+      --_chip-border-color: var(--eds-color-info-border-subtle);
+      &:not(.disabled):hover, &:not(.disabled):focus {
+        --_chip-border-color: var(--eds-color-info-border-strong);
+      }
+    }
+    &.warning {
+      --_chip-text-color: var(--eds-color-warning-text-default);
+      --_chip-icon-color: var(--eds-color-warning-text-subtle);
+      --_chip-background-color: var(--eds-color-warning-surface-default);
+      --_chip-border-color: var(--eds-color-warning-border-subtle);
+      &:not(.disabled):hover, &:not(.disabled):focus {
+        --_chip-border-color: var(--eds-color-warning-border-strong);
+      }
+    }
+    &.error {
+      --_chip-text-color: var(--eds-color-danger-text-default);
+      --_chip-icon-color: var(--eds-color-danger-text-subtle);
+      --_chip-background-color: var(--eds-color-danger-surface-default);
+      --_chip-border-color: var(--eds-color-danger-border-subtle);
+      &:not(.disabled):hover, &:not(.disabled):focus {
+        --_chip-border-color: var(--eds-color-danger-border-strong);
+      }
+    }
+    &.success {
+      --_chip-text-color: var(--eds-color-success-text-default);
+      --_chip-icon-color: var(--eds-color-success-text-subtle);
+      --_chip-background-color: var(--eds-color-success-surface-default);
+      --_chip-border-color: var(--eds-color-success-border-subtle);
+      &:not(.disabled):hover, &:not(.disabled):focus {
+        --_chip-border-color: var(--eds-color-success-border-strong);
+      }
+    }
+    &.disabled {
+      cursor: not-allowed;
+      --_chip-text-color: var(--eds-color-neutral-border-subtle);
+      --_chip-icon-color: var(--eds-color-neutral-border-subtle);
+      --_chip-background-color: var(--eds-color-neutral-background-subtle);
+      --_chip-border-color: var(--eds-color-neutral-surface-default);
+    }
+    > svg {
+      fill: var(--_chip-icon-color);
+      /*subtract inline white space from icon*/
+      margin-inline: -0.20em;
+       /*undo icon adding height*/
+      margin-block: -0.5em;
+    }
+  }
+  [data-color-background="bente"] {
+    .eds-chip {
+      &.default {
+        --_chip-text-color: var(--eds-color-interactive-text-raised-initial);
+        --_chip-icon-color: var(--eds-color-interactive-icon-raised-initial);
+        --_chip-background-color: var(--eds-color-interactive-surface-raised-initial);
+        --_chip-border-color: var(--eds-color-interactive-border-raised-initial);
+        &:not(.disabled):hover, &:not(.disabled):focus {
+          --_chip-text-color: var(--eds-color-interactive-text-raised-hover);
+          --_chip-icon-color: var(--eds-color-interactive-icon-raised-hover);
+          --_chip-background-color: var(--eds-color-interactive-surface-raised-hover);
+          --_chip-border-color: var(--eds-color-interactive-border-raised-hover);
+        }
+        &.active {
+          --_chip-text-color: var(--eds-color-interactive-text-raised-active);
+          --_chip-icon-color: var(--eds-color-interactive-icon-raised-active);
+          --_chip-background-color: var(--eds-color-interactive-surface-raised-active);
+          --_chip-border-color: var(--eds-color-interactive-border-raised-active);
+          &:hover, &:focus {
+            --_chip-text-color: var(--eds-color-interactive-text-raised-active-hover);
+            --_chip-icon-color: var(--eds-color-interactive-icon-raised-active-hover);
+            --_chip-background-color: var(--eds-color-interactive-surface-raised-active-hover);
+            --_chip-border-color: var(--eds-color-interactive-border-raised-active-hover);
+          }
+        }
+      }
+      &.info {
+        --_chip-text-color: var(--eds-color-message-text-raised-info-initial);
+        --_chip-icon-color: var(--eds-color-message-icon-raised-info-initial);
+        --_chip-background-color: var(--eds-color-message-surface-raised-info-initial);
+        --_chip-border-color: var(--eds-color-message-border-raised-info-initial);
+        &:not(.disabled):hover, &:not(.disabled):focus {
+          --_chip-text-color: var(--eds-color-message-text-raised-info-hover);
+          --_chip-icon-color: var(--eds-color-message-icon-raised-info-hover);
+          --_chip-background-color: var(--eds-color-message-surface-raised-info-hover);
+          --_chip-border-color: var(--eds-color-message-border-raised-info-hover);
+        }
+      }
+      &.warning {
+        --_chip-text-color: var(--eds-color-message-text-raised-warning-initial);
+        --_chip-icon-color: var(--eds-color-message-icon-raised-warning-initial);
+        --_chip-background-color: var(--eds-color-message-surface-raised-warning-initial);
+        --_chip-border-color: var(--eds-color-message-border-raised-warning-initial);
+        &:not(.disabled):hover, &:not(.disabled):focus {
+          --_chip-text-color: var(--eds-color-message-text-raised-warning-hover);
+          --_chip-icon-color: var(--eds-color-message-icon-raised-warning-hover);
+          --_chip-background-color: var(--eds-color-message-surface-raised-warning-hover);
+          --_chip-border-color: var(--eds-color-message-border-raised-warning-hover);
+        }
+      }
+      &.error {
+        --_chip-text-color: var(--eds-color-message-text-raised-error-initial);
+        --_chip-icon-color: var(--eds-color-message-icon-raised-error-initial);
+        --_chip-background-color: var(--eds-color-message-surface-raised-error-initial);
+        --_chip-border-color: var(--eds-color-message-border-raised-error-initial);
+        &:not(.disabled):hover, &:not(.disabled):focus {
+          --_chip-text-color: var(--eds-color-message-text-raised-error-hover);
+          --_chip-icon-color: var(--eds-color-message-icon-raised-error-hover);
+          --_chip-background-color: var(--eds-color-message-surface-raised-error-hover);
+          --_chip-border-color: var(--eds-color-message-border-raised-error-hover);
+        }
+      }
+      &.success {
+        --_chip-text-color: var(--eds-color-message-text-raised-success-initial);
+        --_chip-icon-color: var(--eds-color-message-icon-raised-success-initial);
+        --_chip-background-color: var(--eds-color-message-surface-raised-success-initial);
+        --_chip-border-color: var(--eds-color-message-border-raised-success-initial);
+        &:not(.disabled):hover, &:not(.disabled):focus {
+          --_chip-text-color: var(--eds-color-message-text-raised-success-hover);
+          --_chip-icon-color: var(--eds-color-message-icon-raised-success-hover);
+          --_chip-background-color: var(--eds-color-message-surface-raised-success-hover);
+          --_chip-border-color: var(--eds-color-message-border-raised-success-hover);
+        }
+      }
+      &.disabled {
+        cursor: not-allowed;
+        --_chip-text-color: var(--eds-color-interactive-text-raised-disabled);
+        --_chip-icon-color: var(--eds-color-interactive-icon-raised-disabled);
+        --_chip-background-color: var(--eds-color-interactive-surface-raised-disabled);
+        --_chip-border-color: var(--eds-color-interactive-border-raised-disabled);
       }
     }
   }
-  > svg {
-    fill: var(--_chip-icon-color);
-    /*subtract inline white space from icon*/
-    margin-inline: -0.20em;
-     /*undo icon adding height*/
-    margin-block: -0.5em;
-  }
-}
 
-.eds-chip-token {
-  position: relative;
-  width: fit-content;
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
-  align-items: center;
-  border-radius: 1e5px;
-  font-size: var(--eds-typography-ui-body-sm-font-size);
-  gap: 0.618em;
-  padding-block: var(--eds-spacing-inset-sm-stack-squared);
-  padding-inline: var(--eds-spacing-inset-sm-inline);
-  background-color: var(--_chip-background-color);
-  color: var(--_chip-text-color);
-  cursor: pointer;
-  &::after {
-    border-radius: inherit;
-    content: '';
-    position: absolute;
-    inset: 0;
-    outline: var(--eds-sizing-stroke-thin) solid var(--_chip-border-color);
-    outline-offset: calc(var(--eds-sizing-stroke-thin) * -1);
-  }
-  &.default {
-    --_chip-text-color: var(--eds-color-interactive-text-raised-initial);
-    --_chip-icon-color: var(--eds-color-interactive-icon-raised-initial);
-    --_chip-background-color: var(--eds-color-interactive-surface-raised-initial);
-    --_chip-border-color: var(--eds-color-interactive-border-raised-initial);
-    &:not(.disabled):hover, &:not(.disabled):focus {
-      --_chip-text-color: var(--eds-color-interactive-text-raised-hover);
-      --_chip-icon-color: var(--eds-color-interactive-icon-raised-hover);
-      --_chip-background-color: var(--eds-color-interactive-surface-raised-hover);
-      --_chip-border-color: var(--eds-color-interactive-border-raised-hover);
-    }
-    &.active {
-      --_chip-text-color: var(--eds-color-interactive-text-raised-active);
-      --_chip-icon-color: var(--eds-color-interactive-icon-raised-active);
-      --_chip-background-color: var(--eds-color-interactive-surface-raised-active);
-      --_chip-border-color: var(--eds-color-interactive-border-raised-active);
-      &:hover, &:focus {
-        --_chip-text-color: var(--eds-color-interactive-text-raised-active-hover);
-        --_chip-icon-color: var(--eds-color-interactive-icon-raised-active-hover);
-        --_chip-background-color: var(--eds-color-interactive-surface-raised-active-hover);
-        --_chip-border-color: var(--eds-color-interactive-border-raised-active-hover);
-      }
-    }
-  }
-  &.info {
-    --_chip-text-color: var(--eds-color-message-text-raised-info-initial);
-    --_chip-icon-color: var(--eds-color-message-icon-raised-info-initial);
-    --_chip-background-color: var(--eds-color-message-surface-raised-info-initial);
-    --_chip-border-color: var(--eds-color-message-border-raised-info-initial);
-    &:not(.disabled):hover, &:not(.disabled):focus {
-      --_chip-text-color: var(--eds-color-message-text-raised-info-hover);
-      --_chip-icon-color: var(--eds-color-message-icon-raised-info-hover);
-      --_chip-background-color: var(--eds-color-message-surface-raised-info-hover);
-      --_chip-border-color: var(--eds-color-message-border-raised-info-hover);
-    }
-  }
-  &.warning {
-    --_chip-text-color: var(--eds-color-message-text-raised-warning-initial);
-    --_chip-icon-color: var(--eds-color-message-icon-raised-warning-initial);
-    --_chip-background-color: var(--eds-color-message-surface-raised-warning-initial);
-    --_chip-border-color: var(--eds-color-message-border-raised-warning-initial);
-    &:not(.disabled):hover, &:not(.disabled):focus {
-      --_chip-text-color: var(--eds-color-message-text-raised-warning-hover);
-      --_chip-icon-color: var(--eds-color-message-icon-raised-warning-hover);
-      --_chip-background-color: var(--eds-color-message-surface-raised-warning-hover);
-      --_chip-border-color: var(--eds-color-message-border-raised-warning-hover);
-    }
-  }
-  &.error {
-    --_chip-text-color: var(--eds-color-message-text-raised-error-initial);
-    --_chip-icon-color: var(--eds-color-message-icon-raised-error-initial);
-    --_chip-background-color: var(--eds-color-message-surface-raised-error-initial);
-    --_chip-border-color: var(--eds-color-message-border-raised-error-initial);
-    &:not(.disabled):hover, &:not(.disabled):focus {
-      --_chip-text-color: var(--eds-color-message-text-raised-error-hover);
-      --_chip-icon-color: var(--eds-color-message-icon-raised-error-hover);
-      --_chip-background-color: var(--eds-color-message-surface-raised-error-hover);
-      --_chip-border-color: var(--eds-color-message-border-raised-error-hover);
-    }
-  }
-  &.success {
-    --_chip-text-color: var(--eds-color-message-text-raised-success-initial);
-    --_chip-icon-color: var(--eds-color-message-icon-raised-success-initial);
-    --_chip-background-color: var(--eds-color-message-surface-raised-success-initial);
-    --_chip-border-color: var(--eds-color-message-border-raised-success-initial);
-    &:not(.disabled):hover, &:not(.disabled):focus {
-      --_chip-text-color: var(--eds-color-message-text-raised-success-hover);
-      --_chip-icon-color: var(--eds-color-message-icon-raised-success-hover);
-      --_chip-background-color: var(--eds-color-message-surface-raised-success-hover);
-      --_chip-border-color: var(--eds-color-message-border-raised-success-hover);
-    }
-  }
-  &.disabled {
-    cursor: not-allowed;
-    --_chip-text-color: var(--eds-color-interactive-text-raised-disabled);
-    --_chip-icon-color: var(--eds-color-interactive-icon-raised-disabled);
-    --_chip-background-color: var(--eds-color-interactive-surface-raised-disabled);
-    --_chip-border-color: var(--eds-color-interactive-border-raised-disabled);
-  }
-  > svg {
-    fill: var(--_chip-icon-color);
-    /*subtract inline white space from icon*/
-    margin-inline: -0.20em;
-     /*undo icon adding height*/
-    margin-block: -0.5em;
-  }
 }
