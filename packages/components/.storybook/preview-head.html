@@ -15,6 +15,17 @@
 /> -->
 
 <style>
+  /* View transition for theme switch */
+  ::view-transition-image-pair(root) {
+    isolation: auto;
+  }
+  /* View transition for theme switch */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+    display: block;
+  }
   :root, [data-color-scheme="light"] {
     color-scheme: light;
   }

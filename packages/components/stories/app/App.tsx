@@ -1,6 +1,6 @@
 import {Accordion, Button, Chip, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox} from '../../src'
-import {useState} from 'react'
-import {alarm, info_circle} from '@equinor/eds-icons'
+import {useState, useRef} from 'react'
+import {alarm, info_circle, sun, circle_filled} from '@equinor/eds-icons'
 
 import './app.css';
 
@@ -18,10 +18,59 @@ const Chips = ()=> (
 
 export const App = () => {
   const [MenuOpen, setMenuOpen] = useState(false)
+  const main = useRef<HTMLDivElement>(null)
+  const [isDark, setIsDark] = useState<boolean>(false)
+  const [isRadix, setIsRadix] = useState<boolean>(false)
+
+  const toggleTheme = (event: any) => {
+    const el = main.current as HTMLDivElement
+    /* @ts-ignore */
+    if (!document.startViewTransition) {
+      setIsDark(!isDark)
+      isDark ? el.dataset.colorScheme = 'light' : el.dataset.colorScheme = 'dark'
+      return
+    }
+    const x = event?.clientX ?? window.innerWidth / 2;
+    const y = event?.clientY ?? window.innerHeight / 2;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y),
+    )
+
+  /* @ts-ignore */
+    const transition = document.startViewTransition(() => {
+      setIsDark(!isDark)
+      isDark ? el.dataset.colorScheme = 'light' : el.dataset.colorScheme = 'dark'
+    })
+
+    transition.ready.then(() => {
+      document.documentElement.animate(
+        [
+          { clipPath: `circle(0 at ${x}px ${y}px)` },
+          { clipPath: `circle(${endRadius}px at ${x}px ${y}px)` },
+        ],
+        {
+          duration: 500,
+          easing: 'ease-in-out',
+          pseudoElement: '::view-transition-new(root)'
+        },
+      )
+    })
+  }
+  const toggleLightSource = (event: any) => {
+    const el = main.current as HTMLDivElement
+    setIsRadix(!isRadix)
+    isRadix ? el.dataset.lightness = 'designsystemet' : el.dataset.lightness = 'radix'
+  }
 
   return (
-    <main className="app">
-      <section className="app__topbar"></section>
+    <main data-color-scheme="light" data-lightness="designsystemet" ref={main} className="app">
+      <section className="app__topbar">
+        <div className="app__topbar-actions">
+          <Button variant="tertiary" onClick={(e)=> toggleLightSource(e)}>{isRadix ? 'Radix' : 'Designsystemet'}</Button>
+          <Button size='2xl' data-icon variant="tertiary" onClick={(e)=> toggleTheme(e)}>{isDark ? '🌞' : '🌙'}</Button>
+        </div>
+      </section>
       <section className="app__sidebar"><SideBar /></section>
       <section className="app__content">
         <div className='content__title'>
