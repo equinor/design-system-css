@@ -68,7 +68,7 @@ export const App = () => {
       <section className="app__topbar">
         <div className="app__topbar-actions">
           <Button variant="tertiary" onClick={(e)=> toggleLightSource(e)}>{isRadix ? 'Radix' : 'Designsystemet'}</Button>
-          <Button size='2xl' data-icon variant="tertiary" onClick={(e)=> toggleTheme(e)}>{isDark ? '🌞' : '🌙'}</Button>
+          <Button variant="tertiary" onClick={(e)=> toggleTheme(e)}>{isDark ? 'dark 🌙' : 'light 🌞'}</Button>
         </div>
       </section>
       <section className="app__sidebar"><SideBar /></section>
