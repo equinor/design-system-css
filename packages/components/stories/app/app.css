@@ -18,9 +18,17 @@
 }
 .app__topbar {
   grid-area: header;
-  height: 64px;
+  padding-block: var(--eds-spacing-inset-md-stack-squished);
+  padding-inline: var(--eds-spacing-inset-md-inline);
   background-color: light-dark(white, var(--eds-color-neutral-background-subtle));
   border-bottom: 2px solid var(--eds-color-neutral-border-subtle);
+  display: flex;
+  align-items: center;
+}
+.app__topbar-actions {
+  margin-left: auto;
+  display: flex;
+  gap: var(--eds-spacing-inline-md);
 }
 .app__sidebar {
   grid-area: sidebar;
