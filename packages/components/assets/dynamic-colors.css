@@ -4,17 +4,7 @@
 	inherits: true;
 	initial-value: transparent;
 }
-@property --accent-9 {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: transparent;
-}
 @property --neutral-modifier {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: transparent;
-}
-@property --neutral-9 {
 	syntax: "<color>";
 	inherits: true;
 	initial-value: transparent;
@@ -24,17 +14,7 @@
 	inherits: true;
 	initial-value: transparent;
 }
-@property --success-9 {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: transparent;
-}
 @property --info-modifier {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: transparent;
-}
-@property --info-9 {
 	syntax: "<color>";
 	inherits: true;
 	initial-value: transparent;
@@ -44,21 +24,12 @@
 	inherits: true;
 	initial-value: transparent;
 }
-@property --warning-9 {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: transparent;
-}
 @property --danger-modifier {
 	syntax: "<color>";
 	inherits: true;
 	initial-value: transparent;
 }
-@property --danger-9 {
-	syntax: "<color>";
-	inherits: true;
-	initial-value: transparent;
-}
+
 :root {
   --accent-base: #007079; /*moss-green-1100*/
   --neutral-light-base: #4a4a4a; /*neutral-1200*/
@@ -115,7 +86,7 @@
   --dark-6: var(--ld-6) calc(sin(var(--ld-6) * pi) * c) h;
   --dark-7: var(--ld-7) calc(sin(var(--ld-7) * pi) * c) h;
   --dark-8: var(--ld-8) calc(sin(var(--ld-8) * pi) * c) h;
-  --dark-9: clamp(0.3, 1 - l, 0.74) c h;
+  --dark-9: 0.62 c h;
   --dark-12: var(--ld-12) calc(sin(var(--ld-12) * pi) * c) h;
   --dark-13: var(--ld-13) calc(sin(var(--ld-13) * pi) * c) h;
 
