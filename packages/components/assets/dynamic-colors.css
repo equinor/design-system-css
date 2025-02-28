@@ -44,6 +44,11 @@
   /*calculate on-base text color*/
   --y2: clamp(0, (y / 0.36 - 1) * -infinity, 1);
 
+  /*x-value where chroma peaks in gaussian mode*/
+  --mean: var(--user-mean, 0.6);
+  /*standard deviation (width) of the bell curve in gaussian mode*/
+  --stdev: var(--user-stdev, 2);
+
   /*lightness-values (based on designsystemet moss-green measured lightness values)*/
   --l-1: 0.997;
   --l-2: 0.965;
@@ -55,6 +60,17 @@
   --l-8: 0.482;
   --l-12: 0.390;
   --l-13: 0.237;
+    /*dark mode values*/
+  --ld-1: 0.218;
+  --ld-2: 0.253;
+  --ld-3: 0.304;
+  --ld-4: 0.356;
+  --ld-5: 0.407;
+  --ld-6: 0.433;
+  --ld-7: 0.574;
+  --ld-8: 0.700;
+  --ld-12: 0.821;
+  --ld-13: 0.947;
   /*light relative color syntax*/
   --light-1: var(--l-1) calc(sin(var(--l-1) * pi) * c) h;
   --light-2: var(--l-2) calc(sin(var(--l-2) * pi) * c) h;
@@ -66,17 +82,7 @@
   --light-8: var(--l-8) calc(sin(var(--l-8) * pi) * c) h;
   --light-12: var(--l-12) calc(sin(var(--l-12) * pi) * c) h;
   --light-13: var(--l-13) calc(sin(var(--l-13) * pi) * c) h;
-  /*dark mode values*/
-  --ld-1: 0.218;
-  --ld-2: 0.253;
-  --ld-3: 0.304;
-  --ld-4: 0.356;
-  --ld-5: 0.407;
-  --ld-6: 0.433;
-  --ld-7: 0.574;
-  --ld-8: 0.700;
-  --ld-12: 0.821;
-  --ld-13: 0.947;
+
    /*dark relative color syntax*/
   --dark-1: var(--ld-1) calc(sin(var(--ld-1) * pi) * c) h;
   --dark-2: var(--ld-2) calc(sin(var(--ld-2) * pi) * c) h;
@@ -114,6 +120,33 @@
     --ld-12: 0.786;
     --ld-13: 0.907;
     }
+
+  /*gaussian*/
+  /*calc(pow(e, (pow(var(--l-1) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c)*/
+  &:has([data-chroma-curve="gaussian"]) {
+    /*light relative color syntax*/
+  --light-1: var(--l-1) calc(pow(e, (pow(var(--l-1) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-2: var(--l-2) calc(pow(e, (pow(var(--l-2) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-3: var(--l-3) calc(pow(e, (pow(var(--l-3) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-4: var(--l-4) calc(pow(e, (pow(var(--l-4) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-5: var(--l-5) calc(pow(e, (pow(var(--l-5) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-6: var(--l-6) calc(pow(e, (pow(var(--l-6) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-7: var(--l-7) calc(pow(e, (pow(var(--l-7) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-8: var(--l-8) calc(pow(e, (pow(var(--l-8) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-12: var(--l-12) calc(pow(e, (pow(var(--l-12) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-13: var(--l-13) calc(pow(e, (pow(var(--l-13) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+   /*dark relative color syntax*/
+  --dark-1: var(--ld-1) calc(pow(e, (pow(var(--ld-1) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-2: var(--ld-2) calc(pow(e, (pow(var(--ld-2) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-3: var(--ld-3) calc(pow(e, (pow(var(--ld-3) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-4: var(--ld-4) calc(pow(e, (pow(var(--ld-4) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-5: var(--ld-5) calc(pow(e, (pow(var(--ld-5) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-6: var(--ld-6) calc(pow(e, (pow(var(--ld-6) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-7: var(--ld-7) calc(pow(e, (pow(var(--ld-7) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-8: var(--ld-8) calc(pow(e, (pow(var(--ld-8) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-12: var(--ld-12) calc(pow(e, (pow(var(--ld-12) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --dark-13: var(--ld-13) calc(pow(e, (pow(var(--ld-13) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  }
 
 /*how much to darken/lighten base color for hover and active*/
   --base-hover-modifier: 15%;

@@ -1,5 +1,5 @@
 import {Accordion, Button, Chip, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox} from '../../src'
-import {useState, useRef} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import {alarm, info_circle, sun, circle_filled} from '@equinor/eds-icons'
 
 import './app.css';
@@ -21,6 +21,7 @@ export const App = () => {
   const main = useRef<HTMLDivElement>(null)
   const [isDark, setIsDark] = useState<boolean>(false)
   const [isRadix, setIsRadix] = useState<boolean>(false)
+  const [isGaussian, setIsGaussian] = useState<boolean>(true)
 
   const toggleTheme = (event: any) => {
     const el = main.current as HTMLDivElement
@@ -57,17 +58,19 @@ export const App = () => {
       )
     })
   }
-  const toggleLightSource = (event: any) => {
+
+  useEffect(() => {
     const el = main.current as HTMLDivElement
-    setIsRadix(!isRadix)
-    isRadix ? el.dataset.lightness = 'designsystemet' : el.dataset.lightness = 'radix'
-  }
+    isRadix ? el.dataset.lightness = 'radix' : el.dataset.lightness = 'designsystemet'
+    isGaussian ? el.dataset.chromaCurve = 'gaussian' : el.dataset.chromaCurve = 'sine'
+  }, [isRadix, isGaussian])
 
   return (
-    <main data-color-scheme="light" data-lightness="designsystemet" ref={main} className="app">
+    <main data-color-scheme="light" data-lightness="designsystemet" data-chroma-curve="gaussian" ref={main} className="app">
       <section className="app__topbar">
         <div className="app__topbar-actions">
-          <Button variant="tertiary" onClick={(e)=> toggleLightSource(e)}>{isRadix ? 'Radix' : 'Designsystemet'}</Button>
+          <Button variant="tertiary" onClick={(e)=> setIsRadix(!isRadix)}>{isRadix ? 'Light curve: Radix' : 'Light curve: Designsystemet'}</Button>
+          <Button variant="tertiary" onClick={()=> setIsGaussian(!isGaussian)}>{isGaussian ? 'Chroma curve: gaussian' : 'Chroma curve: sine'}</Button>
           <Button variant="tertiary" onClick={(e)=> toggleTheme(e)}>{isDark ? 'dark 🌙' : 'light 🌞'}</Button>
         </div>
       </section>
