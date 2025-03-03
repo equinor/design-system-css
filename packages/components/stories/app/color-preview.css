@@ -1,5 +1,5 @@
-@layer matrix {
-  .matrix {
+@layer color-preview {
+  .color-preview {
     width: 75vw;
     height: 30vh;
     resize: both;
@@ -14,10 +14,30 @@
       div {
         background-color: attr(data-bg type(<color>), white);
       }
+      &.controls {
+        accent-color: var(--eds-color-accent-base-default);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        label {
+          display: flex;
+          align-items: center;
+        }
+        .col {
+          display: flex;
+          flex-direction: column;
+          width: 180px;
+          align-items: start;
+        }
+        input[type="range"]{
+          width: 100%;
+        }
+      }
       &.categories {
         container-type: inline-size;
         p {
           font-size: calc(0.5rem + 1cqi);
+          font-size: clamp(0.5rem, 0.5rem + 1cqi, 1.5rem);
           margin: 0;
           color: canvasText;
           display: flex;
