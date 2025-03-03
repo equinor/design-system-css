@@ -1,6 +1,7 @@
 import {Accordion, Button, Chip, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox} from '../../src'
 import {useState, useRef, useEffect} from 'react'
 import {alarm, info_circle, sun, circle_filled} from '@equinor/eds-icons'
+import {Matrix} from './Matrix'
 
 import './app.css';
 
@@ -80,6 +81,7 @@ export const App = () => {
           <Text variant='header' size="6xl" as="h1">Title</Text>
           <Text size='2xl' prominence='secondary'>I'm a subtitle with prominence="secondary"</Text>
         </div>
+        <Matrix />
         <div className="u-card-grid">
           <Card>
             <div className="eds-card__content u-rich-text">
