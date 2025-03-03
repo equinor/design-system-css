@@ -1,6 +1,7 @@
 import './color-preview.css';
-import { Checkbox } from '../../src/';
-import { useState, useEffect } from 'react';
+import { Checkbox, Icon } from '../../src/';
+import { useState, useEffect, ChangeEvent } from 'react';
+import { help_outline } from '@equinor/eds-icons';
 
 export const ColorPreview = () => {
   const colors = ['neutral', 'accent', 'info', 'success', 'warning', 'danger']
@@ -16,11 +17,18 @@ export const ColorPreview = () => {
     <section className="controls">
       <label>Group by scheme<Checkbox defaultChecked={groupByScheme} onChange={()=> setGroupByScheme(!groupByScheme)} /></label>
       <label className='col'>adjust mean: {mean}
-        <input type="range" max="0.8" min="0.4" step="0.01" value={mean} onInput={(e)=> setMean(e.target.value)} />
+        <input type="range" max="0.8" min="0.4" step="0.01" value={mean}
+          onInput={(e: ChangeEvent<HTMLInputElement>)=> setMean(parseFloat(e.target.value))} />
       </label>
       <label className='col'>adjust stdev: {stdev}
-        <input type="range" max="10" min="0.1" step="0.1" value={stdev} onInput={(e)=> setStdev(e.target.value)} />
+        <input type="range" max="10" min="0.1" step="0.1" value={stdev}
+          onInput={(e: ChangeEvent<HTMLInputElement>)=> setStdev(parseFloat(e.target.value))} />
       </label>
+      <a
+        href="https://codepen.io/Oddbj-rn-vernes/pen/ZYzQpmV" target='_blank'
+        title="Use sliders to adjust mean (peak of the curve) and stdev (width of the bell). Click to open codepen of the curve">
+          <Icon style={{fill: 'var(--eds-color-info-base-default)'}} icon={help_outline} />
+      </a>
     </section>
     <section className="categories">
       <p>Background</p>
