@@ -16,6 +16,17 @@ const Chips = ()=> (
     <Chip variant='success'><Icon size={'xs'} icon={info_circle} />Success</Chip>
   </div>
 )
+const CyclicToggleTest = ()=> (
+  <div>
+    <Text style={{marginBottom: '4px'}}>Test of cyclical toggle for colors. Problem: --color does not inherit into nested elements with their own data-color attribute ⚰️</Text>
+    <div className='cyclic-color-test' data-color>
+      {Array.from({ length: 14 }, (_, i) => (<div key={i}></div>))}
+      <div className="inherit-test">
+        <div data-color></div>
+      </div>
+    </div>
+  </div>
+)
 
 export const App = () => {
   const [MenuOpen, setMenuOpen] = useState(false)
@@ -85,6 +96,7 @@ export const App = () => {
         <div className="u-card-grid">
           <Card>
             <div className="eds-card__content u-rich-text">
+            <CyclicToggleTest />
               <Autocomplete />
               <form>
                 <div className="u-flex">

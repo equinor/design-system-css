@@ -337,6 +337,61 @@
   --eds-color-danger-text-subtle: var(--danger-12);
   --eds-color-danger-text-default: var(--danger-13);
   --eds-color-danger-contrast-default: var(--danger-14);
+}
+/* Test of cyclical space toggle for color. By adding data-color attribute (with no value) to an element,
+ * <div className='cyclic-color-test' data-color></div>
+ * it is now activated and which colors will be used in the variables below can now be set by setting
+ * .cyclic-color-test {
+ *  --color: var(--accent);
+    background-color: var(--eds-color-background-subtle);
+    color: var(--eds-color-text-subtle);
+ * }
+ *
+ * of course the data-color could be replaced with a class instead that would then be needed to be used to activate.
+ * MAJOR LIMITATION: --color does not inherit into nested elements with their own [data-color] attr which resets to --color: var(--neutral).
+ * This could also be seen as a strength (hey free scoping) depending on how it is intended to be used.
+ */
+:root, [data-color] {
+  --color: var(--neutral);
+  --accent: var(--color, );
+  --success: var(--color, );
+  --info: var(--color, );
+  --warning: var(--color, );
+  --danger: var(--color, );
+  --neutral: var(--color, );
 
+  --eds-color-background-default: var(--neutral, var(--neutral-1)) var(--accent, var(--accent-1)) var(--success, var(--success-1)) var(--info, var(--info-1)) var(--warning, var(--warning-1)) var(--danger, var(--danger-1));
+  --eds-color-background-subtle: var(--neutral, var(--neutral-2)) var(--accent, var(--accent-2)) var(--success, var(--success-2)) var(--info, var(--info-2)) var(--warning, var(--warning-2)) var(--danger, var(--danger-2));
+  --eds-color-surface-default: var(--neutral, var(--neutral-3)) var(--accent, var(--accent-3)) var(--success, var(--success-3)) var(--info, var(--info-3)) var(--warning, var(--warning-3)) var(--danger, var(--danger-3));
+  --eds-color-surface-hover: var(--neutral, var(--neutral-4)) var(--accent, var(--accent-4)) var(--success, var(--success-4)) var(--info, var(--info-4)) var(--warning, var(--warning-4)) var(--danger, var(--danger-4));
+  --eds-color-surface-active: var(--neutral, var(--neutral-5)) var(--accent, var(--accent-5)) var(--success, var(--success-5)) var(--info, var(--info-5)) var(--warning, var(--warning-5)) var(--danger, var(--danger-5));
+  --eds-color-border-subtle: var(--neutral, var(--neutral-6)) var(--accent, var(--accent-6)) var(--success, var(--success-6)) var(--info, var(--info-6)) var(--warning, var(--warning-6)) var(--danger, var(--danger-6));
+  --eds-color-border-default: var(--neutral, var(--neutral-7)) var(--accent, var(--accent-7)) var(--success, var(--success-7)) var(--info, var(--info-7)) var(--warning, var(--warning-7)) var(--danger, var(--danger-7));
+  --eds-color-border-strong: var(--neutral, var(--neutral-8)) var(--accent, var(--accent-8)) var(--success, var(--success-8)) var(--info, var(--info-8)) var(--warning, var(--warning-8)) var(--danger, var(--danger-8));
+  --eds-color-base-default: var(--neutral, var(--neutral-9)) var(--accent, var(--accent-9)) var(--success, var(--success-9)) var(--info, var(--info-9)) var(--warning, var(--warning-9)) var(--danger, var(--danger-9));
+  --eds-color-base-hover: var(--neutral, var(--neutral-10)) var(--accent, var(--accent-10)) var(--success, var(--success-10)) var(--info, var(--info-10)) var(--warning, var(--warning-10)) var(--danger, var(--danger-10));
+  --eds-color-base-active: var(--neutral, var(--neutral-11)) var(--accent, var(--accent-11)) var(--success, var(--success-11)) var(--info, var(--info-11)) var(--warning, var(--warning-11)) var(--danger, var(--danger-11));
+  --eds-color-text-subtle: var(--neutral, var(--neutral-12)) var(--accent, var(--accent-12)) var(--success, var(--success-12)) var(--info, var(--info-12)) var(--warning, var(--warning-12)) var(--danger, var(--danger-12));
+  --eds-color-text-default: var(--neutral, var(--neutral-13)) var(--accent, var(--accent-13)) var(--success, var(--success-13)) var(--info, var(--info-13)) var(--warning, var(--warning-13)) var(--danger, var(--danger-13));
+  --eds-color-contrast-default: var(--neutral, var(--neutral-14)) var(--accent, var(--accent-14)) var(--success, var(--success-14)) var(--info, var(--info-14)) var(--warning, var(--warning-14)) var(--danger, var(--danger-14));
+}
+/*additionally, one can also make convenience selectors like this or utility classes (but you still need the data-color attribute to activate)*/
+[data-color="accent"] {
+  --color: var(--accent);
+}
+[data-color="neutral"] {
+  --color: var(--neutral);
+}
+[data-color="info"] {
+  --color: var(--info);
+}
+[data-color="success"] {
+  --color: var(--success);
+}
+[data-color="warning"] {
+  --color: var(--warning);
+}
+[data-color="danger"] {
+  --color: var(--danger);
 }
 
