@@ -28,11 +28,11 @@ export const Autocomplete = () => {
     {/* @ts-ignore */}
     <div ref={options} className="eds-autocomplete__options" popover="manual" onClick={closePopover}>
       <ul>
-        <li><Text varaint='ui'>Kahoot! ASA</Text></li>
-        <li><Text varaint='ui'>Microsoft Corporation</Text></li>
-        <li><Text varaint='ui'>Testla Inc</Text></li>
-        <li><Text varaint='ui'>Apple Inc</Text></li>
-        <li><Text varaint='ui'>NVIDIA corporation</Text></li>
+        <li><Text variant='ui'>Kahoot! ASA</Text></li>
+        <li><Text variant='ui'>Microsoft Corporation</Text></li>
+        <li><Text variant='ui'>Testla Inc</Text></li>
+        <li><Text variant='ui'>Apple Inc</Text></li>
+        <li><Text variant='ui'>NVIDIA corporation</Text></li>
       </ul>
     </div>
   </>
