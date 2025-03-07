@@ -1,5 +1,5 @@
 import {Accordion, Button, Chip, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox} from '../../src'
-import {useState, useRef, useEffect} from 'react'
+import {useState, useRef, useEffect, CSSProperties} from 'react'
 import {alarm, info_circle, sun, circle_filled} from '@equinor/eds-icons'
 import {ColorPreview} from './ColorPreview'
 
@@ -18,11 +18,15 @@ const Chips = ()=> (
 )
 const CyclicToggleTest = ()=> (
   <div>
-    <Text style={{marginBottom: '4px'}}>Test of cyclical toggle for colors. Problem: --color does not inherit into nested elements with their own data-color attribute ⚰️</Text>
+    <Text style={{marginBottom: '4px'}}>Test of cyclical toggle for colors.</Text>
     <div className='cyclic-color-test' data-color>
       {Array.from({ length: 14 }, (_, i) => (<div key={i}></div>))}
       <div className="inherit-test">
-        <div data-color></div>
+        <div data-color>
+          <div className="inherit-test">
+            <div data-color="danger"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
