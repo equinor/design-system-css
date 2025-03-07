@@ -85,8 +85,8 @@
 }
 
 .cyclic-color-test {
-  --color: var(--danger);
-  --color: var(--accent);
+  --color: var(--DANGER);
+  --color: var(--ACCENT);
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   width: 100%;
