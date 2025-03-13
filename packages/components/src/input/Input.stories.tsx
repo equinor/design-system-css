@@ -1,8 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
-import { Text } from '../Typography'
 import { Icon } from '../icon'
-import { close, warning_outlined, search } from '@equinor/eds-icons'
+import { search } from '@equinor/eds-icons'
 
 const meta = {
   title: 'Inputs/Input',
@@ -25,22 +24,14 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   render: (args) => {
     return (
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'start', gap: '16px'}}>
+      <form style={{display: 'flex', justifyContent: 'center', alignItems: 'start', gap: '16px'}}>
         <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-          <Text>generated focus</Text>
-          <Input {...args} />
+          <Input {...args} placeholder="placeholder text" />
           <Input leftAdornments={<Icon icon={search} size="md" />} variant='error' />
-          <Input variant='warning' />
+          <Input required placeholder="required" />
           <Input variant='success' />
 
         </div>
-        <div style={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
-          <Text>Original tokens (focused)</Text>
-          <Input className='debug' {...args}  />
-          <Input className='debug' variant='error' />
-          <Input className='debug' variant='warning' />
-          <Input className='debug' variant='success' />
-        </div>
-      </div>
+      </form>
     )},
 }

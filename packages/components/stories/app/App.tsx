@@ -1,4 +1,4 @@
-import {Accordion, Button, Chip, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox} from '../../src'
+import {Accordion, Button, Chip, Dialog, Icon, Text, SideBar, Snackbar, Autocomplete, Card, Radio, Checkbox, Input} from '../../src'
 import {useState, useRef, useEffect, CSSProperties} from 'react'
 import {alarm, info_circle, sun, circle_filled} from '@equinor/eds-icons'
 import {ColorPreview} from './ColorPreview'
@@ -100,6 +100,7 @@ export const App = () => {
         <div className="u-card-grid">
           <Card>
             <div className="eds-card__content u-rich-text">
+            <Input placeholder="Im a required input" required />
             <CyclicToggleTest />
               <Autocomplete />
               <form>

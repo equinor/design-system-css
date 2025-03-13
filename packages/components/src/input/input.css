@@ -1,30 +1,5 @@
 @layer eds.input {
   .eds-input {
-    /*temporary vars to figure colors*/
-    --eds-input-color-text-initial: light-dark(#565656, #c2c8cc);
-    --eds-input-color-text-focus: light-dark(#3d3d3d, #ffffff);
-    --eds-input-color-text-disabled: light-dark(#bebebe, #52616d);
-    --eds-input-color-surface-initial-on-level-1: light-dark(#ffffff, #00000047);
-    --eds-input-color-surface-initial-on-level-2: light-dark(#f7f7f7, #00000047);
-    --eds-input-color-border-initial: light-dark(#b3b3b3, #ffffff29);
-    --eds-input-color-border-focus: light-dark(#007079, #97cace);
-    --eds-input-color-message-border-success-initial: #3fa13d;
-    --eds-input-color-message-border-success-focus: light-dark(#15682d, #7bcf78);
-    --eds-input-color-message-border-warning-initial: #e57e00;
-    --eds-input-color-message-border-warning-focus: light-dark(#7f4600, #ffae74);
-    --eds-input-color-message-border-error-initial: #e20337;
-    --eds-input-color-message-border-error-focus: light-dark(#90042c, #ff8a8a);
-
-    /*generated focus color*/
-    /*the calculations can technically be global tokens*/
-    --rcs-input-border-focus-light: calc(l * 0.75) c h;
-    --rcs-input-border-focus-dark: calc(l * 1.3) calc(c * 0.8) h;
-    /*this has to be local due to the input color*/
-    --_eds-input-color-message-border-focus: light-dark(
-      oklch(from var(--_outline-color) var(--rcs-input-border-focus-light)),
-      oklch(from var(--_outline-color) var(--rcs-input-border-focus-dark))
-    );
-    /*end temp vars */
     box-sizing: border-box;
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -45,6 +20,9 @@
       /* total height target: comfortable: 24px, spacious: 36px */
       --_trim: calc(-1 * (1lh - 1cap) / 2);
       margin-block: round(nearest, var(--_trim), 2px);
+      &::placeholder {
+        color: var(--eds-color-text-subtle);
+      }
     }
     > .adornments {
       display: grid;
@@ -52,16 +30,19 @@
       align-items: center;
       svg {
         margin-block: -0.5em;
+        fill: var(--_fill-color);
       }
     }
     --_outline-color: transparent;
+    --_focus-outline-color: transparent;
+    --_fill-color: var(--eds-color-text-subtle);
+    --color: var(--NEUTRAL);
     outline-color: var(--_outline-color);
     outline-width: var(--eds-sizing-stroke-thin);
     outline-width: 1px;
     outline-style: solid;
-    box-shadow: 0 1px 0 0 var(--eds-input-color-border-initial);
-    background-color: var(--eds-input-color-surface-initial-on-level-1);
-    color: var(--eds-input-color-text-initial);
+    background-color: var(--eds-color-neutral-background-default);
+    color: var(--eds-color-neutral-text-default);
     padding-block: var(--eds-spacing-inset-xs-stack-stretched);
     padding-inline: var(--eds-spacing-inset-xs-inline);
     font-size: var(--eds-typography-ui-body-md-font-size);
@@ -69,46 +50,38 @@
     font-weight: var(--eds-typography-ui-body-md-font-weight-normal);
     line-height: var(--eds-typography-ui-body-md-lineheight-squished);
 
-    &:where(.error, .warning, .success, :focus-within) {
+    /*Ok these selectors are a bit messy and can probably be simplified in some smarter way*/
+    &:where(.error, .warning, .success, :has(:user-invalid), :has(:user-valid), :focus-within) {
+      --_outline-color: var(--eds-color-border-default);
+      --_focus-outline-color: var(--eds-color-border-strong);
+    }
+    &.initial:not(:focus-within):not(:has(:user-invalid)):not(:has(:user-valid)) {
+      box-shadow: 0 1px 0 0 var(--eds-color-neutral-border-default);
+    }
+    &:not(.initial) {
       box-shadow: none;
     }
-    &.error {
-      --_outline-color: var(--eds-input-color-message-border-error-initial);
-      &.debug {
-        --_outline-color: var(--eds-input-color-message-border-error-focus);
-      }
+    &.initial:focus-within {
+      --color: var(--ACCENT);
+    }
+    &:is(&.error, &:has(:user-invalid)) {
+      --color: var(--DANGER);
     }
     &.warning {
-      --_outline-color: var(--eds-input-color-message-border-warning-initial);
-      &.debug {
-        --_outline-color: var(--eds-input-color-message-border-warning-focus);
-      }
+      --color: var(--WARNING);
     }
-    &.success {
-      --_outline-color: var(--eds-input-color-message-border-success-initial);
-      &.debug {
-        --_outline-color: var(--eds-input-color-message-border-success-focus);
-      }
+    &:is(&.success, &:has(:user-valid)) {
+      --color: var(--SUCCESS);
     }
-    &:where(:focus-within, .debug) {
+    &:where(:focus-within) {
       outline-width: var(--eds-sizing-stroke-thick);
-      color: var(--eds-input-color-text-focus);
-    }
-    &.initial:focus-within {
-      --_outline-color: var(--eds-input-color-border-focus);
-    }
-    &:focus-within:not(.initial, .debug) {
-      outline-color: var(--_eds-input-color-message-border-focus);
-    }
-    &:has(:disabled) {
-      --_outline-color: transparent;
-      color: var(--eds-input-color-text-disabled);
+      --_fill-color: var(--eds-color-text-default);
+      outline-color: var(--_focus-outline-color);
+      box-shadow: none;
     }
 
-    &.colors-from-ds {
-      box-shadow: 0 1px 0 0 var(--eds-color-neutral-border-default);
-      background-color: var(--eds-color-neutral-background-default);
-      color: var(--eds-color-neutral-text-default);
+    &:has(:disabled) {
+      opacity: 0.3;
     }
   }
 
