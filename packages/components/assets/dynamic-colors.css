@@ -388,7 +388,7 @@
      --color: var(--INFO);
    }
    [data-color="success"] {
-     --color: var(--SUCESS);
+     --color: var(--SUCCESS);
    }
    [data-color="warning"] {
      --color: var(--WARNING);
