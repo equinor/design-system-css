@@ -50,7 +50,7 @@
   --stdev: var(--user-stdev, 2);
 
   /*lightness-values (based on designsystemet moss-green measured lightness values)*/
-  --l-1: 0.997;
+  --l-1: 1;
   --l-2: 0.965;
   --l-3: 0.910;
   --l-4: 0.857;
@@ -72,7 +72,7 @@
   --ld-12: 0.821;
   --ld-13: 0.947;
   /*light relative color syntax*/
-  --light-1: var(--l-1) calc(sin(var(--l-1) * pi) * c) h;
+  --light-1: var(--l-1) 0 h;
   --light-2: var(--l-2) calc(sin(var(--l-2) * pi) * c) h;
   --light-3: var(--l-3) calc(sin(var(--l-3) * pi) * c) h;
   --light-4: var(--l-4) calc(sin(var(--l-4) * pi) * c) h;
@@ -98,7 +98,7 @@
 
   &:has([data-lightness="radix"]) {
     /*lightness-values taken from radix measured l-values*/
-    --l-1: 0.993;
+    --l-1: 1;
     --l-2: 0.982;
     --l-3: 0.960;
     --l-4: 0.935;
@@ -125,7 +125,7 @@
   /*calc(pow(e, (pow(var(--l-1) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c)*/
   &:has([data-chroma-curve="gaussian"]) {
     /*light relative color syntax*/
-  --light-1: var(--l-1) calc(pow(e, (pow(var(--l-1) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+  --light-1: var(--l-1) 0 h;
   --light-2: var(--l-2) calc(pow(e, (pow(var(--l-2) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
   --light-3: var(--l-3) calc(pow(e, (pow(var(--l-3) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
   --light-4: var(--l-4) calc(pow(e, (pow(var(--l-4) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
