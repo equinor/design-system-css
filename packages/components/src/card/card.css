@@ -1,5 +1,6 @@
 
 @layer eds.card{
+  /*Bente colors*/
   :root {
     --eds-color-message-surface-standard-info: light-dark(#d5eaf4, #243746);
     --eds-color-message-surface-standard-success: light-dark(#d9f7e2, #243746);
@@ -16,40 +17,16 @@
     width: 100%;
     border: 1px solid transparent;
     border-radius: var(--eds-spacing-border-radius-rounded);
-    background-color: light-dark(white, var(--eds-color-neutral-background-subtle));
-    color: var(--eds-color-neutral-text-default);
-    fill: var(--eds-color-neutral-text-default);
+    background-color: light-dark(var(--eds-color-neutral-background-default), var(--eds-color-neutral-background-subtle));
     --_card-shadow: light-dark(rgb(0 0 0 / .15), transparent);
 
     box-shadow: 0 1px 10px var(--_card-shadow), 0 4px 5px var(--_card-shadow), 0 2px 4px var(--_card-shadow);
-    &.info {
-      background-color: var(--eds-color-info-background-subtle);
-      color: var(--eds-color-info-text-subtle);
-      fill: var(--eds-color-info-text-subtle);
-      border-color: var(--eds-color-info-border-subtle);
-      --override-text-color: var(--eds-color-info-text-subtle);
-    }
-    &.warning {
-      background-color: var(--eds-color-warning-background-subtle);
-      color: var(--eds-color-warning-text-subtle);
-      fill: var(--eds-color-warning-text-subtle);
-      border-color: var(--eds-color-warning-border-subtle);
-      --override-text-color: var(--eds-color-warning-text-subtle);
-    }
-    &.error {
-      background-color: var(--eds-color-danger-background-subtle);
-      color: var(--eds-color-danger-text-subtle);
-      fill: var(--eds-color-danger-text-subtle);
-      border-color: var(--eds-color-danger-border-subtle);
-      --override-text-color: var(--eds-color-danger-text-subtle);
-    }
-    &.success {
-      background-color: var(--eds-color-success-background-subtle);
-      color: var(--eds-color-success-text-subtle);
-      fill: var(--eds-color-success-text-subtle);
-      border-color: var(--eds-color-success-border-subtle);
-      --override-text-color: var(--eds-color-success-text-subtle);
-
+    &.tinted {
+      background-color: var(--eds-color-surface-default);
+      color: var(--eds-color-text-subtle);
+      fill: var(--eds-color-text-subtle);
+      border-color: var(--eds-color-border-subtle);
+      --override-text-color: var(--eds-color-text-subtle);
     }
   }
   [data-color-background="bente"] {

@@ -135,7 +135,7 @@ export const App = () => {
               <Chips/>
             </div>
           </Card>
-          <Card variant="success">
+          <Card tinted data-color="success">
             <div className="eds-card__content u-rich-text">
             <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
             <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
@@ -145,19 +145,19 @@ export const App = () => {
             <Chips/>
             </div>
           </Card>
-          <Card  variant="info">
+          <Card  tinted data-color="info">
             <div className="eds-card__content u-rich-text">
               <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
               <Chips/>
             </div>
           </Card>
-          <Card variant='warning'>
+          <Card tinted data-color="warning">
             <div className="eds-card__content u-rich-text">
               <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
               <Chips/>
             </div>
           </Card>
-          <Card variant='error'>
+          <Card tinted data-color="danger">
             <div className="eds-card__content u-rich-text">
               <Text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus nihil ea ut! Magni officiis est inventore, molestias autem minus numquam ea alias tempora rerum nisi quo deserunt beatae odio expedita!</Text>
               <Chips/>

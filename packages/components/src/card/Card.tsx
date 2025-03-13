@@ -1,11 +1,9 @@
 import './card.css'
 
 type Props = {
-  //elevation?: 'none' | 'raised' | 'overlay'
-  variant?: 'default' | 'info' | 'warning' | 'error' | 'success'
+  tinted?: boolean
 } & React.HTMLAttributes<HTMLDivElement>
-export const Card = ({children, className, variant = 'default', ...rest }: Props) => {
-  //const elevationParsed = `elevation-${elevation}`
+export const Card = ({children, className, tinted, ...rest }: Props) => {
   return (
-   <div className={['eds-card', /* elevationParsed */, variant, className].join(' ')} {...rest}>{children}</div>
+   <div data-color className={['eds-card', tinted && 'tinted', className].join(' ')} {...rest}>{children}</div>
   )}
