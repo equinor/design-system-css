@@ -338,13 +338,14 @@
   --eds-color-danger-text-default: var(--danger-13);
   --eds-color-danger-contrast-default: var(--danger-14);
 }
-/* Test of cyclical space toggle for color. By adding data-color attribute (with no value) to an element,
+/*
+ * Test of cyclical space toggle for color. By adding data-color attribute (with no value) to an element,
  * <div className='cyclic-color-test' data-color></div>
  * it is now activated and which colors will be used in the variables below can now be set by setting
  * .cyclic-color-test {
- *  --color: var(--accent);
-    background-color: var(--eds-color-background-subtle);
-    color: var(--eds-color-text-subtle);
+ *  --color: var(--ACCENT);
+ *  background-color: var(--eds-color-background-subtle);
+ *  color: var(--eds-color-text-subtle);
  * }
  *
  * Using @layer and a default value of revert-layer, the --color will inherit into nested elements with data-color.
