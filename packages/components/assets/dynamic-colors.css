@@ -125,27 +125,27 @@
   /*calc(pow(e, (pow(var(--l-1) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c)*/
   &:has([data-chroma-curve="gaussian"]) {
     /*light relative color syntax*/
-  --light-1: var(--l-1) 0 h;
-  --light-2: var(--l-2) calc(pow(e, (pow(var(--l-2) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-3: var(--l-3) calc(pow(e, (pow(var(--l-3) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-4: var(--l-4) calc(pow(e, (pow(var(--l-4) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-5: var(--l-5) calc(pow(e, (pow(var(--l-5) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-6: var(--l-6) calc(pow(e, (pow(var(--l-6) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-7: var(--l-7) calc(pow(e, (pow(var(--l-7) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-8: var(--l-8) calc(pow(e, (pow(var(--l-8) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-12: var(--l-12) calc(pow(e, (pow(var(--l-12) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --light-13: var(--l-13) calc(pow(e, (pow(var(--l-13) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-   /*dark relative color syntax*/
-  --dark-1: var(--ld-1) calc(pow(e, (pow(var(--ld-1) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-2: var(--ld-2) calc(pow(e, (pow(var(--ld-2) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-3: var(--ld-3) calc(pow(e, (pow(var(--ld-3) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-4: var(--ld-4) calc(pow(e, (pow(var(--ld-4) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-5: var(--ld-5) calc(pow(e, (pow(var(--ld-5) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-6: var(--ld-6) calc(pow(e, (pow(var(--ld-6) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-7: var(--ld-7) calc(pow(e, (pow(var(--ld-7) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-8: var(--ld-8) calc(pow(e, (pow(var(--ld-8) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-12: var(--ld-12) calc(pow(e, (pow(var(--ld-12) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
-  --dark-13: var(--ld-13) calc(pow(e, (pow(var(--ld-13) - var(--mean), 2) / var(--stdev)) * -1 * pow(5, 2)) * c) h;
+    --light-1: var(--l-1) 0 h;
+    --light-2: var(--l-2) calc(pow(e, -25 / var(--stdev) * pow(var(--l-2) - var(--mean), 2)) * c) h;
+    --light-3: var(--l-3) calc(pow(e, -25 / var(--stdev) * pow(var(--l-3) - var(--mean), 2)) * c) h;
+    --light-4: var(--l-4) calc(pow(e, -25 / var(--stdev) * pow(var(--l-4) - var(--mean), 2)) * c) h;
+    --light-5: var(--l-5) calc(pow(e, -25 / var(--stdev) * pow(var(--l-5) - var(--mean), 2)) * c) h;
+    --light-6: var(--l-6) calc(pow(e, -25 / var(--stdev) * pow(var(--l-6) - var(--mean), 2)) * c) h;
+    --light-7: var(--l-7) calc(pow(e, -25 / var(--stdev) * pow(var(--l-7) - var(--mean), 2)) * c) h;
+    --light-8: var(--l-8) calc(pow(e, -25 / var(--stdev) * pow(var(--l-8) - var(--mean), 2)) * c) h;
+    --light-12: var(--l-12) calc(pow(e, -25 / var(--stdev) * pow(var(--l-12) - var(--mean), 2)) * c) h;
+    --light-13: var(--l-13) calc(pow(e, -25 / var(--stdev) * pow(var(--l-13) - var(--mean), 2)) * c) h;
+      /*dark relative color syntax*/
+    --dark-1: var(--ld-1) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-1) - var(--mean), 2)) * c) h;
+    --dark-2: var(--ld-2) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-2) - var(--mean), 2)) * c) h;
+    --dark-3: var(--ld-3) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-3) - var(--mean), 2)) * c) h;
+    --dark-4: var(--ld-4) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-4) - var(--mean), 2)) * c) h;
+    --dark-5: var(--ld-5) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-5) - var(--mean), 2)) * c) h;
+    --dark-6: var(--ld-6) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-6) - var(--mean), 2)) * c) h;
+    --dark-7: var(--ld-7) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-7) - var(--mean), 2)) * c) h;
+    --dark-8: var(--ld-8) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-8) - var(--mean), 2)) * c) h;
+    --dark-12: var(--ld-12) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-12) - var(--mean), 2)) * c) h;
+    --dark-13: var(--ld-13) calc(pow(e, -25 / var(--stdev) * pow(var(--ld-13) - var(--mean), 2)) * c) h;
   }
 
 /*how much to darken/lighten base color for hover and active*/
