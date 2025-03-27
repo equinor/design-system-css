@@ -18,14 +18,11 @@ const getColor = (color: TypographyColor, prominence: TypographyProminence) => {
   const colorBase = `--eds-color-${color}`
   let textColor
   switch (prominence) {
-    case 'primary':
+    case 'default':
       textColor = `var(${colorBase}-text-default)`
       break;
-    case 'secondary':
+    case 'subtle':
       textColor = `var(${colorBase}-text-subtle)`
-      break;
-    case 'disabled':
-      textColor = `var(--eds-color-neutral-border-default)`
       break;
     case 'contrast':
       textColor = `var(${colorBase}-contrast-default)`

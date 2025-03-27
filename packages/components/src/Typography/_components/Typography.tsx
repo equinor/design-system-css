@@ -59,6 +59,7 @@ export const Typography = styled.p<StyleHeadingProps>`
     --_grid-base: 4px;
     &[href],
     & [href] {
+      /*TODO: fix*/
       color: var(--override-link-color, light-dark(#034187, #90d6fc));
     }
     /* vertically center inline icons.
@@ -72,8 +73,20 @@ export const Typography = styled.p<StyleHeadingProps>`
       display: inline-block;
       vertical-align: middle;
     }
-
-    @supports (height: round(up, 10px, 1px)) {
+    /*chrome/edge/safari*/
+    @supports (text-box: trim-both cap alphabetic) {
+      ${$onGrid &&
+      css`
+      /*Finding: we can not use negative margins in pseudo elements with text-box but we can use padding.
+      However padding can only be positive and in some cases (like 3xl) cap height is larger than the nearest
+      round to 4px (17.82px gets rounded to 16px in the fallback version with negative margins which we can not do here.
+      We can only round up but then to the nearest 4 would be 20 or the nearest 2px would be 18px which is not consistent with figma/intended value of 16*/
+        padding-top: calc(round(up, 1cap, 4px) - 1cap);
+      `}
+      text-box: trim-both cap alphabetic;
+    }
+    /*fallback for firefox until they add text-box*/
+    @supports not (text-box: trim-both cap alphabetic) {
       /*This calculates the rest-values to make the total height a multiple of 4px.
       When onGrid is true, the rest is only added to the top of the text-box.*/
       --_rest-top: ${$onGrid
@@ -82,23 +95,22 @@ export const Typography = styled.p<StyleHeadingProps>`
       --_rest-bottom: ${$onGrid
         ? '0cap'
         : 'calc((round(nearest, 1cap, var(--_grid-base)) - 1cap) / 2)'};
-    }
+      /*This emulates text-box-trim: both; text-box-edge: cap alphabetic*/
+      --_trim-top: calc(((((1lh - 1cap) / 2) - var(--_offset)) * -1));
+      --_trim-bottom: calc(((((1lh - 1cap) / 2) + var(--_offset)) * -1));
 
-    /*This emulates text-box-trim: both; text-box-edge: cap alphabetic*/
-    --_trim-top: calc(((((1lh - 1cap) / 2) - var(--_offset)) * -1));
-    --_trim-bottom: calc(((((1lh - 1cap) / 2) + var(--_offset)) * -1));
-
-    &::before {
-      //Because of the negative margins, margin-bottom adjusts the top and vice versa
-      margin-bottom: calc(var(--_trim-top) + var(--_rest-top, 0cap));
-    }
-    &::after {
-      margin-top: calc(var(--_trim-bottom) + var(--_rest-bottom, 0cap));
-    }
-    &::before,
-    &::after {
-      display: table;
-      content: '';
+      &::before {
+        //Because of the negative margins, margin-bottom adjusts the top and vice versa
+        margin-bottom: calc(var(--_trim-top) + var(--_rest-top, 0cap));
+      }
+      &::after {
+        margin-top: calc(var(--_trim-bottom) + var(--_rest-bottom, 0cap));
+      }
+      &::before,
+      &::after {
+        display: table;
+        content: '';
+      }
     }
   `}
 `

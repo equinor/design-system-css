@@ -15,7 +15,7 @@ export type TypographyVariant = 'header' | 'ui' | 'body'
 export type TypographyFontWeight = 'bolder' | 'normal' | 'lighter'
 export type TypographyLetterSpacing = 'loose' | 'normal' | 'tight'
  export type TypographyColor = 'neutral' | 'accent' | 'info' | 'success' | 'warning' | 'danger'
- export type TypographyProminence = 'primary' | 'secondary' | 'disabled' | 'contrast'
+ export type TypographyProminence = 'default' | 'subtle' | 'contrast' /*TODO: follow final color names e.g. "default | subtle | contrast" if using designsystemet naming*/
 
 export type TypographyProps = {
   /** header: uses the "equinor" typeface. Please use the "as" prop to assign the correct header level when variant is header. Always "baselined"

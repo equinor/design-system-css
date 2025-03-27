@@ -10,6 +10,8 @@ const meta: Meta<typeof Text> = {
   component: Text,
   args: {
     size: 'lg',
+    prominence: 'default',
+    color: 'neutral',
     children: TEXT,
   },
   argTypes: {
@@ -43,20 +45,29 @@ const meta: Meta<typeof Text> = {
         type: 'select',
       },
     },
-    onGrid: {
+    baselined: {
       control: {
         type: 'boolean',
       },
     },
     color: {
       options: [
-        'primary',
-        'secondary',
-        'tertiary',
-        'quaternary',
-        'maximal',
-        'disabled',
-        'inverted',
+        'neutral',
+        'accent',
+        'info',
+        'success',
+        'warning',
+        'danger',
+      ],
+      control: {
+        type: 'select',
+      },
+    },
+    prominence: {
+      options: [
+        'default',
+        'subtle',
+        'contrast',
       ],
       control: {
         type: 'select',
@@ -151,7 +162,7 @@ export const Sizes: StoryFn<TextProps> = () => {
       <Text size="3xl">3xl: {TEXT}</Text>
       <Text size="4xl">4xl: {TEXT}</Text>
       <Text size="5xl">5xl: {TEXT}</Text>
-      <Text size="6xl">6xl: {TEXT}</Text>
+      <Text size="6xl" variant='ui'>6xl: {TEXT}</Text>
     </>
   )
 }
@@ -217,10 +228,7 @@ export const Colors: StoryFn<TextProps> = () => {
       <Text size={size}>neutral primary (default)</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)'} as CSSProperties}>
-      <Text size={size} prominence='secondary'>neutral secondary</Text>
-    </div>
-    <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)'} as CSSProperties}>
-      <Text size={size} prominence='disabled'>neutral disabled</Text>
+      <Text size={size} prominence='subtle'>neutral secondary</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-base-default)'} as CSSProperties}>
       <Text size={size} prominence='contrast'>neutral contrast</Text>
@@ -229,7 +237,7 @@ export const Colors: StoryFn<TextProps> = () => {
       <Text size={size} color='accent'>accent primary</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-accent-background-subtle)'} as CSSProperties}>
-      <Text size={size} color='accent' prominence='secondary'>accent secondary</Text>
+      <Text size={size} color='accent' prominence='subtle'>accent secondary</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-accent-base-default)'} as CSSProperties}>
       <Text size={size} color='accent' prominence='contrast'>accent contrast</Text>
@@ -238,7 +246,7 @@ export const Colors: StoryFn<TextProps> = () => {
       <Text size={size} color='warning'>warning primary</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-warning-background-subtle)'} as CSSProperties}>
-      <Text size={size} color='warning' prominence='secondary'>warning secondary</Text>
+      <Text size={size} color='warning' prominence='subtle'>warning secondary</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-warning-base-default)'} as CSSProperties}>
       <Text size={size} color='warning' prominence='contrast'>warning contrast</Text>
@@ -247,7 +255,7 @@ export const Colors: StoryFn<TextProps> = () => {
       <Text size={size} color='danger'>danger primary</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-danger-background-subtle)'} as CSSProperties}>
-      <Text size={size} color='danger' prominence='secondary'>danger secondary</Text>
+      <Text size={size} color='danger' prominence='subtle'>danger secondary</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-danger-base-default)'} as CSSProperties}>
       <Text size={size} color='danger' prominence='contrast'>danger contrast</Text>
@@ -259,7 +267,7 @@ export const Colors: StoryFn<TextProps> = () => {
       <Text customColor='inherit' size={size}>customColor (inherit)</Text>
     </div>
     <div className="text-bg" style={{'--tbg': 'var(--eds-color-neutral-background-subtle)', '--override-text-color': 'light-dark(green, lightgreen)'} as CSSProperties}>
-    <Text size={size} color='danger' prominence='secondary'>override all text color with --override-text-color on parent</Text>
+    <Text size={size} color='danger' prominence='subtle'>override all text color with --override-text-color on parent</Text>
     </div>
 
     </div>
