@@ -8,8 +8,9 @@
       border-bottom: var(--eds-sizing-stroke-thick) solid canvasText;
       display: grid;
       cursor: pointer;
-      /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation*/
-      gap: 0.618em;
+      /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation.
+      Rounding to nearest 0.5px yields the exact same values as the --eds-spacing-icon tokens */
+      gap: round(0.618em, 0.5px);
       grid-auto-flow: column;
       align-items: center;
       justify-content: center;

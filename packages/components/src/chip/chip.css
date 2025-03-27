@@ -8,7 +8,9 @@
     align-items: center;
     border-radius: 1e5px;
     font-size: var(--eds-typography-ui-body-sm-font-size);
-    gap: 0.618em;
+    /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation.
+    Rounding to nearest 0.5px yields the exact same values as the --eds-spacing-icon tokens */
+    gap: round(0.618em, 0.5px);
     padding-block: var(--eds-spacing-inset-sm-stack-squared);
     padding-inline: var(--eds-spacing-inset-sm-inline);
     background-color: var(--_chip-background-color);

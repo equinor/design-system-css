@@ -3,7 +3,9 @@
     box-sizing: border-box;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    gap: 0.618em;
+    /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation.
+    Rounding to nearest 0.5px yields the exact same values as the --eds-spacing-icon tokens */
+    gap: round(0.618em, 0.5px);
     align-items: center;
     cursor: text;
     > input {
@@ -26,7 +28,9 @@
     }
     > .adornments {
       display: grid;
-      gap: 0.618em;
+    /*spacing between icon and text should be font-size * 0.618 according to EDS 2.0 Spacing & Typography Documentation.
+    Rounding to nearest 0.5px yields the exact same values as the --eds-spacing-icon tokens */
+    gap: round(0.618em, 0.5px);
       align-items: center;
       svg {
         margin-block: -0.5em;
