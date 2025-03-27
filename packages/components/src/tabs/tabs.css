@@ -22,6 +22,7 @@
       padding-block-end: calc(var(--eds-spacing-inset-md-stack-squished) - (var(--eds-sizing-stroke-thick)));
       padding-inline: var(--eds-spacing-inset-md-inline);
       font-size: var(--eds-typography-ui-body-lg-font-size);
+      /*using a registered custom property to resolve cap height into px, so it can be passed down to icon*/
       --captured-size-1: calc(round(1cap, 4px) / 2);
       --_button-text-height: var(--captured-size-1);
       &:hover {
