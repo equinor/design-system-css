@@ -1,9 +1,12 @@
 @layer eds.icon {
   .eds-icon {
+    /*we have to send the size through a registered custom property so the tan(atan2()) calc is guaranteed to work in all browsers*/
     --_size: var(--captured-size-1);
+    --_viewbox-size: calc(var(--viewbox-size) * 1px);
     width: var(--_size);
     height: var(--_size);
-    --_path-scale: tan(atan2(var(--_size), 24px));
+    /*This divides size by viewbox-size to get correct scale*/
+    --_path-scale: tan(atan2(var(--_size), var(--_viewbox-size)));
     font-size: var(--_size);
     > path {
       scale: var(--_path-scale);
