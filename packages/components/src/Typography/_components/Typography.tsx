@@ -74,22 +74,27 @@ export const Typography = styled.p<StyleHeadingProps>`
       vertical-align: middle;
     }
     /*chrome/edge/safari*/
-    @supports (text-box: trim-both cap alphabetic) {
-      ${$onGrid &&
-      css`
-      /*Finding: we can not use negative margins in pseudo elements with text-box but we can use padding.
+    /*Finding: we can not use negative margins in pseudo elements with text-box but we can use padding.
       However padding can only be positive and in some cases (like 3xl) cap height is larger than the nearest
       round to 4px (17.82px gets rounded to 16px in the fallback version with negative margins which we can not do here.
       We can only round up but then to the nearest 4 would be 20 or the nearest 2px would be 18px which is not consistent
       with figma/intended value of 16*/
-        /*padding-top: calc(round(up, 1cap, 4px) - 1cap);*/
-        /*ALTERNATIVE SOLUTION: "text-box: trim-both ex alphabetic;" and calculate difference up to cap rounded to 4px and set it as padding-top*/
-        --_cap-diff: calc(1cap - 1ex);
-        --_cap-rest: calc(round(1cap, 4px) - 1cap);
-        padding-top: calc(var(--_cap-diff) + var(--_cap-rest));
+      /*padding-top: calc(round(up, 1cap, 4px) - 1cap);*/
+      /*ALTERNATIVE SOLUTION: "text-box: trim-both ex alphabetic;" and calculate difference up to cap rounded to 4px and set it as padding-top*/
+    @supports (text-box: trim-both cap alphabetic) {
+      --_cap-diff: calc(1cap - 1ex);
+      --_cap-rest: calc(round(1cap, 4px) - 1cap);
+      --_padding: calc(var(--_cap-diff) + var(--_cap-rest));
+      ${$onGrid ?
+        css`
+          padding-top: var(--_padding);
+        ` :
+        css`
+        padding-block: calc(var(--_padding) / 2);
       `}
-      /*text-box: trim-both cap alphabetic;*/
       text-box: trim-both ex alphabetic;
+      /*This could be used if font-size was pre-calculated in tokens to make cap heights rounded to 4px values*/
+      /* text-box: trim-both cap alphabetic; */
     }
     /*fallback for firefox until they add text-box*/
     @supports not (text-box: trim-both cap alphabetic) {
