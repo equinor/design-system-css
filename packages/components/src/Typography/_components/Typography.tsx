@@ -80,10 +80,16 @@ export const Typography = styled.p<StyleHeadingProps>`
       /*Finding: we can not use negative margins in pseudo elements with text-box but we can use padding.
       However padding can only be positive and in some cases (like 3xl) cap height is larger than the nearest
       round to 4px (17.82px gets rounded to 16px in the fallback version with negative margins which we can not do here.
-      We can only round up but then to the nearest 4 would be 20 or the nearest 2px would be 18px which is not consistent with figma/intended value of 16*/
-        padding-top: calc(round(up, 1cap, 4px) - 1cap);
+      We can only round up but then to the nearest 4 would be 20 or the nearest 2px would be 18px which is not consistent
+      with figma/intended value of 16*/
+        /*padding-top: calc(round(up, 1cap, 4px) - 1cap);*/
+        /*ALTERNATIVE SOLUTION: "text-box: trim-both ex alphabetic;" and calculate difference up to cap rounded to 4px and set it as padding-top*/
+        --_cap-diff: calc(1cap - 1ex);
+        --_cap-rest: calc(round(1cap, 4px) - 1cap);
+        padding-top: calc(var(--_cap-diff) + var(--_cap-rest));
       `}
-      text-box: trim-both cap alphabetic;
+      /*text-box: trim-both cap alphabetic;*/
+      text-box: trim-both ex alphabetic;
     }
     /*fallback for firefox until they add text-box*/
     @supports not (text-box: trim-both cap alphabetic) {
