@@ -19,6 +19,7 @@ export const Input = ({ variant, disabled, style, className, type = 'text', left
     data-color
     style={style}
     className={`eds-input ${variant ? variant : 'initial'} ${className ? className : ''}`}
+    /* workaround to ensure focus on the smaller input inside wrapper */
     onClick={()=>{inputRef.current?.focus()}}
   >
     <span className="adornments left">{leftAdornments}</span>

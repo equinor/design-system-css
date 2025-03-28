@@ -47,6 +47,8 @@
     outline-style: solid;
     background-color: var(--eds-color-neutral-background-default);
     color: var(--eds-color-neutral-text-default);
+    /*This solution adds padding to the input wrapper while leaving the input height as cap-height to hit the target height.
+    Perhaps it is possible to reach target height using text-box-trim and moving the padding inside input for a less hacky solution*/
     padding-block: var(--eds-spacing-inset-xs-stack-stretched);
     padding-inline: var(--eds-spacing-inset-xs-inline);
     font-size: var(--eds-typography-ui-body-md-font-size);
@@ -65,6 +67,7 @@
     &:not(.initial) {
       box-shadow: none;
     }
+      /*Just messing around testing how data-color space-toggles can be used*/
     &.initial:focus-within {
       --color: var(--ACCENT);
     }
