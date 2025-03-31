@@ -67,7 +67,7 @@ const preview: Preview = {
     },
     background: {
       description: 'Story color source',
-      defaultValue: 'bente',
+      defaultValue: 'designsystemet',
       toolbar: {
         title: 'color source',
         icon: 'browser',
