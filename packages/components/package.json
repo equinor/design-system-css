@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "eds component mockups",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006 --ci",
@@ -22,16 +23,15 @@
     "styled-components": "^6.1.14"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^2.0.2",
-    "@storybook/addon-essentials": "^8.4.7",
-    "@storybook/addon-interactions": "^8.4.7",
-    "@storybook/addon-links": "^8.4.7",
-    "@storybook/addon-onboarding": "^8.4.7",
-    "@storybook/blocks": "^8.3.4",
-    "@storybook/react": "^8.3.4",
-    "@storybook/react-vite": "^8.4.7",
-    "@storybook/test": "^8.3.4",
+    "@chromatic-com/storybook": "^4.0.0",
+    "@storybook/addon-docs": "^9.0.6",
+    "@storybook/addon-links": "^9.0.6",
+    "@storybook/addon-onboarding": "^9.0.6",
+    "@storybook/react-vite": "^9.0.6",
     "prop-types": "^15.8.1",
-    "storybook": "^8.4.7"
+    "storybook": "^9.0.6"
+  },
+  "overrides": {
+    "storybook": "$storybook"
   }
 }
