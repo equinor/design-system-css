@@ -1,4 +1,4 @@
-import { getAbsolutePath } from './resolvePaths.ts'
+import { getAbsolutePath } from './resolvePaths'
 import type { StorybookConfig } from '@storybook/react-vite'
 const config: StorybookConfig = {
   stories: [
