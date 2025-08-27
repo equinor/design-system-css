@@ -1,4 +1,4 @@
-import { DocsContainer } from '@storybook/blocks'
+import { DocsContainer } from '@storybook/addon-docs/blocks'
 import * as React from 'react'
 import '@equinor/eds-tokens/css/variables.css'
 import '../assets/colors-trimmed.css'
