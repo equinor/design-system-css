@@ -33,6 +33,6 @@
     "storybook": "^9.1.2"
   },
   "overrides": {
-    "storybook": "$storybook"
+    "storybook": "^9.1.2"
   }
 }
